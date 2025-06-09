@@ -39,6 +39,7 @@ import { FooterLayout2 } from "./PayloadFooter/layouts/FooterLayout2/Component"
 import { AdvertismentSection2 } from "./AdvertismentSection/layouts/AdvertismentSection2/Component"
 import { HomeLayout1 } from "../layout/HomeLayout/layouts/HomeLayout1/Component"
 import { HomeLayout2 } from "../layout/HomeLayout/layouts/HomeLayout2/Component"
+import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -47,6 +48,7 @@ const blockComponents = {
   payloadBanner: PayloadBanner,
   bannerLayout1: BannerLayout1,
   banner2: BannerLayout2,
+  bannerLayout3: BannerLayout3,
   payloadButton: PayloadButton,
   outlineButton: OutlineButton,
   animatedButton: AnimatedButton,

@@ -219,6 +219,7 @@ export interface HomeLayout1 {
         | CategoryLayout1
         | FaqLayout
         | ContentBlock
+        | BannerLayout3
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
@@ -455,6 +456,7 @@ export interface HomeLayout2 {
         | CategoryLayout1
         | FaqLayout
         | ContentBlock
+        | BannerLayout3
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
@@ -779,6 +781,24 @@ export interface ContentBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'content';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerLayout3".
+ */
+export interface BannerLayout3 {
+  backgroundImage: number | Media;
+  eyebrowText?: string | null;
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonHref?: string | null;
+  textColor?: string | null;
+  overlayOpacity?: number | null;
+  buttonVariant?: ('default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'bannerLayout3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1148,6 +1168,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1582,6 +1603,23 @@ export interface ContentBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerLayout3_select".
+ */
+export interface BannerLayout3Select<T extends boolean = true> {
+  backgroundImage?: T;
+  eyebrowText?: T;
+  heading?: T;
+  description?: T;
+  buttonText?: T;
+  buttonHref?: T;
+  textColor?: T;
+  overlayOpacity?: T;
+  buttonVariant?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "CallToActionBlock_select".
  */
 export interface CallToActionBlockSelect<T extends boolean = true> {
@@ -1649,6 +1687,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;

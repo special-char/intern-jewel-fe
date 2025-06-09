@@ -21,6 +21,7 @@ import { Content } from "@/blocks/Content/config"
 import { CallToAction } from "@/blocks/CallToAction/config"
 import { Banner } from "@/blocks/Banner/config"
 import { MediaBlock } from "@/blocks/MediaBlock/config"
+import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -52,6 +53,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       CategoryLayout1,
       FaqLayout,
       Content,
+      BannerLayout3,
       CallToAction,
       Banner,
       MediaBlock,
