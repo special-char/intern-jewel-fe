@@ -25,6 +25,7 @@ import { CTASectionLayout1 } from "@/blocks/CTASection/layouts/CTASection1/confi
 import { IntroHeaderLayout1 } from "@/blocks/IntroHeader/layouts/IntroHeader1/config"
 import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWrapper1/config"
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
+import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -56,6 +57,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       CategoryLayout1,
       FaqLayout,
       Content,
+      BannerLayout3,
       CallToAction,
       Banner,
       MediaBlock,
