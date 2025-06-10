@@ -1,4 +1,4 @@
-import { FooterLayout1 as FooterLayoutType } from "@/payload-types"
+import { FooterLayout3 as FooterLayoutType } from "@/payload-types"
 import Newsletter from "../../components/Newsletter3"
 import AddressComponent from "../../components/AddressComponent"
 import FooterLinks from "../../components/FooterLinks"

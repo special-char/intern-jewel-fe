@@ -69,7 +69,7 @@ export const FooterLayout3: Block = {
       name: "footerLinks",
       type: "array",
       label: "Footer Links",
-      maxRows: 2,
+      maxRows: 4,
       defaultValue: [
         {
           title: "Products",
@@ -91,6 +91,27 @@ export const FooterLayout3: Block = {
             { link: { label: "New Arrivals" } },
             { link: { label: "Terms" } },
             { link: { label: "Licenses" } },
+          ],
+        },
+        {
+          title: "Account",
+          items: [
+            { link: { label: "Orders" } },
+            { link: { label: "Wishlist" } },
+            { link: { label: "Payment Info" } },
+            { link: { label: "Addresses" } },
+            { link: { label: "Personal Info" } },
+          ],
+        },
+        {
+          title: "Support",
+          items: [
+            { link: { label: "Size Charts" } },
+            { link: { label: "Payment Guide" } },
+            { link: { label: "Help Centre" } },
+            { link: { label: "Privacy Policey" } },
+            { link: { label: "Return Policy" } },
+            { link: { label: "FAQs" } },
           ],
         },
       ],
