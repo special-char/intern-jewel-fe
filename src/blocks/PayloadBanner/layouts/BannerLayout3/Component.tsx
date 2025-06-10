@@ -64,7 +64,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           )}
 
           <h1
-            className={`${textColor} text-heading6 mb-6 sm:mb-8 font-normal leading-[0.9] text-center`}
+            className={`${textColor} text-banner mb-6 sm:mb-8 font-normal leading-[0.9] text-center`}
           >
             {heading}
           </h1>
