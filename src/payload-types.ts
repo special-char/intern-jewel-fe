@@ -13,163 +13,171 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | 'Pacific/Midway'
-  | 'Pacific/Niue'
-  | 'Pacific/Honolulu'
-  | 'Pacific/Rarotonga'
-  | 'America/Anchorage'
-  | 'Pacific/Gambier'
-  | 'America/Los_Angeles'
-  | 'America/Tijuana'
-  | 'America/Denver'
-  | 'America/Phoenix'
-  | 'America/Chicago'
-  | 'America/Guatemala'
-  | 'America/New_York'
-  | 'America/Bogota'
-  | 'America/Caracas'
-  | 'America/Santiago'
-  | 'America/Buenos_Aires'
-  | 'America/Sao_Paulo'
-  | 'Atlantic/South_Georgia'
-  | 'Atlantic/Azores'
-  | 'Atlantic/Cape_Verde'
-  | 'Europe/London'
-  | 'Europe/Berlin'
-  | 'Africa/Lagos'
-  | 'Europe/Athens'
-  | 'Africa/Cairo'
-  | 'Europe/Moscow'
-  | 'Asia/Riyadh'
-  | 'Asia/Dubai'
-  | 'Asia/Baku'
-  | 'Asia/Karachi'
-  | 'Asia/Tashkent'
-  | 'Asia/Calcutta'
-  | 'Asia/Dhaka'
-  | 'Asia/Almaty'
-  | 'Asia/Jakarta'
-  | 'Asia/Bangkok'
-  | 'Asia/Shanghai'
-  | 'Asia/Singapore'
-  | 'Asia/Tokyo'
-  | 'Asia/Seoul'
-  | 'Australia/Brisbane'
-  | 'Australia/Sydney'
-  | 'Pacific/Guam'
-  | 'Pacific/Noumea'
-  | 'Pacific/Auckland'
-  | 'Pacific/Fiji';
+  | "Pacific/Midway"
+  | "Pacific/Niue"
+  | "Pacific/Honolulu"
+  | "Pacific/Rarotonga"
+  | "America/Anchorage"
+  | "Pacific/Gambier"
+  | "America/Los_Angeles"
+  | "America/Tijuana"
+  | "America/Denver"
+  | "America/Phoenix"
+  | "America/Chicago"
+  | "America/Guatemala"
+  | "America/New_York"
+  | "America/Bogota"
+  | "America/Caracas"
+  | "America/Santiago"
+  | "America/Buenos_Aires"
+  | "America/Sao_Paulo"
+  | "Atlantic/South_Georgia"
+  | "Atlantic/Azores"
+  | "Atlantic/Cape_Verde"
+  | "Europe/London"
+  | "Europe/Berlin"
+  | "Africa/Lagos"
+  | "Europe/Athens"
+  | "Africa/Cairo"
+  | "Europe/Moscow"
+  | "Asia/Riyadh"
+  | "Asia/Dubai"
+  | "Asia/Baku"
+  | "Asia/Karachi"
+  | "Asia/Tashkent"
+  | "Asia/Calcutta"
+  | "Asia/Dhaka"
+  | "Asia/Almaty"
+  | "Asia/Jakarta"
+  | "Asia/Bangkok"
+  | "Asia/Shanghai"
+  | "Asia/Singapore"
+  | "Asia/Tokyo"
+  | "Asia/Seoul"
+  | "Australia/Brisbane"
+  | "Australia/Sydney"
+  | "Pacific/Guam"
+  | "Pacific/Noumea"
+  | "Pacific/Auckland"
+  | "Pacific/Fiji"
 
 export interface Config {
   auth: {
-    users: UserAuthOperations;
-  };
-  blocks: {};
+    users: UserAuthOperations
+  }
+  blocks: {}
   collections: {
-    users: User;
-    media: Media;
-    pages: Page;
-    products: Product;
-    product_categories: ProductCategory;
-    'payload-jobs': PayloadJob;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  collectionsJoins: {};
+    users: User
+    media: Media
+    pages: Page
+    products: Product
+    product_categories: ProductCategory
+    "payload-jobs": PayloadJob
+    "payload-locked-documents": PayloadLockedDocument
+    "payload-preferences": PayloadPreference
+    "payload-migrations": PayloadMigration
+  }
+  collectionsJoins: {}
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
-    media: MediaSelect<false> | MediaSelect<true>;
-    pages: PagesSelect<false> | PagesSelect<true>;
-    products: ProductsSelect<false> | ProductsSelect<true>;
-    product_categories: ProductCategoriesSelect<false> | ProductCategoriesSelect<true>;
-    'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
-  };
+    users: UsersSelect<false> | UsersSelect<true>
+    media: MediaSelect<false> | MediaSelect<true>
+    pages: PagesSelect<false> | PagesSelect<true>
+    products: ProductsSelect<false> | ProductsSelect<true>
+    product_categories:
+      | ProductCategoriesSelect<false>
+      | ProductCategoriesSelect<true>
+    "payload-jobs": PayloadJobsSelect<false> | PayloadJobsSelect<true>
+    "payload-locked-documents":
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>
+    "payload-preferences":
+      | PayloadPreferencesSelect<false>
+      | PayloadPreferencesSelect<true>
+    "payload-migrations":
+      | PayloadMigrationsSelect<false>
+      | PayloadMigrationsSelect<true>
+  }
   db: {
-    defaultIDType: number;
-  };
+    defaultIDType: number
+  }
   globals: {
-    header: Header;
-    footer: Footer;
-    theme: Theme;
-  };
+    header: Header
+    footer: Footer
+    theme: Theme
+  }
   globalsSelect: {
-    header: HeaderSelect<false> | HeaderSelect<true>;
-    footer: FooterSelect<false> | FooterSelect<true>;
-    theme: ThemeSelect<false> | ThemeSelect<true>;
-  };
-  locale: null;
+    header: HeaderSelect<false> | HeaderSelect<true>
+    footer: FooterSelect<false> | FooterSelect<true>
+    theme: ThemeSelect<false> | ThemeSelect<true>
+  }
+  locale: null
   user: User & {
-    collection: 'users';
-  };
+    collection: "users"
+  }
   jobs: {
     tasks: {
-      schedulePublish: TaskSchedulePublish;
+      schedulePublish: TaskSchedulePublish
       inline: {
-        input: unknown;
-        output: unknown;
-      };
-    };
-    workflows: unknown;
-  };
+        input: unknown
+        output: unknown
+      }
+    }
+    workflows: unknown
+  }
 }
 export interface UserAuthOperations {
   forgotPassword: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   login: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   registerFirstUser: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
   unlock: {
-    email: string;
-    password: string;
-  };
+    email: string
+    password: string
+  }
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password?: string | null;
+  id: number
+  updatedAt: string
+  createdAt: string
+  email: string
+  resetPasswordToken?: string | null
+  resetPasswordExpiration?: string | null
+  salt?: string | null
+  hash?: string | null
+  loginAttempts?: number | null
+  lockUntil?: string | null
+  password?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  id: number
+  alt: string
+  updatedAt: string
+  createdAt: string
+  url?: string | null
+  thumbnailURL?: string | null
+  filename?: string | null
+  mimeType?: string | null
+  filesize?: number | null
+  width?: number | null
+  height?: number | null
+  focalX?: number | null
+  focalY?: number | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -180,19 +188,19 @@ export interface Page {
   title: string;
   layout: (HomeLayout1 | HomeLayout2 | AboutUs1)[];
   meta?: {
-    title?: string | null;
+    title?: string | null
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  publishedAt?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+    image?: (number | null) | Media
+    description?: string | null
+  }
+  publishedAt?: string | null
+  slug?: string | null
+  slugLock?: boolean | null
+  updatedAt: string
+  createdAt: string
+  _status?: ("draft" | "published") | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -218,6 +226,7 @@ export interface HomeLayout1 {
         | BrandLayout2
         | CategoryLayout1
         | FaqLayout
+        | FaqLayout2
         | ContentBlock
         | CallToActionBlock
         | BannerBlock
@@ -227,43 +236,43 @@ export interface HomeLayout1 {
         | SectionWrapperBlock
         | ValueListBlock
       )[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'homeLayout1';
+    | null
+  id?: string | null
+  blockName?: string | null
+  blockType: "homeLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "BannerLayout1".
  */
 export interface BannerLayout1 {
-  BannerImage1?: (number | null) | Media;
-  BannerImage2?: (number | null) | Media;
-  title: string;
-  description: string;
+  BannerImage1?: (number | null) | Media
+  BannerImage2?: (number | null) | Media
+  title: string
+  description: string
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
   link: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'bannerLayout1';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "bannerLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -271,39 +280,39 @@ export interface BannerLayout1 {
  */
 export interface BannerLayout2 {
   carousel: {
-    image?: (number | null) | Media;
-    label: string;
-    desc?: string | null;
+    image?: (number | null) | Media
+    label: string
+    desc?: string | null
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-    id?: string | null;
-  }[];
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+    id?: string | null
+  }[]
   banner: {
-    image: number | Media;
-    label: string;
-    description: string;
+    image: number | Media
+    label: string
+    description: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'banner2';
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "banner2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -311,14 +320,14 @@ export interface BannerLayout2 {
  */
 export interface FeatureLayout1 {
   features: {
-    featureIcon?: (number | null) | Media;
-    title: string;
-    description: string;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'featureLayout1';
+    featureIcon?: (number | null) | Media
+    title: string
+    description: string
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "featureLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -326,14 +335,14 @@ export interface FeatureLayout1 {
  */
 export interface FeatureLayout2 {
   features: {
-    featureIcon?: (number | null) | Media;
-    title: string;
-    description: string;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'featureLayout2';
+    featureIcon?: (number | null) | Media
+    title: string
+    description: string
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "featureLayout2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -341,98 +350,98 @@ export interface FeatureLayout2 {
  */
 export interface OfferLayout1 {
   offers: {
-    image?: (number | null) | Media;
-    title: string;
-    description: string;
+    image?: (number | null) | Media
+    title: string
+    description: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'offerLayout1';
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "offerLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FourcolumnLayout".
  */
 export interface FourcolumnLayout {
-  title: string;
-  products?: (number | Product)[] | null;
+  title: string
+  products?: (number | Product)[] | null
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'fourcolumnLayout';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "fourcolumnLayout"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products".
  */
 export interface Product {
-  id: number;
-  product_title: string;
-  product_id: string;
-  product_handle: string;
-  status: 'draft' | 'proposed' | 'published' | 'rejected';
-  publishedAt?: string | null;
+  id: number
+  product_title: string
+  product_id: string
+  product_handle: string
+  status: "draft" | "proposed" | "published" | "rejected"
+  publishedAt?: string | null
   content?: {
     layout?: (HomeLayout1 | HomeLayout2 | AboutUs1)[] | null;
   };
   details?: {
-    additional_title?: string | null;
+    additional_title?: string | null
     additional_content?: {
       root: {
-        type: string;
+        type: string
         children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
+          type: string
+          version: number
+          [k: string]: unknown
+        }[]
+        direction: ("ltr" | "rtl") | null
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | ""
+        indent: number
+        version: number
+      }
+      [k: string]: unknown
+    } | null
     additional_metadata?:
       | {
-          [k: string]: unknown;
+          [k: string]: unknown
         }
       | unknown[]
       | string
       | number
       | boolean
-      | null;
-  };
+      | null
+  }
   meta?: {
-    title?: string | null;
+    title?: string | null
     /**
      * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
      */
-    image?: (number | null) | Media;
-    description?: string | null;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+    image?: (number | null) | Media
+    description?: string | null
+  }
+  updatedAt: string
+  createdAt: string
+  _status?: ("draft" | "published") | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -458,6 +467,7 @@ export interface HomeLayout2 {
         | BrandLayout2
         | CategoryLayout1
         | FaqLayout
+        | FaqLayout2
         | ContentBlock
         | CallToActionBlock
         | BannerBlock
@@ -467,31 +477,31 @@ export interface HomeLayout2 {
         | SectionWrapperBlock
         | ValueListBlock
       )[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'homeLayout2';
+    | null
+  id?: string | null
+  blockName?: string | null
+  blockType: "homeLayout2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ThreecolumnLayout".
  */
 export interface ThreecolumnLayout {
-  title: string;
-  products?: (number | Product)[] | null;
+  title: string
+  products?: (number | Product)[] | null
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'threecolumnLayout';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "threecolumnLayout"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -499,38 +509,38 @@ export interface ThreecolumnLayout {
  */
 export interface PromoProductLayout {
   heading: {
-    name: string;
-    description: string;
+    name: string
+    description: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
-  products: (number | Product)[];
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  products: (number | Product)[]
   promotion: {
-    promotionImage?: (number | null) | Media;
-    promoTagline: string;
-    promoHeading: string;
+    promotionImage?: (number | null) | Media
+    promoTagline: string
+    promoHeading: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'promoProduct';
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "promoProduct"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -538,129 +548,129 @@ export interface PromoProductLayout {
  */
 export interface ProductShowcase {
   heading: {
-    name: string;
+    name: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
-  products: (number | Product)[];
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  products: (number | Product)[]
   promotion: {
-    promotionImage?: (number | null) | Media;
-    promoTagline: string;
-    promoHeading: string;
+    promotionImage?: (number | null) | Media
+    promoTagline: string
+    promoHeading: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'productShowcase';
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "productShowcase"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ShowcaseLayout1".
  */
 export interface ShowcaseLayout1 {
-  image?: (number | null) | Media;
-  showcaseTagline: string;
-  showcaseHeading: string;
-  showcaseDescription: string;
+  image?: (number | null) | Media
+  showcaseTagline: string
+  showcaseHeading: string
+  showcaseDescription: string
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'showcaseLayout1';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "showcaseLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ShowcaseSection2".
  */
 export interface ShowcaseSection2 {
-  image?: (number | null) | Media;
-  showcaseTagline: string;
-  showcaseHeading: string;
-  showcaseDescription: string;
+  image?: (number | null) | Media
+  showcaseTagline: string
+  showcaseHeading: string
+  showcaseDescription: string
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'showcaseLayout2';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "showcaseLayout2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AdvertismentSection1".
  */
 export interface AdvertismentSection1 {
-  image?: (number | null) | Media;
-  adTagline: string;
-  adHeading: string;
-  adDescription: string;
+  image?: (number | null) | Media
+  adTagline: string
+  adHeading: string
+  adDescription: string
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'advertismentSection1';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "advertismentSection1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AdvertismentSection2".
  */
 export interface AdvertismentSection2 {
-  image?: (number | null) | Media;
-  adTagline: string;
-  adHeading: string;
-  adDescription: string;
+  image?: (number | null) | Media
+  adTagline: string
+  adHeading: string
+  adDescription: string
   button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
+    type?: ("custom" | "reference") | null
+    newTab?: boolean | null
     reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'advertismentSection2';
+      relationTo: "pages"
+      value: number | Page
+    } | null
+    url?: string | null
+    label: string
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "advertismentSection2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -668,12 +678,12 @@ export interface AdvertismentSection2 {
  */
 export interface BrandLayout1 {
   brands: {
-    images?: (number | null) | Media;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'assosiatedBrandLayout1';
+    images?: (number | null) | Media
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "assosiatedBrandLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -681,67 +691,104 @@ export interface BrandLayout1 {
  */
 export interface BrandLayout2 {
   brands: {
-    images?: (number | null) | Media;
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'assosiatedBrandLayout2';
+    images?: (number | null) | Media
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "assosiatedBrandLayout2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "CategoryLayout1".
  */
 export interface CategoryLayout1 {
-  heading: string;
+  heading: string
   categories: {
-    name: string;
-    tagline: string;
-    image: number | Media;
+    name: string
+    tagline: string
+    image: number | Media
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'categoryLayout1';
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "categoryLayout1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FaqLayout".
  */
 export interface FaqLayout {
-  heading: string;
+  heading: string
   accordian: {
-    title: string;
+    title: string
     content: {
       root: {
-        type: string;
+        type: string
         children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    };
-    id?: string | null;
-  }[];
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'faqLayout';
+          type: string
+          version: number
+          [k: string]: unknown
+        }[]
+        direction: ("ltr" | "rtl") | null
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | ""
+        indent: number
+        version: number
+      }
+      [k: string]: unknown
+    }
+    id?: string | null
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "faqLayout"
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqLayout2".
+ */
+export interface FaqLayout2 {
+  heading: string
+  /**
+   * Background image for FAQ layout
+   */
+  image?: (number | null) | Media
+  /**
+   * Check this to allow only one accordion item to be open at a time (others will automatically collapse)
+   */
+  singleItemOpen?: boolean | null
+  accordian: {
+    id: string | null
+    title: string
+    content: {
+      root: {
+        type: string
+        children: {
+          type: string
+          version: number
+          [k: string]: unknown
+        }[]
+        direction: ("ltr" | "rtl") | null
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | ""
+        indent: number
+        version: number
+      }
+      [k: string]: unknown
+    }
+  }[]
+  id?: string | null
+  blockName?: string | null
+  blockType: "faqLayout2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -750,43 +797,50 @@ export interface FaqLayout {
 export interface ContentBlock {
   columns?:
     | {
-        size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+        size?: ("oneThird" | "half" | "twoThirds" | "full") | null
         richText?: {
           root: {
-            type: string;
+            type: string
             children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        enableLink?: boolean | null;
+              type: string
+              version: number
+              [k: string]: unknown
+            }[]
+            direction: ("ltr" | "rtl") | null
+            format:
+              | "left"
+              | "start"
+              | "center"
+              | "right"
+              | "end"
+              | "justify"
+              | ""
+            indent: number
+            version: number
+          }
+          [k: string]: unknown
+        } | null
+        enableLink?: boolean | null
         link?: {
-          type?: ('custom' | 'reference') | null;
-          newTab?: boolean | null;
+          type?: ("custom" | "reference") | null
+          newTab?: boolean | null
           reference?: {
-            relationTo: 'pages';
-            value: number | Page;
-          } | null;
-          url?: string | null;
-          label: string;
+            relationTo: "pages"
+            value: number | Page
+          } | null
+          url?: string | null
+          label: string
           /**
            * Choose how the link should be rendered.
            */
-          appearance?: ('default' | 'outline') | null;
-        };
-        id?: string | null;
+          appearance?: ("default" | "outline") | null
+        }
+        id?: string | null
       }[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'content';
+    | null
+  id?: string | null
+  blockName?: string | null
+  blockType: "content"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -795,19 +849,19 @@ export interface ContentBlock {
 export interface CallToActionBlock {
   richText?: {
     root: {
-      type: string;
+      type: string
       children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+        type: string
+        version: number
+        [k: string]: unknown
+      }[]
+      direction: ("ltr" | "rtl") | null
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | ""
+      indent: number
+      version: number
+    }
+    [k: string]: unknown
+  } | null
   links?:
     | {
         link: {
@@ -833,7 +887,7 @@ export interface CallToActionBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "BannerBlock".
+ * via the `definition` "IntroHeaderBlock".
  */
 export interface BannerBlock {
   style: 'info' | 'warning' | 'error' | 'success';
@@ -858,7 +912,7 @@ export interface BannerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "MediaBlock".
+ * via the `definition` "SectionWrapperBlock".
  */
 export interface MediaBlock {
   media: number | Media;
@@ -997,222 +1051,222 @@ export interface ProductCategory {
   } | null;
   additional_metadata?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  status: 'active' | 'inactive';
-  visibility: 'public' | 'internal';
-  updatedAt: string;
-  createdAt: string;
+    | null
+  status: "active" | "inactive"
+  visibility: "public" | "internal"
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
-  id: number;
+  id: number
   /**
    * Input data provided to the job
    */
   input?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
+    | null
   taskStatus?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  completedAt?: string | null;
-  totalTried?: number | null;
+    | null
+  completedAt?: string | null
+  totalTried?: number | null
   /**
    * If hasError is true this job will not be retried
    */
-  hasError?: boolean | null;
+  hasError?: boolean | null
   /**
    * If hasError is true, this is the error that caused it
    */
   error?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
+    | null
   /**
    * Task execution log
    */
   log?:
     | {
-        executedAt: string;
-        completedAt: string;
-        taskSlug: 'inline' | 'schedulePublish';
-        taskID: string;
+        executedAt: string
+        completedAt: string
+        taskSlug: "inline" | "schedulePublish"
+        taskID: string
         input?:
           | {
-              [k: string]: unknown;
+              [k: string]: unknown
             }
           | unknown[]
           | string
           | number
           | boolean
-          | null;
+          | null
         output?:
           | {
-              [k: string]: unknown;
+              [k: string]: unknown
             }
           | unknown[]
           | string
           | number
           | boolean
-          | null;
-        state: 'failed' | 'succeeded';
+          | null
+        state: "failed" | "succeeded"
         error?:
           | {
-              [k: string]: unknown;
+              [k: string]: unknown
             }
           | unknown[]
           | string
           | number
           | boolean
-          | null;
-        id?: string | null;
+          | null
+        id?: string | null
       }[]
-    | null;
-  taskSlug?: ('inline' | 'schedulePublish') | null;
-  queue?: string | null;
-  waitUntil?: string | null;
-  processing?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  taskSlug?: ("inline" | "schedulePublish") | null
+  queue?: string | null
+  waitUntil?: string | null
+  processing?: boolean | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: number
   document?:
     | ({
-        relationTo: 'users';
-        value: number | User;
+        relationTo: "users"
+        value: number | User
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
+        relationTo: "media"
+        value: number | Media
       } | null)
     | ({
-        relationTo: 'pages';
-        value: number | Page;
+        relationTo: "pages"
+        value: number | Page
       } | null)
     | ({
-        relationTo: 'products';
-        value: number | Product;
+        relationTo: "products"
+        value: number | Product
       } | null)
     | ({
-        relationTo: 'product_categories';
-        value: number | ProductCategory;
+        relationTo: "product_categories"
+        value: number | ProductCategory
       } | null)
     | ({
-        relationTo: 'payload-jobs';
-        value: number | PayloadJob;
-      } | null);
-  globalSlug?: string | null;
+        relationTo: "payload-jobs"
+        value: number | PayloadJob
+      } | null)
+  globalSlug?: string | null
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  updatedAt: string;
-  createdAt: string;
+    relationTo: "users"
+    value: number | User
+  }
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: number
   user: {
-    relationTo: 'users';
-    value: number | User;
-  };
-  key?: string | null;
+    relationTo: "users"
+    value: number | User
+  }
+  key?: string | null
   value?:
     | {
-        [k: string]: unknown;
+        [k: string]: unknown
       }
     | unknown[]
     | string
     | number
     | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+  id: number
+  name?: string | null
+  batch?: number | null
+  updatedAt: string
+  createdAt: string
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
+  updatedAt?: T
+  createdAt?: T
+  email?: T
+  resetPasswordToken?: T
+  resetPasswordExpiration?: T
+  salt?: T
+  hash?: T
+  loginAttempts?: T
+  lockUntil?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  alt?: T
+  updatedAt?: T
+  createdAt?: T
+  url?: T
+  thumbnailURL?: T
+  filename?: T
+  mimeType?: T
+  filesize?: T
+  width?: T
+  height?: T
+  focalX?: T
+  focalY?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
-  title?: T;
+  title?: T
   layout?:
     | T
     | {
@@ -1223,16 +1277,16 @@ export interface PagesSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        title?: T;
-        image?: T;
-        description?: T;
-      };
-  publishedAt?: T;
-  slug?: T;
-  slugLock?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
+        title?: T
+        image?: T
+        description?: T
+      }
+  publishedAt?: T
+  slug?: T
+  slugLock?: T
+  updatedAt?: T
+  createdAt?: T
+  _status?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1276,30 +1330,30 @@ export interface HomeLayout1Select<T extends boolean = true> {
  * via the `definition` "BannerLayout1_select".
  */
 export interface BannerLayout1Select<T extends boolean = true> {
-  BannerImage1?: T;
-  BannerImage2?: T;
-  title?: T;
-  description?: T;
+  BannerImage1?: T
+  BannerImage2?: T
+  title?: T
+  description?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
   link?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1309,38 +1363,38 @@ export interface BannerLayout2Select<T extends boolean = true> {
   carousel?:
     | T
     | {
-        image?: T;
-        label?: T;
-        desc?: T;
+        image?: T
+        label?: T
+        desc?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-        id?: T;
-      };
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+        id?: T
+      }
   banner?:
     | T
     | {
-        image?: T;
-        label?: T;
-        description?: T;
+        image?: T
+        label?: T
+        description?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1350,13 +1404,13 @@ export interface FeatureLayout1Select<T extends boolean = true> {
   features?:
     | T
     | {
-        featureIcon?: T;
-        title?: T;
-        description?: T;
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+        featureIcon?: T
+        title?: T
+        description?: T
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1366,13 +1420,13 @@ export interface FeatureLayout2Select<T extends boolean = true> {
   features?:
     | T
     | {
-        featureIcon?: T;
-        title?: T;
-        description?: T;
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+        featureIcon?: T
+        title?: T
+        description?: T
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1382,60 +1436,60 @@ export interface OfferLayout1Select<T extends boolean = true> {
   offers?:
     | T
     | {
-        image?: T;
-        title?: T;
-        description?: T;
+        image?: T
+        title?: T
+        description?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FourcolumnLayout_select".
  */
 export interface FourcolumnLayoutSelect<T extends boolean = true> {
-  title?: T;
-  products?: T;
+  title?: T
+  products?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ThreecolumnLayout_select".
  */
 export interface ThreecolumnLayoutSelect<T extends boolean = true> {
-  title?: T;
-  products?: T;
+  title?: T
+  products?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1445,37 +1499,37 @@ export interface PromoProductLayoutSelect<T extends boolean = true> {
   heading?:
     | T
     | {
-        name?: T;
-        description?: T;
+        name?: T
+        description?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
-  products?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  products?: T
   promotion?:
     | T
     | {
-        promotionImage?: T;
-        promoTagline?: T;
-        promoHeading?: T;
+        promotionImage?: T
+        promoTagline?: T
+        promoHeading?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1485,120 +1539,120 @@ export interface ProductShowcaseSelect<T extends boolean = true> {
   heading?:
     | T
     | {
-        name?: T;
+        name?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
-  products?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  products?: T
   promotion?:
     | T
     | {
-        promotionImage?: T;
-        promoTagline?: T;
-        promoHeading?: T;
+        promotionImage?: T
+        promoTagline?: T
+        promoHeading?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ShowcaseLayout1_select".
  */
 export interface ShowcaseLayout1Select<T extends boolean = true> {
-  image?: T;
-  showcaseTagline?: T;
-  showcaseHeading?: T;
-  showcaseDescription?: T;
+  image?: T
+  showcaseTagline?: T
+  showcaseHeading?: T
+  showcaseDescription?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ShowcaseSection2_select".
  */
 export interface ShowcaseSection2Select<T extends boolean = true> {
-  image?: T;
-  showcaseTagline?: T;
-  showcaseHeading?: T;
-  showcaseDescription?: T;
+  image?: T
+  showcaseTagline?: T
+  showcaseHeading?: T
+  showcaseDescription?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AdvertismentSection1_select".
  */
 export interface AdvertismentSection1Select<T extends boolean = true> {
-  image?: T;
-  adTagline?: T;
-  adHeading?: T;
-  adDescription?: T;
+  image?: T
+  adTagline?: T
+  adHeading?: T
+  adDescription?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AdvertismentSection2_select".
  */
 export interface AdvertismentSection2Select<T extends boolean = true> {
-  image?: T;
-  adTagline?: T;
-  adHeading?: T;
-  adDescription?: T;
+  image?: T
+  adTagline?: T
+  adHeading?: T
+  adDescription?: T
   button?:
     | T
     | {
-        type?: T;
-        newTab?: T;
-        reference?: T;
-        url?: T;
-        label?: T;
-      };
-  id?: T;
-  blockName?: T;
+        type?: T
+        newTab?: T
+        reference?: T
+        url?: T
+        label?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1608,11 +1662,11 @@ export interface BrandLayout1Select<T extends boolean = true> {
   brands?:
     | T
     | {
-        images?: T;
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+        images?: T
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1622,53 +1676,71 @@ export interface BrandLayout2Select<T extends boolean = true> {
   brands?:
     | T
     | {
-        images?: T;
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+        images?: T
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "CategoryLayout1_select".
  */
 export interface CategoryLayout1Select<T extends boolean = true> {
-  heading?: T;
+  heading?: T
   categories?:
     | T
     | {
-        name?: T;
-        tagline?: T;
-        image?: T;
+        name?: T
+        tagline?: T
+        image?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FaqLayout_select".
  */
 export interface FaqLayoutSelect<T extends boolean = true> {
-  heading?: T;
+  heading?: T
   accordian?:
     | T
     | {
-        title?: T;
-        content?: T;
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+        title?: T
+        content?: T
+        id?: T
+      }
+  id?: T
+  blockName?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqLayout2_select".
+ */
+export interface FaqLayout2Select<T extends boolean = true> {
+  heading?: T
+  image?: T
+  singleItemOpen?: T
+  accordian?:
+    | T
+    | {
+        id?: T
+        title?: T
+        content?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1678,30 +1750,30 @@ export interface ContentBlockSelect<T extends boolean = true> {
   columns?:
     | T
     | {
-        size?: T;
-        richText?: T;
-        enableLink?: T;
+        size?: T
+        richText?: T
+        enableLink?: T
         link?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-              appearance?: T;
-            };
-        id?: T;
-      };
-  id?: T;
-  blockName?: T;
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+              appearance?: T
+            }
+        id?: T
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "CallToActionBlock_select".
  */
 export interface CallToActionBlockSelect<T extends boolean = true> {
-  richText?: T;
+  richText?: T
   links?:
     | T
     | {
@@ -1722,7 +1794,7 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "BannerBlock_select".
+ * via the `definition` "SectionWrapperBlock_select".
  */
 export interface BannerBlockSelect<T extends boolean = true> {
   style?: T;
@@ -1732,7 +1804,7 @@ export interface BannerBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "MediaBlock_select".
+ * via the `definition` "ValueListBlock_select".
  */
 export interface MediaBlockSelect<T extends boolean = true> {
   media?: T;
@@ -1863,11 +1935,11 @@ export interface AboutUs1Select<T extends boolean = true> {
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
-  product_title?: T;
-  product_id?: T;
-  product_handle?: T;
-  status?: T;
-  publishedAt?: T;
+  product_title?: T
+  product_id?: T
+  product_handle?: T
+  status?: T
+  publishedAt?: T
   content?:
     | T
     | {
@@ -1882,258 +1954,258 @@ export interface ProductsSelect<T extends boolean = true> {
   details?:
     | T
     | {
-        additional_title?: T;
-        additional_content?: T;
-        additional_metadata?: T;
-      };
+        additional_title?: T
+        additional_content?: T
+        additional_metadata?: T
+      }
   meta?:
     | T
     | {
-        title?: T;
-        image?: T;
-        description?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
+        title?: T
+        image?: T
+        description?: T
+      }
+  updatedAt?: T
+  createdAt?: T
+  _status?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "product_categories_select".
  */
 export interface ProductCategoriesSelect<T extends boolean = true> {
-  category_id?: T;
-  category_handle?: T;
-  category_title?: T;
-  category_media?: T;
-  additional_title?: T;
-  additional_content?: T;
-  additional_metadata?: T;
-  status?: T;
-  visibility?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  category_id?: T
+  category_handle?: T
+  category_title?: T
+  category_media?: T
+  additional_title?: T
+  additional_content?: T
+  additional_metadata?: T
+  status?: T
+  visibility?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-jobs_select".
  */
 export interface PayloadJobsSelect<T extends boolean = true> {
-  input?: T;
-  taskStatus?: T;
-  completedAt?: T;
-  totalTried?: T;
-  hasError?: T;
-  error?: T;
+  input?: T
+  taskStatus?: T
+  completedAt?: T
+  totalTried?: T
+  hasError?: T
+  error?: T
   log?:
     | T
     | {
-        executedAt?: T;
-        completedAt?: T;
-        taskSlug?: T;
-        taskID?: T;
-        input?: T;
-        output?: T;
-        state?: T;
-        error?: T;
-        id?: T;
-      };
-  taskSlug?: T;
-  queue?: T;
-  waitUntil?: T;
-  processing?: T;
-  updatedAt?: T;
-  createdAt?: T;
+        executedAt?: T
+        completedAt?: T
+        taskSlug?: T
+        taskID?: T
+        input?: T
+        output?: T
+        state?: T
+        error?: T
+        id?: T
+      }
+  taskSlug?: T
+  queue?: T
+  waitUntil?: T
+  processing?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
-  document?: T;
-  globalSlug?: T;
-  user?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  document?: T
+  globalSlug?: T
+  user?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences_select".
  */
 export interface PayloadPreferencesSelect<T extends boolean = true> {
-  user?: T;
-  key?: T;
-  value?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  user?: T
+  key?: T
+  value?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-migrations_select".
  */
 export interface PayloadMigrationsSelect<T extends boolean = true> {
-  name?: T;
-  batch?: T;
-  updatedAt?: T;
-  createdAt?: T;
+  name?: T
+  batch?: T
+  updatedAt?: T
+  createdAt?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header".
  */
 export interface Header {
-  id: number;
-  layout?: (HeaderLayout1 | HeaderLayout2)[] | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
+  id: number
+  layout?: (HeaderLayout1 | HeaderLayout2)[] | null
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HeaderLayout1".
  */
 export interface HeaderLayout1 {
-  desktopLogo: number | Media;
-  mobileLogo: number | Media;
-  contactNumber: string;
+  desktopLogo: number | Media
+  mobileLogo: number | Media
+  contactNumber: string
   tree: {
-    heading: string;
+    heading: string
     parent: {
       link: {
-        type?: ('custom' | 'reference') | null;
-        newTab?: boolean | null;
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
         reference?: {
-          relationTo: 'pages';
-          value: number | Page;
-        } | null;
-        url?: string | null;
-        label: string;
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
         /**
          * Choose how the link should be rendered.
          */
-        appearance?: ('default' | 'outline') | null;
-      };
+        appearance?: ("default" | "outline") | null
+      }
       sub?:
         | {
             link: {
-              type?: ('custom' | 'reference') | null;
-              newTab?: boolean | null;
+              type?: ("custom" | "reference") | null
+              newTab?: boolean | null
               reference?: {
-                relationTo: 'pages';
-                value: number | Page;
-              } | null;
-              url?: string | null;
-              label: string;
+                relationTo: "pages"
+                value: number | Page
+              } | null
+              url?: string | null
+              label: string
               /**
                * Choose how the link should be rendered.
                */
-              appearance?: ('default' | 'outline') | null;
-            };
-            id?: string | null;
+              appearance?: ("default" | "outline") | null
+            }
+            id?: string | null
           }[]
-        | null;
-      id?: string | null;
-    }[];
-  };
-  thumbnail: number | Media;
+        | null
+      id?: string | null
+    }[]
+  }
+  thumbnail: number | Media
   menu: {
-    heading: string;
-    categories?: (number | ProductCategory)[] | null;
+    heading: string
+    categories?: (number | ProductCategory)[] | null
     category: {
-      category_thumbnail?: (number | null) | Media;
+      category_thumbnail?: (number | null) | Media
       link: {
-        type?: ('custom' | 'reference') | null;
-        newTab?: boolean | null;
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
         reference?: {
-          relationTo: 'pages';
-          value: number | Page;
-        } | null;
-        url?: string | null;
-        label: string;
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
         /**
          * Choose how the link should be rendered.
          */
-        appearance?: ('default' | 'outline') | null;
-      };
-      id?: string | null;
-    }[];
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'header1';
+        appearance?: ("default" | "outline") | null
+      }
+      id?: string | null
+    }[]
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "header1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HeaderLayout2".
  */
 export interface HeaderLayout2 {
-  desktopLogo: number | Media;
-  mobileLogo: number | Media;
-  contactNumber: string;
+  desktopLogo: number | Media
+  mobileLogo: number | Media
+  contactNumber: string
   tree: {
-    heading: string;
+    heading: string
     parent: {
       link: {
-        type?: ('custom' | 'reference') | null;
-        newTab?: boolean | null;
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
         reference?: {
-          relationTo: 'pages';
-          value: number | Page;
-        } | null;
-        url?: string | null;
-        label: string;
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
         /**
          * Choose how the link should be rendered.
          */
-        appearance?: ('default' | 'outline') | null;
-      };
+        appearance?: ("default" | "outline") | null
+      }
       sub?:
         | {
             link: {
-              type?: ('custom' | 'reference') | null;
-              newTab?: boolean | null;
+              type?: ("custom" | "reference") | null
+              newTab?: boolean | null
               reference?: {
-                relationTo: 'pages';
-                value: number | Page;
-              } | null;
-              url?: string | null;
-              label: string;
+                relationTo: "pages"
+                value: number | Page
+              } | null
+              url?: string | null
+              label: string
               /**
                * Choose how the link should be rendered.
                */
-              appearance?: ('default' | 'outline') | null;
-            };
-            id?: string | null;
+              appearance?: ("default" | "outline") | null
+            }
+            id?: string | null
           }[]
-        | null;
-      id?: string | null;
-    }[];
-  };
-  thumbnail: number | Media;
+        | null
+      id?: string | null
+    }[]
+  }
+  thumbnail: number | Media
   menu: {
-    heading: string;
-    categories?: (number | ProductCategory)[] | null;
+    heading: string
+    categories?: (number | ProductCategory)[] | null
     category: {
-      category_thumbnail?: (number | null) | Media;
+      category_thumbnail?: (number | null) | Media
       link: {
-        type?: ('custom' | 'reference') | null;
-        newTab?: boolean | null;
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
         reference?: {
-          relationTo: 'pages';
-          value: number | Page;
-        } | null;
-        url?: string | null;
-        label: string;
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
         /**
          * Choose how the link should be rendered.
          */
-        appearance?: ('default' | 'outline') | null;
-      };
-      id?: string | null;
-    }[];
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'header2';
+        appearance?: ("default" | "outline") | null
+      }
+      id?: string | null
+    }[]
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "header2"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2151,82 +2223,159 @@ export interface Footer {
  */
 export interface FooterLayout1 {
   newsletter: {
-    title: string;
-    description: string;
+    title: string
+    description: string
     button: {
-      type?: ('custom' | 'reference') | null;
-      newTab?: boolean | null;
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
       reference?: {
-        relationTo: 'pages';
-        value: number | Page;
-      } | null;
-      url?: string | null;
-      label: string;
-    };
-  };
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
   address: {
-    logo: number | Media;
-    location: string;
-    phone: string;
-    email: string;
-  };
+    logo: number | Media
+    location: string
+    phone: string
+    email: string
+  }
   footerLinks?:
     | {
-        title: string;
+        title: string
         items: {
           link: {
-            type?: ('custom' | 'reference') | null;
-            newTab?: boolean | null;
+            type?: ("custom" | "reference") | null
+            newTab?: boolean | null
             reference?: {
-              relationTo: 'pages';
-              value: number | Page;
-            } | null;
-            url?: string | null;
-            label: string;
+              relationTo: "pages"
+              value: number | Page
+            } | null
+            url?: string | null
+            label: string
             /**
              * Choose how the link should be rendered.
              */
-            appearance?: ('default' | 'outline') | null;
-          };
-          id?: string | null;
-        }[];
-        id?: string | null;
+            appearance?: ("default" | "outline") | null
+          }
+          id?: string | null
+        }[]
+        id?: string | null
       }[]
-    | null;
+    | null
   legalLinks: {
     links: {
       link: {
-        type?: ('custom' | 'reference') | null;
-        newTab?: boolean | null;
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
         reference?: {
-          relationTo: 'pages';
-          value: number | Page;
-        } | null;
-        url?: string | null;
-        label: string;
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
         /**
          * Choose how the link should be rendered.
          */
-        appearance?: ('default' | 'outline') | null;
-      };
-      id?: string | null;
-    }[];
+        appearance?: ("default" | "outline") | null
+      }
+      id?: string | null
+    }[]
     images?:
       | {
-          image: number | Media;
-          id?: string | null;
+          image: number | Media
+          id?: string | null
         }[]
-      | null;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'footer1';
+      | null
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "footer1"
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FooterLayout2".
  */
 export interface FooterLayout2 {
+  newsletter: {
+    title: string
+    description: string
+    button: {
+      type?: ("custom" | "reference") | null
+      newTab?: boolean | null
+      reference?: {
+        relationTo: "pages"
+        value: number | Page
+      } | null
+      url?: string | null
+      label: string
+    }
+  }
+  address: {
+    logo: number | Media
+    location: string
+    phone: string
+    email: string
+  }
+  footerLinks?:
+    | {
+        title: string
+        items: {
+          link: {
+            type?: ("custom" | "reference") | null
+            newTab?: boolean | null
+            reference?: {
+              relationTo: "pages"
+              value: number | Page
+            } | null
+            url?: string | null
+            label: string
+            /**
+             * Choose how the link should be rendered.
+             */
+            appearance?: ("default" | "outline") | null
+          }
+          id?: string | null
+        }[]
+        id?: string | null
+      }[]
+    | null
+  legalLinks: {
+    links: {
+      link: {
+        type?: ("custom" | "reference") | null
+        newTab?: boolean | null
+        reference?: {
+          relationTo: "pages"
+          value: number | Page
+        } | null
+        url?: string | null
+        label: string
+        /**
+         * Choose how the link should be rendered.
+         */
+        appearance?: ("default" | "outline") | null
+      }
+      id?: string | null
+    }[]
+    images?:
+      | {
+          image: number | Media
+          id?: string | null
+        }[]
+      | null
+  }
+  id?: string | null
+  blockName?: string | null
+  blockType: "footer2"
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FooterLayout3".
+ */
+export interface FooterLayout3 {
   newsletter: {
     title: string;
     description: string;
@@ -2381,10 +2530,10 @@ export interface FooterLayout3 {
  * via the `definition` "theme".
  */
 export interface Theme {
-  id: number;
-  theme?: string | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
+  id: number
+  theme?: string | null
+  updatedAt?: string | null
+  createdAt?: string | null
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2394,150 +2543,150 @@ export interface HeaderSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        header1?: T | HeaderLayout1Select<T>;
-        header2?: T | HeaderLayout2Select<T>;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+        header1?: T | HeaderLayout1Select<T>
+        header2?: T | HeaderLayout2Select<T>
+      }
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HeaderLayout1_select".
  */
 export interface HeaderLayout1Select<T extends boolean = true> {
-  desktopLogo?: T;
-  mobileLogo?: T;
-  contactNumber?: T;
+  desktopLogo?: T
+  mobileLogo?: T
+  contactNumber?: T
   tree?:
     | T
     | {
-        heading?: T;
+        heading?: T
         parent?:
           | T
           | {
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
               sub?:
                 | T
                 | {
                     link?:
                       | T
                       | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                          appearance?: T;
-                        };
-                    id?: T;
-                  };
-              id?: T;
-            };
-      };
-  thumbnail?: T;
+                          type?: T
+                          newTab?: T
+                          reference?: T
+                          url?: T
+                          label?: T
+                          appearance?: T
+                        }
+                    id?: T
+                  }
+              id?: T
+            }
+      }
+  thumbnail?: T
   menu?:
     | T
     | {
-        heading?: T;
-        categories?: T;
+        heading?: T
+        categories?: T
         category?:
           | T
           | {
-              category_thumbnail?: T;
+              category_thumbnail?: T
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HeaderLayout2_select".
  */
 export interface HeaderLayout2Select<T extends boolean = true> {
-  desktopLogo?: T;
-  mobileLogo?: T;
-  contactNumber?: T;
+  desktopLogo?: T
+  mobileLogo?: T
+  contactNumber?: T
   tree?:
     | T
     | {
-        heading?: T;
+        heading?: T
         parent?:
           | T
           | {
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
               sub?:
                 | T
                 | {
                     link?:
                       | T
                       | {
-                          type?: T;
-                          newTab?: T;
-                          reference?: T;
-                          url?: T;
-                          label?: T;
-                          appearance?: T;
-                        };
-                    id?: T;
-                  };
-              id?: T;
-            };
-      };
-  thumbnail?: T;
+                          type?: T
+                          newTab?: T
+                          reference?: T
+                          url?: T
+                          label?: T
+                          appearance?: T
+                        }
+                    id?: T
+                  }
+              id?: T
+            }
+      }
+  thumbnail?: T
   menu?:
     | T
     | {
-        heading?: T;
-        categories?: T;
+        heading?: T
+        categories?: T
         category?:
           | T
           | {
-              category_thumbnail?: T;
+              category_thumbnail?: T
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2563,47 +2712,47 @@ export interface FooterLayout1Select<T extends boolean = true> {
   newsletter?:
     | T
     | {
-        title?: T;
-        description?: T;
+        title?: T
+        description?: T
         button?:
           | T
           | {
-              type?: T;
-              newTab?: T;
-              reference?: T;
-              url?: T;
-              label?: T;
-            };
-      };
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
   address?:
     | T
     | {
-        logo?: T;
-        location?: T;
-        phone?: T;
-        email?: T;
-      };
+        logo?: T
+        location?: T
+        phone?: T
+        email?: T
+      }
   footerLinks?:
     | T
     | {
-        title?: T;
+        title?: T
         items?:
           | T
           | {
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
-        id?: T;
-      };
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
+        id?: T
+      }
   legalLinks?:
     | T
     | {
@@ -2613,30 +2762,107 @@ export interface FooterLayout1Select<T extends boolean = true> {
               link?:
                 | T
                 | {
-                    type?: T;
-                    newTab?: T;
-                    reference?: T;
-                    url?: T;
-                    label?: T;
-                    appearance?: T;
-                  };
-              id?: T;
-            };
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
         images?:
           | T
           | {
-              image?: T;
-              id?: T;
-            };
-      };
-  id?: T;
-  blockName?: T;
+              image?: T
+              id?: T
+            }
+      }
+  id?: T
+  blockName?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FooterLayout2_select".
  */
 export interface FooterLayout2Select<T extends boolean = true> {
+  newsletter?:
+    | T
+    | {
+        title?: T
+        description?: T
+        button?:
+          | T
+          | {
+              type?: T
+              newTab?: T
+              reference?: T
+              url?: T
+              label?: T
+            }
+      }
+  address?:
+    | T
+    | {
+        logo?: T
+        location?: T
+        phone?: T
+        email?: T
+      }
+  footerLinks?:
+    | T
+    | {
+        title?: T
+        items?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
+        id?: T
+      }
+  legalLinks?:
+    | T
+    | {
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T
+                    newTab?: T
+                    reference?: T
+                    url?: T
+                    label?: T
+                    appearance?: T
+                  }
+              id?: T
+            }
+        images?:
+          | T
+          | {
+              image?: T
+              id?: T
+            }
+      }
+  id?: T
+  blockName?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FooterLayout3_select".
+ */
+export interface FooterLayout3Select<T extends boolean = true> {
   newsletter?:
     | T
     | {
@@ -2791,10 +3017,10 @@ export interface FooterLayout3Select<T extends boolean = true> {
  * via the `definition` "theme_select".
  */
 export interface ThemeSelect<T extends boolean = true> {
-  theme?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+  theme?: T
+  updatedAt?: T
+  createdAt?: T
+  globalType?: T
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2802,31 +3028,30 @@ export interface ThemeSelect<T extends boolean = true> {
  */
 export interface TaskSchedulePublish {
   input: {
-    type?: ('publish' | 'unpublish') | null;
-    locale?: string | null;
+    type?: ("publish" | "unpublish") | null
+    locale?: string | null
     doc?:
       | ({
-          relationTo: 'pages';
-          value: number | Page;
+          relationTo: "pages"
+          value: number | Page
         } | null)
       | ({
-          relationTo: 'products';
-          value: number | Product;
-        } | null);
-    global?: string | null;
-    user?: (number | null) | User;
-  };
-  output?: unknown;
+          relationTo: "products"
+          value: number | Product
+        } | null)
+    global?: string | null
+    user?: (number | null) | User
+  }
+  output?: unknown
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "auth".
  */
 export interface Auth {
-  [k: string]: unknown;
+  [k: string]: unknown
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }
