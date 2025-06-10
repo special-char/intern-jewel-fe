@@ -8,6 +8,7 @@ import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-p
 import { PayLoadNavbar } from "@/blocks/PayloadHeader/Component"
 import { PayloadFooter } from "@/blocks/PayloadFooter/Component"
 import { ToogleTheme } from "@/blocks/Theme/Component"
+import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/Component"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),

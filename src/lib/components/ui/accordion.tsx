@@ -47,9 +47,7 @@ const AccordionTrigger = React.forwardRef<
     <>
       {variant === "prefixicon" && (
         <div className="relative">
-          <MinusIcon
-            className={`h-5 w-5 transition-transform duration-300 text-primary`}
-          />
+          <MinusIcon className=" h-5 w-5 transition-transform duration-300 text-primary" />
           <MinusIcon className=" group-data-[state=open]:hidden absolute top-0 rotate-90 h-5 w-5 transition-transform duration-300 text-primary" />
         </div>
       )}

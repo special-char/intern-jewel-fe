@@ -218,6 +218,7 @@ export interface HomeLayout1 {
         | BrandLayout2
         | CategoryLayout1
         | FaqLayout
+        | FaqLayout2
         | ContentBlock
         | BannerLayout3
         | CallToActionBlock
@@ -459,6 +460,7 @@ export interface HomeLayout2 {
         | BrandLayout2
         | CategoryLayout1
         | FaqLayout
+        | FaqLayout2
         | ContentBlock
         | BannerLayout3
         | CallToActionBlock
@@ -744,6 +746,43 @@ export interface FaqLayout {
   id?: string | null;
   blockName?: string | null;
   blockType: 'faqLayout';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqLayout2".
+ */
+export interface FaqLayout2 {
+  heading: string;
+  /**
+   * Background image for FAQ layout
+   */
+  image?: (number | null) | Media;
+  /**
+   * Check this to allow only one accordion item to be open at a time (others will automatically collapse)
+   */
+  singleItemOpen?: boolean | null;
+  accordian: {
+    id: string | null;
+    title: string;
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faqLayout2';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1279,6 +1318,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
         bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
@@ -1693,6 +1733,24 @@ export interface FaqLayoutSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FaqLayout2_select".
+ */
+export interface FaqLayout2Select<T extends boolean = true> {
+  heading?: T;
+  image?: T;
+  singleItemOpen?: T;
+  accordian?:
+    | T
+    | {
+        id?: T;
+        title?: T;
+        content?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
@@ -1867,6 +1925,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
         bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
