@@ -178,7 +178,7 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2)[];
+  layout: (HomeLayout1 | HomeLayout2 | AboutUs1)[];
   meta?: {
     title?: string | null;
     /**
@@ -222,6 +222,10 @@ export interface HomeLayout1 {
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
+        | CTASectionBlock
+        | IntroHeaderBlock
+        | SectionWrapperBlock
+        | ValueListBlock
       )[]
     | null;
   id?: string | null;
@@ -389,7 +393,7 @@ export interface Product {
   status: 'draft' | 'proposed' | 'published' | 'rejected';
   publishedAt?: string | null;
   content?: {
-    layout?: (HomeLayout1 | HomeLayout2)[] | null;
+    layout?: (HomeLayout1 | HomeLayout2 | AboutUs1)[] | null;
   };
   details?: {
     additional_title?: string | null;
@@ -458,6 +462,10 @@ export interface HomeLayout2 {
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
+        | CTASectionBlock
+        | IntroHeaderBlock
+        | SectionWrapperBlock
+        | ValueListBlock
       )[]
     | null;
   id?: string | null;
@@ -860,6 +868,109 @@ export interface MediaBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CTASectionBlock".
+ */
+export interface CTASectionBlock {
+  title: string;
+  button: {
+    type?: ('custom' | 'reference') | null;
+    newTab?: boolean | null;
+    reference?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
+    url?: string | null;
+    label: string;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ctaSectionBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IntroHeaderBlock".
+ */
+export interface IntroHeaderBlock {
+  label?: string | null;
+  title: string;
+  subtitle?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'introHeaderBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SectionWrapperBlock".
+ */
+export interface SectionWrapperBlock {
+  title?: string | null;
+  subtitle?: string | null;
+  children?:
+    | {
+        content?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'richText';
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'sectionWrapperLayout1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ValueListBlock".
+ */
+export interface ValueListBlock {
+  items: {
+    title: string;
+    description: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'valueListLayout1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutUs1".
+ */
+export interface AboutUs1 {
+  children?: (CTASectionBlock | IntroHeaderBlock | SectionWrapperBlock | ValueListBlock | MediaBlock)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'aboutUs1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "product_categories".
  */
 export interface ProductCategory {
@@ -1107,6 +1218,7 @@ export interface PagesSelect<T extends boolean = true> {
     | {
         homeLayout1?: T | HomeLayout1Select<T>;
         homeLayout2?: T | HomeLayout2Select<T>;
+        aboutUs1?: T | AboutUs1Select<T>;
       };
   meta?:
     | T
@@ -1151,6 +1263,10 @@ export interface HomeLayout1Select<T extends boolean = true> {
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
       };
   id?: T;
   blockName?: T;
@@ -1625,6 +1741,71 @@ export interface MediaBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CTASectionBlock_select".
+ */
+export interface CTASectionBlockSelect<T extends boolean = true> {
+  title?: T;
+  button?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        label?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "IntroHeaderBlock_select".
+ */
+export interface IntroHeaderBlockSelect<T extends boolean = true> {
+  label?: T;
+  title?: T;
+  subtitle?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SectionWrapperBlock_select".
+ */
+export interface SectionWrapperBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  children?:
+    | T
+    | {
+        richText?:
+          | T
+          | {
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ValueListBlock_select".
+ */
+export interface ValueListBlockSelect<T extends boolean = true> {
+  items?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout2_select".
  */
 export interface HomeLayout2Select<T extends boolean = true> {
@@ -1652,6 +1833,27 @@ export interface HomeLayout2Select<T extends boolean = true> {
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutUs1_select".
+ */
+export interface AboutUs1Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
       };
   id?: T;
   blockName?: T;
@@ -1674,6 +1876,7 @@ export interface ProductsSelect<T extends boolean = true> {
           | {
               homeLayout1?: T | HomeLayout1Select<T>;
               homeLayout2?: T | HomeLayout2Select<T>;
+              aboutUs1?: T | AboutUs1Select<T>;
             };
       };
   details?:
