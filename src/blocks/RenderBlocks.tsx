@@ -46,6 +46,7 @@ import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component
 import { SectionWrapperLayout1 } from "./SectionWrapper/layouts/SectionWrapper1/Component"
 import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
 import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
+import { FaqLayout2 } from "./AccordianLayout/layouts/FaqLayout2/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -81,6 +82,7 @@ const blockComponents = {
   advertismentSection2: AdvertismentSection2,
   accordianLayout: AccordianLayout,
   faqLayout: FaqLayout,
+  faqLayout2: FaqLayout2,
   categoryShowcase: CategoryShowcase,
   categoryLayout1: CategoryLayout1,
   footer1: FooterLayout1,
