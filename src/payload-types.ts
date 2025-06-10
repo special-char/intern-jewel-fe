@@ -1938,7 +1938,7 @@ export interface HeaderLayout2 {
  */
 export interface Footer {
   id: number;
-  layout: (FooterLayout1 | FooterLayout2)[];
+  layout: (FooterLayout1 | FooterLayout2 | FooterLayout3)[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -2095,6 +2095,83 @@ export interface FooterLayout2 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'footer2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FooterLayout3".
+ */
+export interface FooterLayout3 {
+  newsletter: {
+    title: string;
+    description: string;
+    button: {
+      type?: ('custom' | 'reference') | null;
+      newTab?: boolean | null;
+      reference?: {
+        relationTo: 'pages';
+        value: number | Page;
+      } | null;
+      url?: string | null;
+      label: string;
+    };
+  };
+  address: {
+    logo: number | Media;
+    location: string;
+    phone: string;
+    email: string;
+  };
+  footerLinks?:
+    | {
+        title: string;
+        items: {
+          link: {
+            type?: ('custom' | 'reference') | null;
+            newTab?: boolean | null;
+            reference?: {
+              relationTo: 'pages';
+              value: number | Page;
+            } | null;
+            url?: string | null;
+            label: string;
+            /**
+             * Choose how the link should be rendered.
+             */
+            appearance?: ('default' | 'outline') | null;
+          };
+          id?: string | null;
+        }[];
+        id?: string | null;
+      }[]
+    | null;
+  legalLinks: {
+    links: {
+      link: {
+        type?: ('custom' | 'reference') | null;
+        newTab?: boolean | null;
+        reference?: {
+          relationTo: 'pages';
+          value: number | Page;
+        } | null;
+        url?: string | null;
+        label: string;
+        /**
+         * Choose how the link should be rendered.
+         */
+        appearance?: ('default' | 'outline') | null;
+      };
+      id?: string | null;
+    }[];
+    images?:
+      | {
+          image: number | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'footer3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2269,6 +2346,7 @@ export interface FooterSelect<T extends boolean = true> {
     | {
         footer1?: T | FooterLayout1Select<T>;
         footer2?: T | FooterLayout2Select<T>;
+        footer3?: T | FooterLayout3Select<T>;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -2356,6 +2434,83 @@ export interface FooterLayout1Select<T extends boolean = true> {
  * via the `definition` "FooterLayout2_select".
  */
 export interface FooterLayout2Select<T extends boolean = true> {
+  newsletter?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        button?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+      };
+  address?:
+    | T
+    | {
+        logo?: T;
+        location?: T;
+        phone?: T;
+        email?: T;
+      };
+  footerLinks?:
+    | T
+    | {
+        title?: T;
+        items?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              id?: T;
+            };
+        id?: T;
+      };
+  legalLinks?:
+    | T
+    | {
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              id?: T;
+            };
+        images?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+            };
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FooterLayout3_select".
+ */
+export interface FooterLayout3Select<T extends boolean = true> {
   newsletter?:
     | T
     | {
