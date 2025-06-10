@@ -2022,7 +2022,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Header {
   id: number;
-  layout?: (HeaderLayout1 | HeaderLayout2)[] | null;
+  layout?: (HeaderLayout1 | HeaderLayout2 | HeaderLayout3)[] | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -2173,6 +2173,37 @@ export interface HeaderLayout2 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'header2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeaderLayout3".
+ */
+export interface HeaderLayout3 {
+  logo?: {
+    text?: string | null;
+    image?: (number | null) | Media;
+    href?: string | null;
+  };
+  navigation?:
+    | {
+        title: string;
+        href?: string | null;
+        megaMenu?:
+          | {
+              title: string;
+              image?: (number | null) | Media;
+              href?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  searchPlaceholder?: string | null;
+  phoneNumber?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'headerLayout3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2435,6 +2466,7 @@ export interface HeaderSelect<T extends boolean = true> {
     | {
         header1?: T | HeaderLayout1Select<T>;
         header2?: T | HeaderLayout2Select<T>;
+        headerLayout3?: T | HeaderLayout3Select<T>;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -2575,6 +2607,38 @@ export interface HeaderLayout2Select<T extends boolean = true> {
               id?: T;
             };
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeaderLayout3_select".
+ */
+export interface HeaderLayout3Select<T extends boolean = true> {
+  logo?:
+    | T
+    | {
+        text?: T;
+        image?: T;
+        href?: T;
+      };
+  navigation?:
+    | T
+    | {
+        title?: T;
+        href?: T;
+        megaMenu?:
+          | T
+          | {
+              title?: T;
+              image?: T;
+              href?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  searchPlaceholder?: T;
+  phoneNumber?: T;
   id?: T;
   blockName?: T;
 }
