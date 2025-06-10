@@ -45,6 +45,7 @@ import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component
 import { SectionWrapperLayout1 } from "./SectionWrapper/layouts/SectionWrapper1/Component"
 import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
 import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
+import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -54,6 +55,7 @@ const blockComponents = {
   bannerLayout1: BannerLayout1,
   banner2: BannerLayout2,
 
+  bannerLayout3: BannerLayout3,
   payloadButton: PayloadButton,
   outlineButton: OutlineButton,
   animatedButton: AnimatedButton,
@@ -91,7 +93,7 @@ const blockComponents = {
   introHeaderBlock: IntroHeaderLayout1,
   SectionWrapperBlock: SectionWrapperLayout1,
   ValueListBlock: ValueListLayout1,
-  aboutUs1:AboutUs1
+  aboutUs1: AboutUs1,
 }
 
 export const RenderBlocks: React.FC<{
@@ -109,7 +111,8 @@ export const RenderBlocks: React.FC<{
           const { blockType } = block
 
           if (blockType && blockType in blockComponents) {
-            const Block = blockComponents[blockType as keyof typeof blockComponents]
+            const Block =
+              blockComponents[blockType as keyof typeof blockComponents]
 
             if (Block) {
               return (
