@@ -40,6 +40,11 @@ import { AdvertismentSection2 } from "./AdvertismentSection/layouts/Advertisment
 import { HomeLayout1 } from "../layout/HomeLayout/layouts/HomeLayout1/Component"
 import { HomeLayout2 } from "../layout/HomeLayout/layouts/HomeLayout2/Component"
 import { FooterLayout3 } from "./PayloadFooter/layouts/FooterLayout3/Component"
+import { CTASectionLayout1 } from "./CTASection/layouts/CTASection1/Component"
+import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component"
+import { SectionWrapperLayout1 } from "./SectionWrapper/layouts/SectionWrapper1/Component"
+import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
+import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -82,6 +87,11 @@ const blockComponents = {
   footer3: FooterLayout3,
   homeLayout1: HomeLayout1,
   homeLayout2: HomeLayout2,
+  ctaSectionBlock: CTASectionLayout1,
+  introHeaderBlock: IntroHeaderLayout1,
+  SectionWrapperBlock: SectionWrapperLayout1,
+  ValueListBlock: ValueListLayout1,
+  aboutUs1:AboutUs1
 }
 
 export const RenderBlocks: React.FC<{
@@ -99,14 +109,13 @@ export const RenderBlocks: React.FC<{
           const { blockType } = block
 
           if (blockType && blockType in blockComponents) {
-            const Block = blockComponents[blockType]
+            const Block = blockComponents[blockType as keyof typeof blockComponents]
 
             if (Block) {
               return (
                 <div key={index}>
                   <Block
                     {...block}
-                    // @ts-expect-error
                     disableInnerContainer
                     region={props.region}
                   />

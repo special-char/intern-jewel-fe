@@ -21,6 +21,10 @@ import { Content } from "@/blocks/Content/config"
 import { CallToAction } from "@/blocks/CallToAction/config"
 import { Banner } from "@/blocks/Banner/config"
 import { MediaBlock } from "@/blocks/MediaBlock/config"
+import { CTASectionLayout1 } from "@/blocks/CTASection/layouts/CTASection1/config"
+import { IntroHeaderLayout1 } from "@/blocks/IntroHeader/layouts/IntroHeader1/config"
+import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWrapper1/config"
+import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -55,6 +59,10 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       CallToAction,
       Banner,
       MediaBlock,
+      CTASectionLayout1,
+      IntroHeaderLayout1,
+      SectionWrapperLayout1,
+      ValueListLayout1,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
