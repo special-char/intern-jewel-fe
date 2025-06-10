@@ -2,6 +2,7 @@ import { Block } from "payload"
 import { BannerLayout1 } from "./layouts/BannerLayout1/config"
 import { BannerLayout2 } from "./layouts/BannerLayout2/config"
 import { BannerLayout3 } from "./layouts/BannerLayout3/Config"
+import { BannerLayout3 } from "./layouts/BannerLayout3/Config"
 import { ContactBlock } from "./layouts/ContactLayout1/Config"
 
 export const PayloadBanner: Block = {
@@ -13,6 +14,8 @@ export const PayloadBanner: Block = {
     {
       name: "PayloadBanner",
       type: "blocks",
+      blocks: [BannerLayout1, BannerLayout2, BannerLayout3],
+      defaultValue: [{ blockType: "bannerLayout1" }],
       blocks: [BannerLayout1, BannerLayout2, BannerLayout3, ContactBlock],
       defaultValue: [{ blockType: "bannerLayout1" }],
       maxRows: 1,

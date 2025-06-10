@@ -54,7 +54,6 @@ const blockComponents = {
   payloadBanner: PayloadBanner,
   bannerLayout1: BannerLayout1,
   banner2: BannerLayout2,
-
   bannerLayout3: BannerLayout3,
   payloadButton: PayloadButton,
   outlineButton: OutlineButton,
