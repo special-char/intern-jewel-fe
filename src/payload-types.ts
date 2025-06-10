@@ -228,6 +228,7 @@ export interface HomeLayout1 {
         | FaqLayout
         | FaqLayout2
         | ContentBlock
+        | BannerLayout3
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
@@ -469,6 +470,7 @@ export interface HomeLayout2 {
         | FaqLayout
         | FaqLayout2
         | ContentBlock
+        | BannerLayout3
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
@@ -841,6 +843,24 @@ export interface ContentBlock {
   id?: string | null
   blockName?: string | null
   blockType: "content"
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerLayout3".
+ */
+export interface BannerLayout3 {
+  backgroundImage: number | Media;
+  eyebrowText?: string | null;
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonHref?: string | null;
+  textColor?: string | null;
+  overlayOpacity?: number | null;
+  buttonVariant?: ('default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'bannerLayout3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1314,6 +1334,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1770,6 +1791,23 @@ export interface ContentBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerLayout3_select".
+ */
+export interface BannerLayout3Select<T extends boolean = true> {
+  backgroundImage?: T;
+  eyebrowText?: T;
+  heading?: T;
+  description?: T;
+  buttonText?: T;
+  buttonHref?: T;
+  textColor?: T;
+  overlayOpacity?: T;
+  buttonVariant?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "CallToActionBlock_select".
  */
 export interface CallToActionBlockSelect<T extends boolean = true> {
@@ -1902,6 +1940,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         categoryLayout1?: T | CategoryLayout1Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -2054,10 +2093,10 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "header".
  */
 export interface Header {
-  id: number
-  layout?: (HeaderLayout1 | HeaderLayout2)[] | null
-  updatedAt?: string | null
-  createdAt?: string | null
+  id: number;
+  layout?: (HeaderLayout1 | HeaderLayout2 | HeaderLayout3)[] | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2206,6 +2245,37 @@ export interface HeaderLayout2 {
   id?: string | null
   blockName?: string | null
   blockType: "header2"
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeaderLayout3".
+ */
+export interface HeaderLayout3 {
+  logo?: {
+    text?: string | null;
+    image?: (number | null) | Media;
+    href?: string | null;
+  };
+  navigation?:
+    | {
+        title: string;
+        href?: string | null;
+        megaMenu?:
+          | {
+              title: string;
+              image?: (number | null) | Media;
+              href?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  searchPlaceholder?: string | null;
+  phoneNumber?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'headerLayout3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2543,12 +2613,13 @@ export interface HeaderSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        header1?: T | HeaderLayout1Select<T>
-        header2?: T | HeaderLayout2Select<T>
-      }
-  updatedAt?: T
-  createdAt?: T
-  globalType?: T
+        header1?: T | HeaderLayout1Select<T>;
+        header2?: T | HeaderLayout2Select<T>;
+        headerLayout3?: T | HeaderLayout3Select<T>;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2687,6 +2758,38 @@ export interface HeaderLayout2Select<T extends boolean = true> {
       }
   id?: T
   blockName?: T
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HeaderLayout3_select".
+ */
+export interface HeaderLayout3Select<T extends boolean = true> {
+  logo?:
+    | T
+    | {
+        text?: T;
+        image?: T;
+        href?: T;
+      };
+  navigation?:
+    | T
+    | {
+        title?: T;
+        href?: T;
+        megaMenu?:
+          | T
+          | {
+              title?: T;
+              image?: T;
+              href?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  searchPlaceholder?: T;
+  phoneNumber?: T;
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
