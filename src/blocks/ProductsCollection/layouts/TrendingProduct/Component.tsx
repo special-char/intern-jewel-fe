@@ -102,7 +102,7 @@ const TrendingProduct = (props: TrendingProductProps) => {
               <TwoColumnGrid
                 title={title}
                 products={products}
-                blockType={"design1"}
+                blockType={"design3"}
                 button={button}
               />
             </Suspense>
