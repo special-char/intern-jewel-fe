@@ -16,7 +16,7 @@ const AccordionFunction = ({
   singleItemOpen,
 }: FaqLayoutTypes) => {
   return (
-    <div className="bg-background flex flex-col gap-12 sm:p-10">
+    <div className="bg-card flex flex-col gap-2 p-4 sm:p-10">
       <h2 className="text-heading4 text-center text-foreground">{heading}</h2>
       <Accordion
         type={singleItemOpen ? "single" : "multiple"}
