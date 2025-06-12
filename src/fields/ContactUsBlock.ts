@@ -3,7 +3,7 @@ import { Block, Field } from "payload"
 
 import { ContactInformationBlock } from "@/blocks/ContactInformation/Config"
 import { ContactSection } from "@/blocks/LetsConnect/Config"
-import { ContactFormBlock } from "@/blocks/ContactForm/Config"
+import { ContactFormBlock } from "@/blocks/ContactForm/layouts/contactForm1/Config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -12,7 +12,7 @@ type PropsTypes = {
   } | null
 }
 
-export const aboutUsBlock = (props: PropsTypes = {}) => {
+export const contactUsBlock = (props: PropsTypes = {}) => {
   const fields: Field = {
     name: "children",
     label: "Children",

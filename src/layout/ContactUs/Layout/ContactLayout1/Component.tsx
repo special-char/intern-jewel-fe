@@ -1,15 +1,15 @@
-import React from "react"
+import { RenderBlocks } from "@/blocks/RenderBlocks"
 import { HttpTypes } from "@medusajs/types"
-import { RenderBlocks } from "../RenderBlocks"
-import { ContactFormBlock } from "@/payload-types"
-
+import React from "react"
+import type { ContactUs1 } from "@/payload-types"
 type Props = {
   region: HttpTypes.StoreRegion
-  ContactForm: ContactFormBlock
+  children: ContactUs1
 }
 
-export const ContactForm: React.FC<Props> = async ({ region, ContactForm }) => {
-  const block = ContactForm
+export const ContactUs = (props: Props) => {
+  const { children, region } = props
+  const block = children
   const hasChildren = block && Array.isArray(block) && block.length > 0
 
   if (hasChildren) {
