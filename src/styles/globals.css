@@ -47,6 +47,18 @@
   input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+
+  .btn-darkmode {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .btn-darkmode {
+      background-color: hsl(var(--primary-foreground));
+      color: hsl(var(--primary));
+    }
+  }
 }
 
 @layer components {
