@@ -48,6 +48,7 @@ import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
 import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
 import { FaqLayout2 } from "./AccordianLayout/layouts/FaqLayout2/Component"
 import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/Component"
+import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -86,6 +87,7 @@ const blockComponents = {
   faqLayout2: FaqLayout2,
   categoryShowcase: CategoryShowcase,
   categoryLayout1: CategoryLayout1,
+  category2: CategoryLayout2,
   footer1: FooterLayout1,
   footer2: FooterLayout2,
   footer3: FooterLayout3,

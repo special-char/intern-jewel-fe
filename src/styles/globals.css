@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
 @layer utilities {
+
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -13,16 +21,18 @@
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
-  input:focus ~ label,
-  input:not(:placeholder-shown) ~ label {
+  input:focus~label,
+  input:not(:placeholder-shown)~label {
     @apply -translate-y-2 text-xsmall-regular;
   }
 
-  input:focus ~ label {
+  input:focus~label {
     @apply left-0;
   }
 
@@ -125,14 +135,21 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 13.3%; /* #222222 */
-    --card: 0, 0%, 98%; /* #FAFAFA */
+    --background: 0 0% 100%;
+    /* White */
+    --foreground: 0 0% 13.3%;
+    /* #222222 */
+    --card: 0, 0%, 98%;
+    /* #FAFAFA */
     --card-foreground: 0 0% 0%;
-    --secondary: 0 0% 13.3%; /* #222222 */
-    --secondary-foreground: 0 0% 100%; /* White*/
-    --primary: 40 35% 57%; /* #B59A6C */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --secondary: 0 0% 13.3%;
+    /* #222222 */
+    --secondary-foreground: 0 0% 100%;
+    /* White*/
+    --primary: 40 35% 57%;
+    /* #B59A6C */
+    --primary-foreground: 0 0% 100%;
+    /* #FFFFFF */
     --white: 0 0% 100%;
     --white-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
@@ -186,9 +203,11 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-dmsans;
   }
+
   header,
   footer,
   section {
@@ -208,27 +227,35 @@
   h1 {
     @apply text-heading1;
   }
+
   h2 {
     @apply text-heading2;
   }
+
   h3 {
     @apply text-heading3;
   }
+
   h4 {
     @apply text-heading4;
   }
+
   h5 {
     @apply text-heading5;
   }
+
   h6 {
     @apply text-heading6;
   }
+
   p.large {
     @apply text-subtitle;
   }
+
   p {
     @apply text-body;
   }
+
   p.small {
     @apply text-caption;
   }
