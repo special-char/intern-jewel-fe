@@ -217,6 +217,7 @@ export interface HomeLayout1 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -459,6 +460,7 @@ export interface HomeLayout2 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -717,6 +719,35 @@ export interface CategoryLayout1 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'categoryLayout1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CategoryLayout2".
+ */
+export interface CategoryLayout2 {
+  categories: {
+    thumbnail: number | Media;
+    image: number | Media;
+    link: {
+      type?: ('custom' | 'reference') | null;
+      newTab?: boolean | null;
+      reference?: {
+        relationTo: 'pages';
+        value: number | Page;
+      } | null;
+      url?: string | null;
+      label: string;
+      /**
+       * Choose how the link should be rendered.
+       */
+      appearance?: ('default' | 'outline') | null;
+    };
+    text: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'category2';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1358,6 +1389,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
@@ -1758,6 +1790,32 @@ export interface CategoryLayout1Select<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CategoryLayout2_select".
+ */
+export interface CategoryLayout2Select<T extends boolean = true> {
+  categories?:
+    | T
+    | {
+        thumbnail?: T;
+        image?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        text?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "FaqLayout_select".
  */
 export interface FaqLayoutSelect<T extends boolean = true> {
@@ -1965,6 +2023,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
