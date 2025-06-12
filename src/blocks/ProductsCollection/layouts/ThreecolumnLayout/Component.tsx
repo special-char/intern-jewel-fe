@@ -10,7 +10,7 @@ export const ThreecolumnLayout = (props: ThreecolumnLayoutTypes) => {
       <ThreeColumnGrid
         title={title}
         products={products}
-        blockType={"design1"}
+        blockType={"design3"}
         button={button}
       />
     </Suspense>
