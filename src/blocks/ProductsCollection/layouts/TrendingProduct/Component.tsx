@@ -60,58 +60,60 @@ const TrendingProduct = (props: TrendingProductProps) => {
   const { subtext = defaultSubtext, title, products, button } = props
 
   return (
-    <div className="w-full bg-neutral-50 text-foreground">
-      <div className="content-container py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
-          {/* Left Text Section */}
-          <div className="h-full flex flex-col">
-            <div className="mb-6 justify-start">
-              {/* Icon */}
-              <div
-                className="w-32 h-32 bg-primary mask mask-center mask-no-repeat mask-contain"
-                style={{
-                  maskImage: "url(/images/Flower.svg)",
-                  WebkitMaskImage: "url(/images/Flower.svg)",
-                }}
-              />
-              <p className="pt-16 tracking-widest text-primary font-medium pb-4 text-small-semi">
-                SHOP
-              </p>
+    <div className="bg-neutral-100 text-foreground">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-center px-container py-20">
 
-              <h2 className="text-heading2 text-secondary pb-4">Trending Products</h2>
+        {/* Left Text Section */}
+        <div
+          className="flex flex-col"
+        // className="flex flex-col py-24 sm:py-20 md:py-24 pl-4 sm:pl-6 md:pl-12 lg:pl-16"
+        >
+          <div className="mb-6 ">
+            <img
+              src="/images/Flower.svg"
+              alt="Flower Mask"
+              className="w-32 h-32 bg-primary mask mask-center mask-no-repeat mask-contain"
+              style={{
+                maskImage: 'url(/images/Flower.svg)',
+                WebkitMaskImage: 'url(/images/Flower.svg)',
+              }}
+            />
 
-              <div className="text-muted-foreground text-large-regular leading-relaxed">
-                <RichText data={subtext} className="text-muted-foreground text-large-regular" />
-              </div>
-            </div>
+            <p className="pt-16 tracking-[0.5em] text-primary font-medium pb-4 text-lg uppercase">
+              shop
+            </p>
 
-            <Link
-              href="#"
-              className="mt-12 inline-flex items-center gap-4 text-large-semi text-secondary hover:text-foreground transition"
-            >
-              View All Trending
-              <span className="text-primary w-8 h-8 inline-block">
-                <img src="/images/arrow.svg" alt="Right Arrow" className="w-full h-full object-contain" />
-              </span>
-            </Link>
+            {/* <h2 className="text-heading2 text-secondary pb-4">Trending Products</h2> */}
+            {/* <div className="text-muted-foreground text-large-regular leading-relaxed"> */}
+            <RichText
+              data={subtext}
+              className="-ml-8"
+            />
+            {/* </div> */}
           </div>
 
-          {/* Right Product Section */}
-          {products && products.length > 0 ? (
-            <Suspense fallback={<SkeletonProductGrid />}>
-              <TwoColumnGrid
-                title={title}
-                products={products}
-                blockType={"design3"}
-                button={button}
-              />
-            </Suspense>
-          ) : (
-            <DummyImageGrid />
-          )}
+          <Link
+            href="#"
+            className="mt-12 inline-flex items-center gap-4 text-large-semi text-secondary hover:text-foreground transition"
+          >
+            View All Trending
+            <span className="text-primary w-8 h-8 inline-block">
+              <img src="/images/arrow.svg" alt="Right Arrow" className="w-full h-full object-contain" />
+            </span>
+          </Link>
         </div>
+
+        {/* Right Product Section */}
+        {products && products.length > 0 ? (
+          <Suspense fallback={<SkeletonProductGrid />}>
+            <TwoColumnGrid products={products} blockType="design3" />
+          </Suspense>
+        ) : (
+          <DummyImageGrid />
+        )}
       </div>
     </div>
+
   )
 }
 
