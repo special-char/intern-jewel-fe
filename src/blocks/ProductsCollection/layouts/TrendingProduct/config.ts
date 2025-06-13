@@ -1,4 +1,5 @@
 import { Block } from "payload"
+import { button } from "@/fields/button"
 
 export const TrendingProduct: Block = {
   slug: "trendingProduct",
@@ -28,14 +29,8 @@ export const TrendingProduct: Block = {
           return "You must select exactly two products."
         }
         return true
-      },
-      defaultValue: async ({ req }) => {
-        const products = await req.payload.find({
-          collection: "products",
-          limit: 2,
-        })
-        return products.docs.map((product) => product.id)
-      },
+      }
     },
+    button(),
   ],
 }

@@ -3,6 +3,7 @@ import Link from "next/link"
 import RichText from "@components/payload/RichText"
 import { TwoColumnGrid } from "../../components/TwoColumnGrid"
 import SkeletonProductGrid from "@modules/skeletons/components/skeleton-product-grid"
+import { ArrowRight } from "lucide-react"
 
 interface TrendingProductProps {
   heading: string
@@ -11,10 +12,11 @@ interface TrendingProductProps {
   }
   title: string
   products: any[]
+  button: any
 }
 
 const TrendingProduct = (props: TrendingProductProps) => {
-  const { heading, subtext, products } = props
+  const { heading, subtext, products, button } = props
 
   if (!heading || heading.trim() === "") {
     return null // Prevent rendering when heading is empty
@@ -25,8 +27,8 @@ const TrendingProduct = (props: TrendingProductProps) => {
   }
 
   return (
-    <div className="bg-neutral-100 text-foreground">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-center px-container py-20">
+    <div className="bg-card text-foreground">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-center px-container py-16">
 
         {/* Left Text Section */}
         <div
@@ -47,7 +49,7 @@ const TrendingProduct = (props: TrendingProductProps) => {
             <p className="pt-16 tracking-[0.5em] text-primary font-medium pb-4 text-lg uppercase">
               shop
             </p>
-            <h2 className="text-heading2 text-secondary pb-2">{props.heading}</h2>
+            <h3 className="text-heading2 pb-2">{props.heading}</h3>
             <RichText
               data={subtext}
               className="-ml-7"
@@ -55,12 +57,12 @@ const TrendingProduct = (props: TrendingProductProps) => {
           </div>
 
           <Link
-            href="#"
-            className="mt-12 inline-flex items-center gap-4 text-large-semi text-secondary hover:text-foreground transition"
+            href={button?.link || "#"}
+            className="mt-12 inline-flex items-center gap-4 text-large-semi hover:text-foreground transition"
           >
-            View All Trending
-            <span className="text-primary w-8 h-8 inline-block">
-              <img src="/images/arrow.svg" alt="Right Arrow" className="w-full h-full object-contain" />
+            {button?.label || "View All"} {/* fallback label if undefined */}
+            <span className="inline-block">
+              <ArrowRight className="text-primary" />
             </span>
           </Link>
         </div>

@@ -36,17 +36,17 @@ export const TwoColumnGrid = async ({
 
 
     return (
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14 bg-neutral-50 p-8">
-                {pricedProducts &&
-                    pricedProducts?.map((item) => {
-                        return (
-                            <ProductCard
-                                key={item.id}
-                                product={item}
-                                blockType={blockType}
-                            />
-                        )
-                    })}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
+            {pricedProducts &&
+                pricedProducts?.map((item) => {
+                    return (
+                        <ProductCard
+                            key={item.id}
+                            product={item}
+                            blockType={blockType}
+                        />
+                    )
+                })}
+        </div>
     )
 }
