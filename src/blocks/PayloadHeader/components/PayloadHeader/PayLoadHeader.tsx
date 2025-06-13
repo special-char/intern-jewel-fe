@@ -1,12 +1,12 @@
 import { Header } from "@/payload-types"
 import HeaderLayout1 from "../../layouts/HeaderLayout1/Component"
 import HeaderLayout2 from "../../layouts/HeaderLayout2/Component"
-import { HeaderLayout3 } from "../../layouts/HeaderLayout3/Component"
+import HeaderLayout3 from "../../layouts/HeaderLayout3/Component"
 
 const blockComponents: Record<string, React.FC<any>> = {
   header1: HeaderLayout1,
   header2: HeaderLayout2,
-  headerLayout3: HeaderLayout3,
+  header3: HeaderLayout3,
 }
 
 export const PayLoadHeader: React.FC<{

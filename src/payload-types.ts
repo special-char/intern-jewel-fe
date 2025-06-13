@@ -2497,31 +2497,74 @@ export interface HeaderLayout2 {
  * via the `definition` "HeaderLayout3".
  */
 export interface HeaderLayout3 {
-  logo?: {
-    text?: string | null;
-    image?: (number | null) | Media;
-    href?: string | null;
+  desktopLogo: number | Media;
+  mobileLogo: number | Media;
+  contactNumber: string;
+  tree: {
+    heading: string;
+    parent: {
+      link: {
+        type?: ('custom' | 'reference') | null;
+        newTab?: boolean | null;
+        reference?: {
+          relationTo: 'pages';
+          value: number | Page;
+        } | null;
+        url?: string | null;
+        label: string;
+        /**
+         * Choose how the link should be rendered.
+         */
+        appearance?: ('default' | 'outline') | null;
+      };
+      sub?:
+        | {
+            link: {
+              type?: ('custom' | 'reference') | null;
+              newTab?: boolean | null;
+              reference?: {
+                relationTo: 'pages';
+                value: number | Page;
+              } | null;
+              url?: string | null;
+              label: string;
+              /**
+               * Choose how the link should be rendered.
+               */
+              appearance?: ('default' | 'outline') | null;
+            };
+            id?: string | null;
+          }[]
+        | null;
+      id?: string | null;
+    }[];
   };
-  navigation?:
-    | {
-        title: string;
-        href?: string | null;
-        megaMenu?:
-          | {
-              title: string;
-              image?: (number | null) | Media;
-              href?: string | null;
-              id?: string | null;
-            }[]
-          | null;
-        id?: string | null;
-      }[]
-    | null;
-  searchPlaceholder?: string | null;
-  phoneNumber?: string | null;
+  thumbnail: number | Media;
+  menu: {
+    heading: string;
+    categories?: (number | ProductCategory)[] | null;
+    category: {
+      category_thumbnail?: (number | null) | Media;
+      link: {
+        type?: ('custom' | 'reference') | null;
+        newTab?: boolean | null;
+        reference?: {
+          relationTo: 'pages';
+          value: number | Page;
+        } | null;
+        url?: string | null;
+        label: string;
+        /**
+         * Choose how the link should be rendered.
+         */
+        appearance?: ('default' | 'outline') | null;
+      };
+      id?: string | null;
+    }[];
+  };
   id?: string | null;
   blockName?: string | null;
-  blockType: 'headerLayout3';
+  blockType: 'header3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2784,7 +2827,7 @@ export interface HeaderSelect<T extends boolean = true> {
     | {
         header1?: T | HeaderLayout1Select<T>;
         header2?: T | HeaderLayout2Select<T>;
-        headerLayout3?: T | HeaderLayout3Select<T>;
+        header3?: T | HeaderLayout3Select<T>;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -2933,30 +2976,67 @@ export interface HeaderLayout2Select<T extends boolean = true> {
  * via the `definition` "HeaderLayout3_select".
  */
 export interface HeaderLayout3Select<T extends boolean = true> {
-  logo?:
+  desktopLogo?: T;
+  mobileLogo?: T;
+  contactNumber?: T;
+  tree?:
     | T
     | {
-        text?: T;
-        image?: T;
-        href?: T;
-      };
-  navigation?:
-    | T
-    | {
-        title?: T;
-        href?: T;
-        megaMenu?:
+        heading?: T;
+        parent?:
           | T
           | {
-              title?: T;
-              image?: T;
-              href?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              sub?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
               id?: T;
             };
-        id?: T;
       };
-  searchPlaceholder?: T;
-  phoneNumber?: T;
+  thumbnail?: T;
+  menu?:
+    | T
+    | {
+        heading?: T;
+        categories?: T;
+        category?:
+          | T
+          | {
+              category_thumbnail?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              id?: T;
+            };
+      };
   id?: T;
   blockName?: T;
 }
