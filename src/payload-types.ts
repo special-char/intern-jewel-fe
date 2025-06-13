@@ -178,7 +178,7 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1)[];
+  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ListPage1)[];
   meta?: {
     title?: string | null;
     /**
@@ -233,6 +233,7 @@ export interface HomeLayout1 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ProductCategoryLayout1
       )[]
     | null;
   id?: string | null;
@@ -400,7 +401,7 @@ export interface Product {
   status: 'draft' | 'proposed' | 'published' | 'rejected';
   publishedAt?: string | null;
   content?: {
-    layout?: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1)[] | null;
+    layout?: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ListPage1)[] | null;
   };
   details?: {
     additional_title?: string | null;
@@ -480,6 +481,7 @@ export interface HomeLayout2 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ProductCategoryLayout1
       )[]
     | null;
   id?: string | null;
@@ -1136,6 +1138,35 @@ export interface Separate {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductCategoryLayout1".
+ */
+export interface ProductCategoryLayout1 {
+  heading: string;
+  accordian: {
+    title: string;
+    content: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'productCategoryLayout1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout3".
  */
 export interface HomeLayout3 {
@@ -1173,6 +1204,7 @@ export interface HomeLayout3 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ProductCategoryLayout1
       )[]
     | null;
   id?: string | null;
@@ -1190,6 +1222,16 @@ export interface AboutUs1 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'aboutUs1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage1".
+ */
+export interface ListPage1 {
+  children?: (FaqLayout2 | ThreecolumnLayout)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'listPage1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1442,6 +1484,7 @@ export interface PagesSelect<T extends boolean = true> {
         homeLayout2?: T | HomeLayout2Select<T>;
         homeLayout3?: T | HomeLayout3Select<T>;
         aboutUs1?: T | AboutUs1Select<T>;
+        listPage1?: T | ListPage1Select<T>;
       };
   meta?:
     | T
@@ -1497,6 +1540,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        productCategoryLayout1?: T | ProductCategoryLayout1Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2150,6 +2194,22 @@ export interface SeparateSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductCategoryLayout1_select".
+ */
+export interface ProductCategoryLayout1Select<T extends boolean = true> {
+  heading?: T;
+  accordian?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout2_select".
  */
 export interface HomeLayout2Select<T extends boolean = true> {
@@ -2188,6 +2248,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        productCategoryLayout1?: T | ProductCategoryLayout1Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2232,6 +2293,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        productCategoryLayout1?: T | ProductCategoryLayout1Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2257,6 +2319,20 @@ export interface AboutUs1Select<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage1_select".
+ */
+export interface ListPage1Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        faqLayout2?: T | FaqLayout2Select<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
@@ -2275,6 +2351,7 @@ export interface ProductsSelect<T extends boolean = true> {
               homeLayout2?: T | HomeLayout2Select<T>;
               homeLayout3?: T | HomeLayout3Select<T>;
               aboutUs1?: T | AboutUs1Select<T>;
+              listPage1?: T | ListPage1Select<T>;
             };
       };
   details?:

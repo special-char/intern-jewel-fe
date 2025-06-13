@@ -40,7 +40,6 @@ import { FooterLayout2 } from "./PayloadFooter/layouts/FooterLayout2/Component"
 import { AdvertismentSection2 } from "./AdvertismentSection/layouts/AdvertismentSection2/Component"
 import { HomeLayout1 } from "../layout/HomeLayout/layouts/HomeLayout1/Component"
 import { HomeLayout2 } from "../layout/HomeLayout/layouts/HomeLayout2/Component"
-import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { FooterLayout3 } from "./PayloadFooter/layouts/FooterLayout3/Component"
 import { CTASectionLayout1 } from "./CTASection/layouts/CTASection1/Component"
 import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component"
@@ -53,6 +52,10 @@ import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Comp
 import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Component"
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
+import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
+import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
+import { ListPage } from "@/layout/Listpage/Component"
+import { ProductCategoryLayout1 } from "./ProductCategoryMenu/layouts/ProductCategoryLayout1/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -108,6 +111,9 @@ const blockComponents = {
   aboutUs1: AboutUs1,
   valueListLayout1: ValueListLayout1,
   separate: Separator,
+  listPage: ListPage,
+  listPage1: ListPage1,
+  productCategoryLayout1: ProductCategoryLayout1,
 }
 
 export const RenderBlocks: React.FC<{
