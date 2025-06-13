@@ -1072,6 +1072,16 @@ export interface ValueListBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Separate".
+ */
+export interface Separate {
+  Separator?: {};
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'separate';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout3".
  */
 export interface HomeLayout3 {
@@ -1094,6 +1104,7 @@ export interface HomeLayout3 {
         | BrandLayout2
         | CategoryLayout1
         | CategoryLayout2
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -1101,25 +1112,17 @@ export interface HomeLayout3 {
         | CallToActionBlock
         | BannerBlock
         | MediaBlock
+        | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
         | SectionWrapperBlock
         | ValueListBlock
+        | Separate
       )[]
     | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'homeLayout3';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Separate".
- */
-export interface Separate {
-  Separator?: {};
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'separate';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2165,6 +2168,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
