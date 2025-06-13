@@ -5,6 +5,9 @@ import { CTASectionLayout1 } from "@/blocks/CTASection/layouts/CTASection1/confi
 import { IntroHeaderLayout1 } from "@/blocks/IntroHeader/layouts/IntroHeader1/config"
 import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWrapper1/config"
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
+import { ImageBlock } from "@/blocks/ImageBlock/config"
+import { SeparateBlock } from "@/blocks/Separator/config"
+
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -24,6 +27,8 @@ export const aboutUsBlock = (props: PropsTypes = {}) => {
       SectionWrapperLayout1,
       ValueListLayout1,
       MediaBlock,
+      ImageBlock,
+      SeparateBlock,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

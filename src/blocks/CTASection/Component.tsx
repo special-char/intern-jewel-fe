@@ -1,11 +1,11 @@
 import React from "react"
 import { HttpTypes } from "@medusajs/types"
 import { RenderBlocks } from "../RenderBlocks"
-import { HomeLayout1 } from "@/payload-types"
+import { AboutUs1 } from "@/payload-types"
 
 type Props = {
   region: HttpTypes.StoreRegion
-  CTASection: HomeLayout1
+  CTASection: AboutUs1
 }
 
 export const CTASection: React.FC<Props> = async ({

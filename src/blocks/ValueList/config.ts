@@ -1,19 +1,19 @@
 import { Block } from "payload"
-import { ValueListBlock } from "./layouts/ValueList1/config"
+import { ValueListLayout1 } from "./layouts/ValueList1/config"
 
-export const ValueListBanner: Block = {
-  slug: "valueListBanner",
+export const ValueListBlock: Block = {
+  slug: "valueListBlock",
   admin: {
-    group: "Banner",
+    group: "Content",
   },
   fields: [
     {
-      name: "list",
+      name: "valueList",
       type: "blocks",
-      blocks: [ValueListBlock],
+      blocks: [ValueListLayout1],
       maxRows: 1,
       required: true,
-      defaultValue: [{ blockType: "value-list" }],
+      defaultValue: [{ blockType: "valueListLayout1" }],
     },
   ],
 }

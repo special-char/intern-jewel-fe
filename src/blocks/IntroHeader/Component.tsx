@@ -1,11 +1,11 @@
 import React from "react"
 import { HttpTypes } from "@medusajs/types"
 import { RenderBlocks } from "../RenderBlocks"
-import { HomeLayout1 } from "@/payload-types"
+import { AboutUs1 } from "@/payload-types"
 
 type Props = {
   region: HttpTypes.StoreRegion
-  IntroHeader: HomeLayout1
+  IntroHeader: AboutUs1
 }
 
 export const IntroHeader: React.FC<Props> = async ({
