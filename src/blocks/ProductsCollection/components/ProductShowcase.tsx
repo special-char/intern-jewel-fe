@@ -80,7 +80,7 @@ export const ProductShowcase = async ({
             fill
             imgClassName="object-cover"
             alt={
-              (promotion?.promotionImage as Media).alt ||
+              (promotion?.promotionImage as Media)?.alt ||
               "ProductShowcase image"
             }
           />

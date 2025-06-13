@@ -134,7 +134,7 @@ const SideNav = ({
                   if (typeof category === "number") return null
 
                   return (
-                    <div key={category?.id} className="flex-none min-w-[240px]">
+                    <div>
                       <div className="relative aspect-3/4 w-full hover:cursor-pointer overflow-hidden">
                         <ImageMedia
                           resource={category?.category_media as Media}
@@ -148,7 +148,7 @@ const SideNav = ({
                         className="flex justify-between items-center py-2 text-body font-semibold"
                       >
                         {category?.category_title}
-                        <ArrowRight className="h-4 text-primary" />
+                        <ArrowRight className="h-4 text-secondary" />
                       </LocalizedClientLink>
                     </div>
                   )
