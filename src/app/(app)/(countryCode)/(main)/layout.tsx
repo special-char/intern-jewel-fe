@@ -34,14 +34,14 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
       )}
 
       {cart && (
-        <FreeShippingPriceNudge
+        <FreeShippingPriceNudge 
           variant="popup"
-          cart={cart}
-          shippingOptions={shippingOptions}
-        />
+          cart={cart} 
+          shippingOptions={shippingOptions} 
+        /> 
       )}
-      {props.children}
-      <PayloadFooter />
+      {props.children} 
+          <PayloadFooter />
     </>
   )
 }

@@ -43,6 +43,7 @@ export default async function Page() {
 
       {/* <RenderHero {...hero} /> */}
       <RenderBlocks blocks={layout} region={region} />
+      
     </>
   )
 }

@@ -50,6 +50,7 @@ import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
 import { FaqLayout2 } from "./AccordianLayout/layouts/FaqLayout2/Component"
 import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/Component"
 import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Component"
+import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Component"
 import Separator from "@/blocks/Separator/Component"
 
 const blockComponents = {
@@ -76,6 +77,7 @@ const blockComponents = {
   offerLayout1: OfferLayout1,
   productsCollection: ProductsCollection,
   threecolumnLayout: ThreecolumnLayout,
+  trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,
   productShowcase: ProductShowcaseLayout,
