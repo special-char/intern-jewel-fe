@@ -3,6 +3,7 @@
 import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { cn } from "@lib/lib/utils"
+import { Button } from "@lib/components/ui/button"
 
 interface HeroSectionProps {
   backgroundImage: {
@@ -16,7 +17,7 @@ interface HeroSectionProps {
   className?: string
   button?: {
     label: string
-    href?: string
+    url?: string
     newTab?: boolean
   }
 }
@@ -72,23 +73,15 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           >
             {description}
           </p>
-
-          {button?.label && button?.href && (
+          <Button variant="animated" className="w-max" size="lg">
+            <span className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary rounded-full scale-0 group-hover:scale-[15] transition-transform duration-300 ease-in-out transform -translate-x-1/2 translate-y-1/2" />
             <LocalizedClientLink
-              href={button.href}
-              target={button.newTab ? "_blank" : undefined}
-              rel={button.newTab ? "noopener noreferrer" : undefined}
-              className={cn(
-                "relative group inline-flex items-center justify-center text-subtitle px-8 py-4 border border-black text-center font-medium transition duration-300 ease-in-out",
-                "overflow-hidden",
-                "text-white", // You can make this dynamic if needed
-                "hover:text-secondary-foreground"
-              )}
+              href={button?.url || ""}
+              className="relative z-10 duration-300 ease-out group-hover:text-secondary-foreground"
             >
-              <span className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary rounded-full scale-0 group-hover:scale-[15] transition-transform duration-300 ease-in-out transform -translate-x-1/2 translate-y-1/2" />
-              <span className="relative z-10">{button.label}</span>
+              {button?.label}
             </LocalizedClientLink>
-          )}
+          </Button>
         </div>
       </div>
     </section>

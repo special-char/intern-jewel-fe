@@ -1079,6 +1079,7 @@ export interface HomeLayout3 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -2076,6 +2077,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
