@@ -28,6 +28,8 @@ import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/config"
 import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
 import { CategoryLayout2 } from "@/blocks/CategoryShowcase/layouts/CategoryLayout2/config"
+import { ImageBlock } from "@/blocks/ImageBlock/config"
+import { SeparateBlock } from "@/blocks/Separator/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -65,10 +67,12 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       CallToAction,
       Banner,
       MediaBlock,
+      ImageBlock,
       CTASectionLayout1,
       IntroHeaderLayout1,
       SectionWrapperLayout1,
       ValueListLayout1,
+      SeparateBlock,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

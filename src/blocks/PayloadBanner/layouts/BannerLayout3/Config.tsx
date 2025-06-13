@@ -1,4 +1,5 @@
 import { Block } from "payload"
+import { button } from "@/fields/button"
 
 export const BannerLayout3: Block = {
   slug: "bannerLayout3",
@@ -18,7 +19,7 @@ export const BannerLayout3: Block = {
     },
     {
       name: "eyebrowText",
-      label: "Eyebrow Text",
+      label: "Label",
       type: "text",
     },
     {
@@ -33,18 +34,10 @@ export const BannerLayout3: Block = {
       type: "textarea",
       required: true,
     },
-    {
-      name: "buttonText",
-      label: "Button Text",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "buttonHref",
-      defaultValue: "#",
-      label: "Button Link",
-      type: "text",
-    },
+
+    // ✅ Reusable button group
+    button(),
+
     {
       name: "textColor",
       label: "Text Color (Tailwind Class)",
@@ -58,20 +51,6 @@ export const BannerLayout3: Block = {
       min: 0,
       max: 1,
       defaultValue: 0.3,
-    },
-    {
-      name: "buttonVariant",
-      label: "Button Variant",
-      type: "select",
-      options: [
-        "default",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-        "destructive",
-      ],
-      defaultValue: "outline",
     },
   ],
 }

@@ -1,5 +1,5 @@
 import { Block } from "payload"
-import { SectionWrapperBlock } from "./layouts/SectionWrapper1/config"
+import { SectionWrapperLayout1 } from "./layouts/SectionWrapper1/config"
 
 export const SectionWrapperBanner: Block = {
   slug: "sectionWrapperBanner",
@@ -8,12 +8,12 @@ export const SectionWrapperBanner: Block = {
   },
   fields: [
     {
-      name: "wrapper",
+      name: "SectionWrapper",
       type: "blocks",
-      blocks: [SectionWrapperBlock],
+      blocks: [SectionWrapperLayout1],
       maxRows: 1,
       required: true,
-      defaultValue: [{ blockType: "section-wrapper" }],
+      defaultValue: [{ blockType: "sectionWrapperLayout1" }],
     },
   ],
 }
