@@ -869,11 +869,18 @@ export interface BannerLayout3 {
   eyebrowText?: string | null;
   heading: string;
   description: string;
-  buttonText: string;
-  buttonHref?: string | null;
+  button: {
+    type?: ('custom' | 'reference') | null;
+    newTab?: boolean | null;
+    reference?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
+    url?: string | null;
+    label: string;
+  };
   textColor?: string | null;
   overlayOpacity?: number | null;
-  buttonVariant?: ('default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'bannerLayout3';
@@ -1072,6 +1079,7 @@ export interface HomeLayout3 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -1883,11 +1891,17 @@ export interface BannerLayout3Select<T extends boolean = true> {
   eyebrowText?: T;
   heading?: T;
   description?: T;
-  buttonText?: T;
-  buttonHref?: T;
+  button?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        label?: T;
+      };
   textColor?: T;
   overlayOpacity?: T;
-  buttonVariant?: T;
   id?: T;
   blockName?: T;
 }
@@ -2063,6 +2077,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;

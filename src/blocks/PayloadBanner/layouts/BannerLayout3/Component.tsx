@@ -1,7 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { OutlineButton } from "@/blocks/PayloadButton/layouts/OutlineButton/Component"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { cn } from "@lib/lib/utils"
+import { Button } from "@lib/components/ui/button"
 
 interface HeroSectionProps {
   backgroundImage: {
@@ -10,18 +12,14 @@ interface HeroSectionProps {
   eyebrowText?: string
   heading: string
   description: string
-  buttonText: string
-  buttonHref?: string
   textColor?: string
-  buttonVariant?:
-    | "default"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link"
-    | "destructive"
   overlayOpacity?: number
   className?: string
+  button?: {
+    label: string
+    url?: string
+    newTab?: boolean
+  }
 }
 
 export const BannerLayout3 = (props: HeroSectionProps) => {
@@ -30,17 +28,17 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
     eyebrowText,
     heading,
     description,
-    buttonText,
-    buttonHref = "#",
     textColor = "text-white",
     overlayOpacity = 0.3,
     className = "",
+    button,
   } = props
 
   return (
     <section
       className={`relative min-h-screen grid place-items-center overflow-hidden ${className}`}
     >
+      {/* Background Image + Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src={backgroundImage.url}
@@ -55,6 +53,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
         />
       </div>
 
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 place-items-center text-center max-w-4xl mx-auto">
           {eyebrowText && (
@@ -70,20 +69,23 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           </h1>
 
           <p
-            className={`${textColor} text-subtitle  max-w-2xl mx-auto leading-tight mb-8 sm:mb-12`}
+            className={`${textColor} text-subtitle max-w-2xl mx-auto leading-tight mb-8 sm:mb-12`}
           >
             {description}
           </p>
-
-          <div className="flex justify-center">
-            <OutlineButton
-              className="text-subtitle px-8 py-4 border border-black"
-              button={{
-                label: buttonText,
-                url: buttonHref,
-              }}
-            />
-          </div>
+          <Button
+            variant="animated"
+            className="w-max border border-white text-white"
+            size="lg"
+          >
+            <span className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary rounded-full scale-0 group-hover:scale-[15] transition-transform duration-300 ease-in-out transform -translate-x-1/2 translate-y-1/2" />
+            <LocalizedClientLink
+              href={button?.url || ""}
+              className="relative z-10 duration-300 ease-out group-hover:text-secondary-foreground"
+            >
+              {button?.label}
+            </LocalizedClientLink>
+          </Button>
         </div>
       </div>
     </section>
