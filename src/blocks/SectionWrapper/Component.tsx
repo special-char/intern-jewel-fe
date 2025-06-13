@@ -1,28 +1,22 @@
 import React from "react"
 import { HttpTypes } from "@medusajs/types"
-import SectionWrapper from "./layouts/SectionWrapper1/Component"
 import { RenderBlocks } from "../RenderBlocks"
+import { AboutUs1 } from "@/payload-types"
 
 type Props = {
   region: HttpTypes.StoreRegion
-  block: {
-    title?: React.ReactNode
-    subtitle?: React.ReactNode
-    children?: any[]
-  }
+  SectionWrapper: AboutUs1
 }
 
 export const SectionWrapperComponent: React.FC<Props> = async ({
-  block,
   region,
+  SectionWrapper,
 }) => {
-  if (!block || (!block.title && !block.subtitle && !block.children?.length)) {
-    return null
-  }
+  const block = SectionWrapper
+  const hasChildren = block && Array.isArray(block) && block.length > 0
 
-  return (
-    <SectionWrapper title={block.title} subtitle={block.subtitle}>
-      <RenderBlocks blocks={block.children || []} region={region} />
-    </SectionWrapper>
-  )
+  if (hasChildren) {
+    return <RenderBlocks blocks={block} region={region} />
+  }
+  return null
 }

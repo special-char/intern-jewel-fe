@@ -8,10 +8,10 @@ export const CTASectionLayout1 = (props: CTASectionLayout1Type) => {
   if (!title && !button?.label && !button?.url) return null;
 
   return (
-    <section className="py-0 px-6 text-center bg-card">
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 py-16">
+    <section className="py-0 px-6 text-center">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
         {title && (
-          <h3 className="text-3xl sm:text-4xl font-serif text-foreground">
+          <h3 className="text-foreground">
             {title}
           </h3>
         )}
@@ -31,8 +31,6 @@ export const CTASectionLayout1 = (props: CTASectionLayout1Type) => {
             }}
           />
         )}
-
-        <div className="border-t border-border w-full mt-12" />
       </div>
     </section>
   );

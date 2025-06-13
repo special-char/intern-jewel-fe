@@ -16,13 +16,6 @@ export const SectionWrapperLayout1: Block = {
       defaultValue: "Why Choose Us?",
     },
     {
-      name: "subtitle",
-      type: "textarea",
-      required: false,
-      defaultValue:
-        "We blend craftsmanship, quality, and design to create something truly unique.",
-    },
-    {
       name: "children",
       type: "blocks",
       required: false,
