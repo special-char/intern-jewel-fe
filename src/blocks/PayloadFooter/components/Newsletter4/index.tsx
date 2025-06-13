@@ -10,10 +10,10 @@ const Newsletter = ({
     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-16">
       {/* Left side - Title & Description */}
       <div className="lg:w-1/2">
-        <p className="text-[#C5A362] uppercase text-[14px] font-medium tracking-[6px] font-['DM_Sans']">
+        <p className="font-dmsans text-caption text-primary  uppercase  tracking-[6px]">
           {title}
         </p>
-        <h2 className="font-['Playfair_Display'] text-[40px] font-normal leading-[1.1] mt-2">
+        <h2 className="font-['Playfair_Display'] text-heading4 mt-2">
           {description}
         </h2>
       </div>
@@ -24,7 +24,7 @@ const Newsletter = ({
           <input
             type="email"
             placeholder="Enter your email address ..."
-            className="flex-1 border-b bg-transparent border-white  
+            className="flex-1 border-b bg-transparent 
               focus:outline-none placeholder-neutral-400  pb-2"
           />
           <Button
