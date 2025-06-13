@@ -1,7 +1,7 @@
+import { ImageMedia } from "@components/payload/Media/ImageMedia";
 import { HttpTypes } from "@medusajs/types";
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
 import ProductPrice from "@modules/products/components/product-price";
-import Image from "next/image";
 
 const Design1 = ({ product, variant } : {product : HttpTypes.StoreProduct , variant : HttpTypes.StoreProductVariant}) => (
     <LocalizedClientLink
@@ -14,11 +14,11 @@ const Design1 = ({ product, variant } : {product : HttpTypes.StoreProduct , vari
       className="w-full aspect-4/3 bg-card text-card-foreground p-4 md:p-8 gap-6 group hover:border-primary hover:border ease-in-out hover:cursor-pointer"
     >
       <div className="relative w-full aspect-4/3 ">
-        <Image
-          src={product?.thumbnail || product?.images?.[0].url || ""}
+        <ImageMedia
+          src={product?.thumbnail || product?.images?.[0].url || ("" as any)}
           alt={product.title}
           fill
-          className="object-contain group-hover:scale-110 group-hover:rotate-12 duration-300 ease-in-out"
+          imgClassName="object-contain group-hover:scale-110 group-hover:rotate-12 duration-300 ease-in-out"
         />
       </div>
       <div className="flex flex-col">
