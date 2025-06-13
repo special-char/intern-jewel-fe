@@ -39,6 +39,7 @@ import { FooterLayout2 } from "./PayloadFooter/layouts/FooterLayout2/Component"
 import { AdvertismentSection2 } from "./AdvertismentSection/layouts/AdvertismentSection2/Component"
 import { HomeLayout1 } from "../layout/HomeLayout/layouts/HomeLayout1/Component"
 import { HomeLayout2 } from "../layout/HomeLayout/layouts/HomeLayout2/Component"
+import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { FooterLayout3 } from "./PayloadFooter/layouts/FooterLayout3/Component"
 import { CTASectionLayout1 } from "./CTASection/layouts/CTASection1/Component"
 import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component"
@@ -46,7 +47,8 @@ import { SectionWrapperLayout1 } from "./SectionWrapper/layouts/SectionWrapper1/
 import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
 import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
 import { FaqLayout2 } from "./AccordianLayout/layouts/FaqLayout2/Component"
-import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
+import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/Component"
+import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -55,7 +57,6 @@ const blockComponents = {
   payloadBanner: PayloadBanner,
   bannerLayout1: BannerLayout1,
   banner2: BannerLayout2,
-
   bannerLayout3: BannerLayout3,
   payloadButton: PayloadButton,
   outlineButton: OutlineButton,
@@ -86,11 +87,13 @@ const blockComponents = {
   faqLayout2: FaqLayout2,
   categoryShowcase: CategoryShowcase,
   categoryLayout1: CategoryLayout1,
+  category2: CategoryLayout2,
   footer1: FooterLayout1,
   footer2: FooterLayout2,
   footer3: FooterLayout3,
   homeLayout1: HomeLayout1,
   homeLayout2: HomeLayout2,
+  homeLayout3: HomeLayout3,
   ctaSectionBlock: CTASectionLayout1,
   introHeaderBlock: IntroHeaderLayout1,
   SectionWrapperBlock: SectionWrapperLayout1,

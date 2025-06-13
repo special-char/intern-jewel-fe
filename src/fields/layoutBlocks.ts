@@ -27,6 +27,7 @@ import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWr
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/config"
 import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
+import { CategoryLayout2 } from "@/blocks/CategoryShowcase/layouts/CategoryLayout2/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -56,6 +57,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       AssosiatedBrandsLayout1,
       AssosiatedBrandsLayout2,
       CategoryLayout1,
+      CategoryLayout2,
       FaqLayout,
       FaqLayout2,
       Content,

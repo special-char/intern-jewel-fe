@@ -178,7 +178,7 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2 | AboutUs1)[];
+  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1)[];
   meta?: {
     title?: string | null;
     /**
@@ -217,6 +217,7 @@ export interface HomeLayout1 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -395,7 +396,7 @@ export interface Product {
   status: 'draft' | 'proposed' | 'published' | 'rejected';
   publishedAt?: string | null;
   content?: {
-    layout?: (HomeLayout1 | HomeLayout2 | AboutUs1)[] | null;
+    layout?: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1)[] | null;
   };
   details?: {
     additional_title?: string | null;
@@ -459,6 +460,7 @@ export interface HomeLayout2 {
         | BrandLayout1
         | BrandLayout2
         | CategoryLayout1
+        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -717,6 +719,38 @@ export interface CategoryLayout1 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'categoryLayout1';
+<<<<<<< HEAD
+=======
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CategoryLayout2".
+ */
+export interface CategoryLayout2 {
+  categories: {
+    thumbnail: number | Media;
+    image: number | Media;
+    link: {
+      type?: ('custom' | 'reference') | null;
+      newTab?: boolean | null;
+      reference?: {
+        relationTo: 'pages';
+        value: number | Page;
+      } | null;
+      url?: string | null;
+      label: string;
+      /**
+       * Choose how the link should be rendered.
+       */
+      appearance?: ('default' | 'outline') | null;
+    };
+    text: string;
+    id?: string | null;
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'category2';
+>>>>>>> b755196f111722b083bc844eef0feaa913106590
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1020,6 +1054,46 @@ export interface ValueListBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeLayout3".
+ */
+export interface HomeLayout3 {
+  children?:
+    | (
+        | BannerLayout1
+        | BannerLayout2
+        | FeatureLayout1
+        | FeatureLayout2
+        | OfferLayout1
+        | FourcolumnLayout
+        | ThreecolumnLayout
+        | PromoProductLayout
+        | ProductShowcase
+        | ShowcaseLayout1
+        | ShowcaseSection2
+        | AdvertismentSection1
+        | AdvertismentSection2
+        | BrandLayout1
+        | BrandLayout2
+        | CategoryLayout1
+        | FaqLayout
+        | FaqLayout2
+        | ContentBlock
+        | BannerLayout3
+        | CallToActionBlock
+        | BannerBlock
+        | MediaBlock
+        | CTASectionBlock
+        | IntroHeaderBlock
+        | SectionWrapperBlock
+        | ValueListBlock
+      )[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeLayout3';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "AboutUs1".
  */
 export interface AboutUs1 {
@@ -1277,6 +1351,7 @@ export interface PagesSelect<T extends boolean = true> {
     | {
         homeLayout1?: T | HomeLayout1Select<T>;
         homeLayout2?: T | HomeLayout2Select<T>;
+        homeLayout3?: T | HomeLayout3Select<T>;
         aboutUs1?: T | AboutUs1Select<T>;
       };
   meta?:
@@ -1317,6 +1392,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
         content?: T | ContentBlockSelect<T>;
@@ -1714,6 +1790,35 @@ export interface CategoryLayout1Select<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
+<<<<<<< HEAD
+=======
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CategoryLayout2_select".
+ */
+export interface CategoryLayout2Select<T extends boolean = true> {
+  categories?:
+    | T
+    | {
+        thumbnail?: T;
+        image?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+              appearance?: T;
+            };
+        text?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+>>>>>>> b755196f111722b083bc844eef0feaa913106590
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1924,8 +2029,51 @@ export interface HomeLayout2Select<T extends boolean = true> {
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
         assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
         categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
+<<<<<<< HEAD
+=======
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeLayout3_select".
+ */
+export interface HomeLayout3Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+>>>>>>> b755196f111722b083bc844eef0feaa913106590
         content?: T | ContentBlockSelect<T>;
         bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
@@ -1974,6 +2122,7 @@ export interface ProductsSelect<T extends boolean = true> {
           | {
               homeLayout1?: T | HomeLayout1Select<T>;
               homeLayout2?: T | HomeLayout2Select<T>;
+              homeLayout3?: T | HomeLayout3Select<T>;
               aboutUs1?: T | AboutUs1Select<T>;
             };
       };
