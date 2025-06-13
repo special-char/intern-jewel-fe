@@ -5,59 +5,24 @@ import { TwoColumnGrid } from "../../components/TwoColumnGrid"
 import SkeletonProductGrid from "@modules/skeletons/components/skeleton-product-grid"
 
 interface TrendingProductProps {
+  heading: string
   subtext: {
     root: any
   }
   title: string
   products: any[]
-  button: any
-}
-
-const DummyImageGrid = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-    <div className="flex justify-center items-center bg-card p-4 min-h-[450px] border border-border rounded-lg">
-      <img src="/images/product1.avif" alt="Dummy Product 1" className="object-contain max-h-[400px]" />
-    </div>
-    <div className="flex justify-center items-center bg-card p-4 min-h-[450px] border border-border rounded-lg">
-      <img src="/images/product2.avif" alt="Dummy Product 2" className="object-contain max-h-[400px]" />
-    </div>
-  </div>
-)
-
-const defaultSubtext = {
-  root: {
-    children: [
-      {
-        type: "paragraph",
-        children: [
-          {
-            text: "Discover our most popular trending products handpicked just for you.",
-            type: "text",
-            format: 0,
-            mode: "normal",
-            style: "",
-            detail: 0,
-            version: 1,
-          },
-        ],
-        direction: "ltr",
-        format: "",
-        indent: 0,
-        textFormat: 0,
-        version: 1,
-      },
-    ],
-    direction: "ltr",
-    format: "",
-    indent: 0,
-    type: "root",
-    version: 1,
-  },
-  version: 1,
 }
 
 const TrendingProduct = (props: TrendingProductProps) => {
-  const { subtext = defaultSubtext, title, products, button } = props
+  const { heading, subtext, products } = props
+
+  if (!heading || heading.trim() === "") {
+    return null // Prevent rendering when heading is empty
+  }
+
+  if (!products || products.length !== 2) {
+    return null // Or return fallback UI
+  }
 
   return (
     <div className="bg-neutral-100 text-foreground">
@@ -82,14 +47,11 @@ const TrendingProduct = (props: TrendingProductProps) => {
             <p className="pt-16 tracking-[0.5em] text-primary font-medium pb-4 text-lg uppercase">
               shop
             </p>
-
-            {/* <h2 className="text-heading2 text-secondary pb-4">Trending Products</h2> */}
-            {/* <div className="text-muted-foreground text-large-regular leading-relaxed"> */}
+            <h2 className="text-heading2 text-secondary pb-2">{props.heading}</h2>
             <RichText
               data={subtext}
-              className="-ml-8"
+              className="-ml-7"
             />
-            {/* </div> */}
           </div>
 
           <Link
@@ -104,13 +66,12 @@ const TrendingProduct = (props: TrendingProductProps) => {
         </div>
 
         {/* Right Product Section */}
-        {products && products.length > 0 ? (
+        {products && products.length > 0 && (
           <Suspense fallback={<SkeletonProductGrid />}>
             <TwoColumnGrid products={products} blockType="design3" />
           </Suspense>
-        ) : (
-          <DummyImageGrid />
         )}
+
       </div>
     </div>
 

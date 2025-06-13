@@ -20,7 +20,6 @@ export const TwoColumnGrid = async ({
             ? await listProducts({
                 countryCode: DEFAULT_COUNTRYCODE,
                 queryParams: {
-                    //@ts-expect-error
                     id: limitedProducts.map((p) => p.product_id),
                     fields:
                         "*variants.calculated_price,*metadata,+variants.inventory_quantity , *images,+images.url , *thumbnail",

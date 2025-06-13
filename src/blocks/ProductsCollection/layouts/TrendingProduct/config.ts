@@ -1,5 +1,4 @@
 import { Block } from "payload"
-import { button } from "@/fields/button"
 
 export const TrendingProduct: Block = {
   slug: "trendingProduct",
@@ -8,29 +7,35 @@ export const TrendingProduct: Block = {
 
   fields: [
     {
-          name: "title",
-          type: "text",
-          required: true,
-          defaultValue: "Products Collection",
-        },
-        {
-          name: "products",
-          type: "relationship",
-          relationTo: "products",
-          hasMany: true,
-          defaultValue: async ({ req }) => {
-            const products = await req.payload.find({
-              collection: "products",
-              limit: 6,
-            })
-            return products.docs.map((product) => product.id)
-          },
-        },
-        button(),
+      name: "heading",
+      type: "text",
+      required: true,
+      defaultValue: "Trending Products",
+    },
     {
       name: "subtext",
       type: "richText",
       required: true,
+    },
+    {
+      name: "products",
+      type: "relationship",
+      relationTo: "products",
+      hasMany: true,
+      required: true,
+      validate: (val) => {
+        if (!val || val.length !== 2) {
+          return "You must select exactly two products."
+        }
+        return true
+      },
+      defaultValue: async ({ req }) => {
+        const products = await req.payload.find({
+          collection: "products",
+          limit: 2,
+        })
+        return products.docs.map((product) => product.id)
+      },
     },
   ],
 }
