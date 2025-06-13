@@ -42,8 +42,8 @@ const nextConfig = {
         hostname: "minio.thespecialcharacter.com",
       },
       {
-        protocol: 'https',
-        hostname: 'minio-usw040kwsgkookko0kswwkko.194.164.151.221.sslip.io',
+        protocol: "https",
+        hostname: "minio-usw040kwsgkookko0kswwkko.194.164.151.221.sslip.io",
       },
     ],
   },
