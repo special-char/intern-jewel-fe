@@ -228,7 +228,7 @@ export interface HomeLayout1 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -473,7 +473,7 @@ export interface HomeLayout2 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -723,8 +723,6 @@ export interface CategoryLayout1 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'categoryLayout1';
-<<<<<<< HEAD
-=======
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -754,7 +752,6 @@ export interface CategoryLayout2 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'category2';
->>>>>>> b755196f111722b083bc844eef0feaa913106590
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -976,7 +973,6 @@ export interface MediaBlock {
  */
 export interface ImageBlock {
   media: number | Media;
-  aspectRatio?: ('16/9' | '4/3' | '1/1' | '1280/568') | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'imageBlock';
@@ -1029,35 +1025,28 @@ export interface IntroHeaderBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "SectionWrapperBlock".
+ * via the `definition` "PayloadSectionBlock".
  */
-export interface SectionWrapperBlock {
-  title?: string | null;
-  children?:
-    | {
-        content?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'richText';
-      }[]
-    | null;
+export interface PayloadSectionBlock {
+  title: string;
+  richTextContent: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   id?: string | null;
   blockName?: string | null;
-  blockType: 'sectionWrapperLayout1';
+  blockType: 'payloadSectionLayout1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1107,7 +1096,6 @@ export interface HomeLayout3 {
         | BrandLayout2
         | CategoryLayout1
         | CategoryLayout2
-        | CategoryLayout2
         | FaqLayout
         | FaqLayout2
         | ContentBlock
@@ -1118,7 +1106,7 @@ export interface HomeLayout3 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -1133,7 +1121,7 @@ export interface HomeLayout3 {
  */
 export interface AboutUs1 {
   children?:
-    | (CTASectionBlock | IntroHeaderBlock | SectionWrapperBlock | ValueListBlock | MediaBlock | ImageBlock | Separate)[]
+    | (CTASectionBlock | IntroHeaderBlock | PayloadSectionBlock | ValueListBlock | MediaBlock | ImageBlock | Separate)[]
     | null;
   id?: string | null;
   blockName?: string | null;
@@ -1440,7 +1428,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -1829,8 +1817,6 @@ export interface CategoryLayout1Select<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
-<<<<<<< HEAD
-=======
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1857,7 +1843,6 @@ export interface CategoryLayout2Select<T extends boolean = true> {
       };
   id?: T;
   blockName?: T;
->>>>>>> b755196f111722b083bc844eef0feaa913106590
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1991,7 +1976,6 @@ export interface MediaBlockSelect<T extends boolean = true> {
  */
 export interface ImageBlockSelect<T extends boolean = true> {
   media?: T;
-  aspectRatio?: T;
   id?: T;
   blockName?: T;
 }
@@ -2026,21 +2010,11 @@ export interface IntroHeaderBlockSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "SectionWrapperBlock_select".
+ * via the `definition` "PayloadSectionBlock_select".
  */
-export interface SectionWrapperBlockSelect<T extends boolean = true> {
+export interface PayloadSectionBlockSelect<T extends boolean = true> {
   title?: T;
-  children?:
-    | T
-    | {
-        richText?:
-          | T
-          | {
-              content?: T;
-              id?: T;
-              blockName?: T;
-            };
-      };
+  richTextContent?: T;
   id?: T;
   blockName?: T;
 }
@@ -2095,49 +2069,6 @@ export interface HomeLayout2Select<T extends boolean = true> {
         category2?: T | CategoryLayout2Select<T>;
         faqLayout?: T | FaqLayoutSelect<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
-<<<<<<< HEAD
-=======
-        content?: T | ContentBlockSelect<T>;
-        bannerLayout3?: T | BannerLayout3Select<T>;
-        cta?: T | CallToActionBlockSelect<T>;
-        banner?: T | BannerBlockSelect<T>;
-        mediaBlock?: T | MediaBlockSelect<T>;
-        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
-        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
-        valueListLayout1?: T | ValueListBlockSelect<T>;
-      };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "HomeLayout3_select".
- */
-export interface HomeLayout3Select<T extends boolean = true> {
-  children?:
-    | T
-    | {
-        bannerLayout1?: T | BannerLayout1Select<T>;
-        banner2?: T | BannerLayout2Select<T>;
-        featureLayout1?: T | FeatureLayout1Select<T>;
-        featureLayout2?: T | FeatureLayout2Select<T>;
-        offerLayout1?: T | OfferLayout1Select<T>;
-        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
-        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        promoProduct?: T | PromoProductLayoutSelect<T>;
-        productShowcase?: T | ProductShowcaseSelect<T>;
-        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
-        showcaseLayout2?: T | ShowcaseSection2Select<T>;
-        advertismentSection1?: T | AdvertismentSection1Select<T>;
-        advertismentSection2?: T | AdvertismentSection2Select<T>;
-        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
-        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
-        categoryLayout1?: T | CategoryLayout1Select<T>;
-        category2?: T | CategoryLayout2Select<T>;
-        faqLayout?: T | FaqLayoutSelect<T>;
-        faqLayout2?: T | FaqLayout2Select<T>;
->>>>>>> b755196f111722b083bc844eef0feaa913106590
         content?: T | ContentBlockSelect<T>;
         bannerLayout3?: T | BannerLayout3Select<T>;
         cta?: T | CallToActionBlockSelect<T>;
@@ -2146,7 +2077,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -2188,7 +2119,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -2205,7 +2136,7 @@ export interface AboutUs1Select<T extends boolean = true> {
     | {
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
         imageBlock?: T | ImageBlockSelect<T>;

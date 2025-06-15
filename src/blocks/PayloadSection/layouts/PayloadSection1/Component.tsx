@@ -1,14 +1,12 @@
 import React from "react"
-import { SectionWrapperBlock } from "@/payload-types"
+import { PayloadSectionBlock } from "@/payload-types"
 import { RichText } from "@payloadcms/richtext-lexical/react"
 import { SerializedEditorState } from "node_modules/lexical/LexicalEditorState"
 
-export const SectionWrapperLayout1 = (props: SectionWrapperBlock) => {
-  const { title, children } = props || {}
+export const PayloadSectionLayout1 = (props: PayloadSectionBlock) => {
+  const { title, richTextContent } = props || {}
 
   const hasHeader = title
-  const richTextBlock = children?.[0]?.blockType === 'richText' ? children[0] : null
-  const richTextContent = richTextBlock?.content
 
   return (
     <section>
