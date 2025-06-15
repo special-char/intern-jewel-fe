@@ -29,8 +29,8 @@ const Design3 = ({
         />
       </div>
       <Button
-        variant="animated"
-        className="absolute left-0 bottom-0 w-full translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-in-out z-10 btn-darkmode rounded-none"
+        variant="design3"
+        className="absolute left-0 bottom-0 w-full translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-in-out z-10 rounded-none"
       >
         Add to Cart
       </Button>
