@@ -5,14 +5,14 @@ import { AboutUs1 } from "@/payload-types"
 
 type Props = {
   region: HttpTypes.StoreRegion
-  SectionWrapper: AboutUs1
+  PayloadSection: AboutUs1
 }
 
-export const SectionWrapperComponent: React.FC<Props> = async ({
+export const PayloadSectionComponent: React.FC<Props> = async ({
   region,
-  SectionWrapper,
+  PayloadSection,
 }) => {
-  const block = SectionWrapper
+  const block = PayloadSection
   const hasChildren = block && Array.isArray(block) && block.length > 0
 
   if (hasChildren) {

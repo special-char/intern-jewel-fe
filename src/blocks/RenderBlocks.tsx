@@ -44,7 +44,7 @@ import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { FooterLayout3 } from "./PayloadFooter/layouts/FooterLayout3/Component"
 import { CTASectionLayout1 } from "./CTASection/layouts/CTASection1/Component"
 import { IntroHeaderLayout1 } from "./IntroHeader/layouts/IntroHeader1/Component"
-import { SectionWrapperLayout1 } from "./SectionWrapper/layouts/SectionWrapper1/Component"
+import { PayloadSectionLayout1 } from "./PayloadSection/layouts/PayloadSection1/Component"
 import { ValueListLayout1 } from "./ValueList/layouts/ValueList1/Component"
 import { AboutUs1 } from "../layout/AboutUs/layouts/AboutUs1/Component"
 import { FaqLayout2 } from "./AccordianLayout/layouts/FaqLayout2/Component"
@@ -99,12 +99,10 @@ const blockComponents = {
   homeLayout3: HomeLayout3,
   ctaSectionBlock: CTASectionLayout1,
   introHeaderBlock: IntroHeaderLayout1,
-  SectionWrapperBlock: SectionWrapperLayout1,
+  payloadSectionLayout1: PayloadSectionLayout1,
   ValueListBlock: ValueListLayout1,
   aboutUs1: AboutUs1,
-  sectionWrapperLayout1: SectionWrapperLayout1,
   valueListLayout1: ValueListLayout1,
-  aboutUs1: AboutUs1,
   separate: Separator,
 }
 
