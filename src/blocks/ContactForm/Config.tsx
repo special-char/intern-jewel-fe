@@ -4,7 +4,7 @@ import { Block } from "payload"
 import { ContactFormBlock } from "./layouts/contactForm1/Config"
 
 export const ContactForm: Block = {
-  slug: "contactForm",
+  slug: "ContactFormComponent",
   labels: {
     singular: "Contact Form Layout",
     plural: "Contact Form Layouts",
