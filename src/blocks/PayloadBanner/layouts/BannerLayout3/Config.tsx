@@ -1,5 +1,6 @@
 import { Block } from "payload"
 import { button } from "@/fields/button"
+import { findImageByFilename } from "@lib/util/findImageByFilename"
 
 export const BannerLayout3: Block = {
   slug: "bannerLayout3",
@@ -16,23 +17,29 @@ export const BannerLayout3: Block = {
       type: "upload",
       relationTo: "media",
       required: true,
+      defaultValue: async ({ req }) =>
+        findImageByFilename(req, "BannerLayout3_hero"),
     },
     {
       name: "eyebrowText",
       label: "Label",
       type: "text",
+      defaultValue: "JEWELRY",
     },
     {
       name: "heading",
       label: "Heading",
       type: "text",
       required: true,
+      defaultValue: "DISCOVER SPARKLE WITH STYLE",
     },
     {
       name: "description",
       label: "Description",
       type: "textarea",
       required: true,
+      defaultValue:
+        "Whether casual or formal, find the perfect jewelry for every occasion with us.",
     },
 
     // ✅ Reusable button group
