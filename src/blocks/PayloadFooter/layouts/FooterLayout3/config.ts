@@ -6,7 +6,7 @@ import type { Block } from "payload"
 export const FooterLayout3: Block = {
   slug: "footer3",
   imageURL:
-    "https://minio.thespecialcharacter.com/payload-website-templates/thumbnail_footerLayout2.png",
+    "https://minio.thespecialcharacter.com/payload-website-templates/thumbnail_footerLayout3.png",
   interfaceName: "FooterLayout3",
   fields: [
     {
@@ -25,8 +25,7 @@ export const FooterLayout3: Block = {
           type: "textarea",
           required: true,
           label: "Newsletter Description",
-          defaultValue:
-            "Get our latest news and promo updates directly to your email address every month.",
+          defaultValue: "Get Monthly Updates",
         },
         button(),
       ],
