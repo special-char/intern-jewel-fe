@@ -19,6 +19,22 @@ export const PayloadSectionLayout1: Block = {
       name: "richTextContent",
       type: "richText",
       required: true,
+      defaultValue: {
+        root: {
+          type: "root",
+          children: [
+            {
+              type: "paragraph",
+              children: [
+                {
+                  type: "text",
+                  text: "We are committed to providing the best service to our customers. Our team of experts works tirelessly to ensure your satisfaction.",
+                },
+              ],
+            },
+          ],
+        },
+      },
     },
   ],
 }
