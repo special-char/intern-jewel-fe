@@ -77,7 +77,6 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       PayloadSectionLayout1,
       ValueListLayout1,
       SeparateBlock,
-      ProductCategoryLayout1,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
