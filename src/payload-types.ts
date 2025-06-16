@@ -492,6 +492,7 @@ export interface HomeLayout2 {
  */
 export interface ThreecolumnLayout {
   title: string;
+  cardDesign: string;
   products?: (number | Product)[] | null;
   button: {
     type?: ('custom' | 'reference') | null;
@@ -1153,6 +1154,7 @@ export interface HomeLayout3 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1653,6 +1655,7 @@ export interface FourcolumnLayoutSelect<T extends boolean = true> {
  */
 export interface ThreecolumnLayoutSelect<T extends boolean = true> {
   title?: T;
+  cardDesign?: T;
   products?: T;
   button?:
     | T
@@ -2211,6 +2214,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;

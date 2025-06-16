@@ -15,6 +15,19 @@ export const ThreecolumnLayout: Block = {
       defaultValue: "Products Collection",
     },
     {
+      name: "cardDesign",
+      type: "text",
+      label: "Card Design",
+      required: true,
+      admin: {
+        components: {
+          Field: {
+            path: "src/components/payload/ProductCardDesign/index.tsx",
+          },
+        },
+      },
+    },
+    {
       name: "products",
       type: "relationship",
       relationTo: "products",
