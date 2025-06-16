@@ -1,11 +1,9 @@
 // import type { StaticImageData } from "next/image"
+// import React from "react"
 
 // import { cn } from "@/utilities/ui"
-// import React from "react"
 // import RichText from "@/components/payload/RichText"
-
 // import type { ImageBlock as ImageBlockProps } from "@/payload-types"
-
 // import { Media } from "@/components/payload/Media"
 
 // type Props = ImageBlockProps & {
@@ -16,38 +14,42 @@
 //   imgClassName?: string
 //   staticImage?: StaticImageData
 //   disableInnerContainer?: boolean
+//   aspectRatio?: string
 // }
 
 // export const ImageBlock: React.FC<Props> = (props) => {
 //   const {
-//     captionClassName,
+//     // captionClassName,
 //     className,
 //     enableGutter = true,
 //     imgClassName,
 //     media,
 //     staticImage,
 //     disableInnerContainer,
-//     aspectRatio = '1280/568',
+//     aspectRatio = '16/6.7',
 //   } = props
 
-//   let caption
-//   if (media && typeof media === "object") caption = media.caption
 
 //   return (
-//     <div
+//     //<section>
+//     <section
 //       className={cn(
-//         "",
-//         {
-//           container: enableGutter,
-//         },
+//         "flex flex-col lg:flex-row lg:items-center px-16",
+//         enableGutter && "container",
 //         className
 //       )}
 //     >
 //       {(media || staticImage) && (
-//         <div className="relative w-full" style={{ aspectRatio: aspectRatio || '1280/568' }}>
+//         <div
+//           className={cn(
+//             "relative w-full overflow-hidden", // Added my-0 to remove vertical margin
+//           )}
+//           style={{ aspectRatio: aspectRatio }}
+//         >
 //           <Media
 //             imgClassName={cn(
-//               "border border-border rounded-[0.0rem] w-full h-full object-cover",
+//               "absolute inset-0 w-full h-full object-cover",
+//               "border border-border rounded-none",
 //               imgClassName
 //             )}
 //             resource={media}
@@ -55,16 +57,17 @@
 //           />
 //         </div>
 //       )}
-//     </div>
+//     </section>
 //   )
 // }
+
+
 import type { StaticImageData } from "next/image"
 import React from "react"
 
-import { cn } from "@/utilities/ui"
-import RichText from "@/components/payload/RichText"
-import type { ImageBlock as ImageBlockProps } from "@/payload-types"
 import { Media } from "@/components/payload/Media"
+import type { ImageBlock as ImageBlockProps } from "@/payload-types"
+import { cn } from "@/utilities/ui"
 
 type Props = ImageBlockProps & {
   breakout?: boolean
@@ -78,20 +81,14 @@ type Props = ImageBlockProps & {
 
 export const ImageBlock: React.FC<Props> = (props) => {
   const {
-    captionClassName,
     className,
     enableGutter = true,
     imgClassName,
     media,
     staticImage,
-    disableInnerContainer,
   } = props
 
-  let caption
-  if (media && typeof media === "object") caption = media.caption
-
   return (
-    //<section>
     <section
       className={cn(
         "flex flex-col lg:flex-row lg:items-center px-16",
@@ -102,13 +99,13 @@ export const ImageBlock: React.FC<Props> = (props) => {
       {(media || staticImage) && (
         <div
           className={cn(
-            "relative w-full overflow-hidden", // relative container
-            "md:aspect-[4/3] aspect-[5/4] lg:aspect-[16/9]"
+            "relative w-full overflow-hidden", 
+            "md:aspect-[4/3] aspect-[5/4] lg:aspect-[16/6.7]"
           )}
         >
           <Media
             imgClassName={cn(
-              "absolute inset-0 w-full h-full object-cover", // ✅ key fix here
+              "absolute inset-0 w-full h-full object-cover", 
               "border border-border rounded-none",
               imgClassName
             )}
@@ -117,12 +114,6 @@ export const ImageBlock: React.FC<Props> = (props) => {
           />
         </div>
       )}
-
-      {/* {caption && (
-        <div className={cn("mt-4 lg:mt-0 lg:ml-6", captionClassName)}>
-          <RichText content={caption} />
-        </div>
-      )} */}
     </section>
   )
 }

@@ -3,7 +3,7 @@ import { Block, Field } from "payload"
 import { MediaBlock } from "@/blocks/MediaBlock/config"
 import { CTASectionLayout1 } from "@/blocks/CTASection/layouts/CTASection1/config"
 import { IntroHeaderLayout1 } from "@/blocks/IntroHeader/layouts/IntroHeader1/config"
-import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWrapper1/config"
+import { PayloadSectionLayout1 } from "@/blocks/PayloadSection/layouts/PayloadSection1/config"
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import { ImageBlock } from "@/blocks/ImageBlock/config"
 import { SeparateBlock } from "@/blocks/Separator/config"
@@ -24,7 +24,7 @@ export const aboutUsBlock = (props: PropsTypes = {}) => {
     blocks: [
       CTASectionLayout1,
       IntroHeaderLayout1,
-      SectionWrapperLayout1,
+      PayloadSectionLayout1,
       ValueListLayout1,
       MediaBlock,
       ImageBlock,

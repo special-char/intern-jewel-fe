@@ -23,13 +23,14 @@ import { Banner } from "@/blocks/Banner/config"
 import { MediaBlock } from "@/blocks/MediaBlock/config"
 import { CTASectionLayout1 } from "@/blocks/CTASection/layouts/CTASection1/config"
 import { IntroHeaderLayout1 } from "@/blocks/IntroHeader/layouts/IntroHeader1/config"
-import { SectionWrapperLayout1 } from "@/blocks/SectionWrapper/layouts/SectionWrapper1/config"
+import { PayloadSectionLayout1 } from "@/blocks/PayloadSection/layouts/PayloadSection1/config"
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/config"
 import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
 import { CategoryLayout2 } from "@/blocks/CategoryShowcase/layouts/CategoryLayout2/config"
 import { ImageBlock } from "@/blocks/ImageBlock/config"
 import { SeparateBlock } from "@/blocks/Separator/config"
+import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingProduct/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -50,6 +51,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       OfferLayout1,
       FourcolumnLayout,
       ThreecolumnLayout,
+      TrendingProduct,
       PromoProductLayout,
       ProductShowcaseLayout,
       ShowcaseSection1,
@@ -70,7 +72,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ImageBlock,
       CTASectionLayout1,
       IntroHeaderLayout1,
-      SectionWrapperLayout1,
+      PayloadSectionLayout1,
       ValueListLayout1,
       SeparateBlock,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
