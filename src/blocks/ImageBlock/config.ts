@@ -11,7 +11,7 @@ export const ImageBlock: Block = {
       relationTo: 'media',
       required: true,
       defaultValue: async ({ req }) =>
-        findImageByFilename(req, "66d5c8bb7dc83b58bb213479_Image-43-p-1602.jpg"),
+        findImageByFilename(req, "about-us-image.jpg"),
     },
   ],
 }
