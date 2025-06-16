@@ -1,63 +1,3 @@
-// import type { StaticImageData } from "next/image"
-
-// import { cn } from "@/utilities/ui"
-// import React from "react"
-// import RichText from "@/components/payload/RichText"
-
-// import type { ImageBlock as ImageBlockProps } from "@/payload-types"
-
-// import { Media } from "@/components/payload/Media"
-
-// type Props = ImageBlockProps & {
-//   breakout?: boolean
-//   captionClassName?: string
-//   className?: string
-//   enableGutter?: boolean
-//   imgClassName?: string
-//   staticImage?: StaticImageData
-//   disableInnerContainer?: boolean
-// }
-
-// export const ImageBlock: React.FC<Props> = (props) => {
-//   const {
-//     captionClassName,
-//     className,
-//     enableGutter = true,
-//     imgClassName,
-//     media,
-//     staticImage,
-//     disableInnerContainer,
-//     aspectRatio = '1280/568',
-//   } = props
-
-//   let caption
-//   if (media && typeof media === "object") caption = media.caption
-
-//   return (
-//     <div
-//       className={cn(
-//         "",
-//         {
-//           container: enableGutter,
-//         },
-//         className
-//       )}
-//     >
-//       {(media || staticImage) && (
-//         <div className="relative w-full" style={{ aspectRatio: aspectRatio || '1280/568' }}>
-//           <Media
-//             imgClassName={cn(
-//               "border border-border rounded-[0.0rem] w-full h-full object-cover",
-//               imgClassName
-//             )}
-//             resource={media}
-//             src={staticImage}
-//           />
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
 import type { StaticImageData } from "next/image"
 import React from "react"
 
@@ -74,21 +14,21 @@ type Props = ImageBlockProps & {
   imgClassName?: string
   staticImage?: StaticImageData
   disableInnerContainer?: boolean
+  aspectRatio?: string
 }
 
 export const ImageBlock: React.FC<Props> = (props) => {
   const {
-    captionClassName,
+    // captionClassName,
     className,
     enableGutter = true,
     imgClassName,
     media,
     staticImage,
     disableInnerContainer,
+    aspectRatio = '16/6.7',
   } = props
 
-  let caption
-  if (media && typeof media === "object") caption = media.caption
 
   return (
     //<section>
@@ -102,13 +42,13 @@ export const ImageBlock: React.FC<Props> = (props) => {
       {(media || staticImage) && (
         <div
           className={cn(
-            "relative w-full overflow-hidden", // relative container
-            "md:aspect-[4/3] aspect-[5/4] lg:aspect-[16/9]"
+            "relative w-full overflow-hidden", // Added my-0 to remove vertical margin
           )}
+          style={{ aspectRatio: aspectRatio }}
         >
           <Media
             imgClassName={cn(
-              "absolute inset-0 w-full h-full object-cover", // ✅ key fix here
+              "absolute inset-0 w-full h-full object-cover",
               "border border-border rounded-none",
               imgClassName
             )}
@@ -117,12 +57,6 @@ export const ImageBlock: React.FC<Props> = (props) => {
           />
         </div>
       )}
-
-      {/* {caption && (
-        <div className={cn("mt-4 lg:mt-0 lg:ml-6", captionClassName)}>
-          <RichText content={caption} />
-        </div>
-      )} */}
     </section>
   )
 }
