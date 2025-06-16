@@ -1,5 +1,5 @@
 import { FooterLayout3 as FooterLayoutType } from "@/payload-types"
-import Newsletter from "../../components/Newsletter4"
+import Newsletter from "../../components/Newsletter3"
 import AddressComponent from "../../components/AddressComponent"
 import FooterLinks from "../../components/FooterLinks"
 import LegalLinks from "../../components/LegalLinks"
