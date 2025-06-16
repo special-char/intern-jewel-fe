@@ -14,7 +14,7 @@ export default async function HeaderLayout3(props: firstLayout) {
     props
 
   return (
-    <header className="sticky top-0 inset-x-0 z-50 text-primary bg-background px-4 py-3 md:px-12 md:py-0 shadow-md">
+    <header className="absolute top-0 inset-x-0 z-50  text-primary px-4 py-3 md:px-12 md:py-0">
       <div className="flex items-center justify-between lg:hidden">
         {/* Mobile - SideNav */}
         <SideNav tree={tree} menu={menu} />
