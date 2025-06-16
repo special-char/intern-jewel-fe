@@ -2,11 +2,11 @@ import { Block } from "payload"
 import { ContactUs1 } from "./Layout/ContactLayout1/Config"
 
 export const ContactUs: Block = {
-  slug: "aboutUs",
+  slug: "contactUs",
   interfaceName: "ContactUs",
   fields: [
     {
-      name: "AboutUs",
+      name: "ContactUs",
       type: "blocks",
       blocks: [ContactUs1],
       maxRows: 1,
