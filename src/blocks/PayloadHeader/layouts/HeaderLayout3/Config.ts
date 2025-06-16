@@ -99,7 +99,7 @@ export const HeaderLayout3: Block = {
       relationTo: "media",
       required: true,
       defaultValue: async ({ req }) =>
-        findImageByFilename(req, "headerLayout3_productThumbnail.avif"),
+        findImageByFilename(req, "headerLayout1_productThumbnail.avif"),
     },
     {
       name: "menu",
