@@ -2,7 +2,6 @@ import { getBaseURL } from "@lib/util/env"
 import { Metadata } from "next"
 import "../../styles/globals.css"
 import { Playfair_Display, DM_Sans } from "next/font/google"
-
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
@@ -23,6 +22,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en" data-mode="light">
       <body className={`${playfair_display.variable} ${dm_sans.variable}`}>
         <main className="relative">{props.children}</main>
+        {/* <TrendingProduct  /> */}
       </body>
     </html>
   )

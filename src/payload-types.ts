@@ -208,6 +208,7 @@ export interface HomeLayout1 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
@@ -453,6 +454,7 @@ export interface HomeLayout2 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
@@ -502,6 +504,42 @@ export interface ThreecolumnLayout {
   id?: string | null;
   blockName?: string | null;
   blockType: 'threecolumnLayout';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrendingProduct".
+ */
+export interface TrendingProduct {
+  title: string;
+  products?: (number | Product)[] | null;
+  button: {
+    type?: ('custom' | 'reference') | null;
+    newTab?: boolean | null;
+    reference?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
+    url?: string | null;
+    label: string;
+  };
+  subtext: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'trendingProduct';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1420,6 +1458,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
@@ -1610,6 +1649,26 @@ export interface ThreecolumnLayoutSelect<T extends boolean = true> {
         url?: T;
         label?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TrendingProduct_select".
+ */
+export interface TrendingProductSelect<T extends boolean = true> {
+  title?: T;
+  products?: T;
+  button?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        label?: T;
+      };
+  subtext?: T;
   id?: T;
   blockName?: T;
 }
@@ -2083,6 +2142,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
