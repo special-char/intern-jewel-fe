@@ -52,6 +52,7 @@ import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/Component"
 import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Component"
 import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Component"
 import Separator from "@/blocks/Separator/Component"
+import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -84,6 +85,7 @@ const blockComponents = {
   showcaseSection: ShowcaseSection,
   showcaseLayout1: ShowcaseSection1,
   showcaseLayout2: ShowcaseSection2,
+  showcaseLayout3: ShowcaseSection3,
   advertismentSection: AdvertismentSection,
   advertismentSection1: AdvertismentSection1,
   advertismentSection2: AdvertismentSection2,
