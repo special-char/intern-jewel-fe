@@ -20,14 +20,14 @@ export const ShowcaseSection3: Block = {
       name: "showcaseHeading",
       type: "text",
       required: true,
-      defaultValue: "Minimal Me",
+      defaultValue: "NEW ARRIVAL",
     },
     {
       name: "showcaseDescription",
       type: "text",
       required: true,
       defaultValue:
-        "Introducing our new minimalist collection. Suitable for the active yet elegant.",
+        "We offer a timeless adornment for those who seek both beauty and grace in meaning.",
     },
     button(),
   ],
