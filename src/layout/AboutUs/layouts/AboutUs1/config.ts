@@ -12,16 +12,31 @@ export const AboutUs1: Block = {
           blockType: "introHeaderBlock",
         },
         {
-          blockType: "section-wrapper-layout-1",
+          blockType: "imageBlock",
         },
         {
-          blockType: "value-list-layout-1",
+          blockType: "payloadSectionLayout1",
+        },
+        {
+          blockType: "separate",
+        },
+        {
+          blockType: "payloadSectionLayout1",
+        },
+        {
+          blockType: "imageBlock",
+        },
+        {
+          blockType: "valueListLayout1",
+        },
+        {
+          blockType: "separate",
         },
         {
           blockType: "ctaSectionBlock",
         },
         {
-          blockType: "mediaBlock",
+          blockType: "separate",
         }
       ],
     }})
