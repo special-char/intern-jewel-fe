@@ -64,7 +64,7 @@ const TrendingProduct = (props: TrendingProductProps) => {
             className="mt-12 inline-flex items-center gap-4 transition-colors"
             style={{ fontSize: '1rem', fontWeight: 600 }}
           >
-            {button?.label || "View All"}
+            {button?.label}
             <span className="inline-block">
               <ArrowRight style={{ color: 'hsl(var(--primary))' }} />
             </span>
