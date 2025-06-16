@@ -1,6 +1,7 @@
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
 
+
 type PropsTypes = {
   overrides?: Partial<Field> | null
   append?: {
@@ -8,7 +9,7 @@ type PropsTypes = {
   } | null
 }
 
-export const ListPageBlocks = (props: PropsTypes = {}) => {
+export const listPageBlocks = (props: PropsTypes = {}) => {
   const fields: Field = {
     name: "children",
     label: "Children",

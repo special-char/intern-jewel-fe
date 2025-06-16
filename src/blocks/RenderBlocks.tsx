@@ -53,6 +53,7 @@ import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Compon
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
 import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
+import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -107,6 +108,7 @@ const blockComponents = {
   ValueListBlock: ValueListLayout1,
   aboutUs1: AboutUs1,
   valueListLayout1: ValueListLayout1,
+  listPage1 : ListPage1,
   separate: Separator,
 }
 
