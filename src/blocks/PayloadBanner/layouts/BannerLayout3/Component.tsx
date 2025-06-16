@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { cn } from "@lib/lib/utils"
 import { Button } from "@lib/components/ui/button"
 
 interface HeroSectionProps {
@@ -48,7 +47,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           priority
         />
         <div
-          className="absolute inset-0 bg-black"
+          className="absolute inset-0 bg-background"
           style={{ opacity: overlayOpacity }}
         />
       </div>
@@ -75,7 +74,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           </p>
           <Button
             variant="animated"
-            className="w-max border border-white text-white"
+            className="w-max border border-primary text-primary"
             size="lg"
           >
             <span className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary rounded-full scale-0 group-hover:scale-[15] transition-transform duration-300 ease-in-out transform -translate-x-1/2 translate-y-1/2" />
