@@ -18,7 +18,7 @@ export const HomeLayout3: Block = {
        
         { blockType: "threecolumnLayout" },
         {
-          blockType: "showcaseLayout2",
+          blockType: "showcaseLayout3",
         },
         { blockType: "offerLayout1" },
         { blockType: "threecolumnLayout" },
