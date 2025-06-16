@@ -510,18 +510,7 @@ export interface ThreecolumnLayout {
  * via the `definition` "TrendingProduct".
  */
 export interface TrendingProduct {
-  title: string;
-  products?: (number | Product)[] | null;
-  button: {
-    type?: ('custom' | 'reference') | null;
-    newTab?: boolean | null;
-    reference?: {
-      relationTo: 'pages';
-      value: number | Page;
-    } | null;
-    url?: string | null;
-    label: string;
-  };
+  heading: string;
   subtext: {
     root: {
       type: string;
@@ -536,6 +525,17 @@ export interface TrendingProduct {
       version: number;
     };
     [k: string]: unknown;
+  };
+  products: (number | Product)[];
+  button: {
+    type?: ('custom' | 'reference') | null;
+    newTab?: boolean | null;
+    reference?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
+    url?: string | null;
+    label: string;
   };
   id?: string | null;
   blockName?: string | null;
@@ -1124,6 +1124,7 @@ export interface HomeLayout3 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
@@ -1645,7 +1646,8 @@ export interface ThreecolumnLayoutSelect<T extends boolean = true> {
  * via the `definition` "TrendingProduct_select".
  */
 export interface TrendingProductSelect<T extends boolean = true> {
-  title?: T;
+  heading?: T;
+  subtext?: T;
   products?: T;
   button?:
     | T
@@ -1656,7 +1658,6 @@ export interface TrendingProductSelect<T extends boolean = true> {
         url?: T;
         label?: T;
       };
-  subtext?: T;
   id?: T;
   blockName?: T;
 }
@@ -2159,6 +2160,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
