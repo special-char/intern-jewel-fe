@@ -12,7 +12,7 @@ export const CTASectionLayout1: Block = {
       name: "title",
       type: "textarea",
       required: true,
-      defaultValue: "Discover Timeless Elegance",
+      defaultValue: "let work with Us!",
     },
     button({
       overrides: {

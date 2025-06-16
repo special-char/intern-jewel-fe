@@ -59,6 +59,16 @@ export const ValueListLayout1: Block = {
       type: "array",
       required: true,
       minRows: 1,
+      defaultValue: [
+        {
+          title: "Trusted Craftsmanship",
+          description: "We use only ethically sourced materials to ensure beauty with integrity."
+        },
+        {
+          title: "Sustainable Practices",
+          description: "Our commitment to environmental responsibility guides every aspect of our production."
+        }
+      ],
       fields: [
         {
           name: "title",
