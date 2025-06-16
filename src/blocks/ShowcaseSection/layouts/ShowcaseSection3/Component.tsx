@@ -23,7 +23,7 @@ export const ShowcaseSection3 = (props: ShowcaseLayout3) => {
         {/* SVG Logo */}
         <div
           className="w-12 h-12 md:w-16 md:h-16 mb-spacing bg-no-repeat bg-contain bg-center opacity-80 filter invert"
-          style={{ backgroundImage: "url('/images/test.svg')" }}
+          style={{ backgroundImage: "url('/images/Flower.svg')" }}
         />
 
         {/* Heading */}
@@ -35,7 +35,7 @@ export const ShowcaseSection3 = (props: ShowcaseLayout3) => {
 
         {/* Description */}
         {showcaseDescription && (
-          <p className="max-w-xxl mb-6 text-body text-muted mb-spacing">
+          <p className="max-w-xxl mb-6 text-white text-body text-muted mb-spacing">
             {showcaseDescription}
           </p>
         )}
