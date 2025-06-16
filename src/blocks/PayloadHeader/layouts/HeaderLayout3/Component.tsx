@@ -14,12 +14,13 @@ export default async function HeaderLayout3(props: firstLayout) {
     props
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50  text-primary px-4 py-3 md:px-12 md:py-0">
+    <header className="absolute top-0 inset-x-0 z-50 text-primary px-4 py-2 md:px-8 lg:px-20">
+      {/* Mobile + Tablet Header */}
       <div className="flex items-center justify-between lg:hidden">
-        {/* Mobile - SideNav */}
+        {/* Mobile SideNav */}
         <SideNav tree={tree} menu={menu} />
 
-        {/* Center - Logo */}
+        {/* Logo Centered */}
         <div className="flex justify-center flex-1">
           <Logo
             desktopLogo={desktopLogo as Media}
@@ -27,8 +28,8 @@ export default async function HeaderLayout3(props: firstLayout) {
           />
         </div>
 
-        {/* Right - Cart */}
-        <div className="ml-auto pl-4">
+        {/* Cart */}
+        <div className="ml-auto pl-2">
           <Suspense
             fallback={
               <LocalizedClientLink
@@ -61,17 +62,17 @@ export default async function HeaderLayout3(props: firstLayout) {
         </div>
       </div>
 
-      {/* Desktop Layout */}
-      <div className="hidden lg:flex items-center justify-between h-24">
-        {/* Left - Navigation Links */}
-        <div className="flex gap-10 items-center">
+      {/* Desktop Header */}
+      <div className="hidden lg:flex items-center justify-between h-20">
+        {/* Left - Navigation */}
+        <div className="flex items-center gap-6 xl:gap-10 min-w-0 flex-shrink">
           <ProductLinks tree={tree} thumbnail={thumbnail as Media} />
           <NavLinks menu={menu} />
           <AboutContact />
         </div>
 
         {/* Center - Logo */}
-        <div className="flex justify-center flex-1">
+        <div className="flex justify-center flex-1 px-4">
           <Logo
             desktopLogo={desktopLogo as Media}
             mobileLogo={mobileLogo as Media}
@@ -79,13 +80,13 @@ export default async function HeaderLayout3(props: firstLayout) {
         </div>
 
         {/* Right - Search, Phone, Cart */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 xl:gap-6">
           {/* Search */}
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <input
               type="text"
               placeholder="Search product..."
-              className="bg-transparent border-none focus:outline-none placeholder-primary text-caption"
+              className="bg-transparent border-b border-primary focus:outline-none placeholder-primary text-caption w-40 md:w-48"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -103,10 +104,10 @@ export default async function HeaderLayout3(props: firstLayout) {
             </svg>
           </div>
 
-          <div className="border-l border-primary/30 h-6" />
+          <div className="hidden md:block border-l border-primary/30 h-6" />
 
           {/* Phone */}
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <Phone className="h-5 text-primary" />
             <LocalizedClientLink
               href={`tel:${contactNumber}`}
@@ -116,7 +117,7 @@ export default async function HeaderLayout3(props: firstLayout) {
             </LocalizedClientLink>
           </div>
 
-          <div className="border-l border-primary/30 h-6" />
+          <div className="hidden md:block border-l border-primary/30 h-6" />
 
           {/* Cart */}
           <Suspense
