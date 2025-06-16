@@ -9,10 +9,10 @@ export const HomeLayout3: Block = {
     layoutBlocks({overrides : {
       defaultValue: [
         {
-          blockType: "banner2",
+          blockType: "bannerLayout3",
         },
         {
-          blockType: "assosiatedBrandLayout2",
+          blockType: "category2",
         }, 
        
        
@@ -21,15 +21,11 @@ export const HomeLayout3: Block = {
           blockType: "showcaseLayout2",
         },
         { blockType: "offerLayout1" },
-        { blockType: "promoProduct" },
-        {blockType: "categoryLayout1"},
+        { blockType: "threecolumnLayout" },
+        { blockType: "trendingProduct" },
         {
-          blockType: "featureLayout2",
+          blockType: "advertismentSection1",
         },
-        {
-          blockType: "advertismentSection2",
-        },
-
         {
           blockType: "faqLayout2",
         },
