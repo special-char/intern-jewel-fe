@@ -1,7 +1,6 @@
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
 
-
 type PropsTypes = {
   overrides?: Partial<Field> | null
   append?: {
@@ -14,9 +13,7 @@ export const listPageBlocks = (props: PropsTypes = {}) => {
     name: "children",
     label: "Children",
     type: "blocks",
-    blocks: [
-      ...(props?.append?.blocks ? props?.append?.blocks : []),
-    ],
+    blocks: [...(props?.append?.blocks ? props?.append?.blocks : [])],
   }
 
   return deepMerge(fields, props?.overrides)
