@@ -79,7 +79,7 @@ export default async function PaginatedProducts({
           return (
             <li key={p.id}>
               {/* <ProductPreview product={p} region={region} /> */}
-              <ProductCard  product={p}  />
+              <ProductCard product={p} />
             </li>
           )
         })}
