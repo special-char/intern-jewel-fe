@@ -20,7 +20,7 @@ const AccordionFunction = ({
       <h2 className="text-heading4 text-center text-foreground">{heading}</h2>
       <Accordion
         type={singleItemOpen ? "single" : "multiple"}
-        collapsible={singleItemOpen || false}
+        collapsible={singleItemOpen ? true : undefined}
         className="flex flex-col gap-4 p-4"
       >
         {accordian.map((item) => (
