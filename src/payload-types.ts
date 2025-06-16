@@ -213,6 +213,7 @@ export interface HomeLayout1 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -459,6 +460,7 @@ export interface HomeLayout2 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -663,6 +665,28 @@ export interface ShowcaseSection2 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'showcaseLayout2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ShowcaseLayout3".
+ */
+export interface ShowcaseLayout3 {
+  image?: (number | null) | Media;
+  showcaseHeading: string;
+  showcaseDescription: string;
+  button: {
+    type?: ('custom' | 'reference') | null;
+    newTab?: boolean | null;
+    reference?: {
+      relationTo: 'pages';
+      value: number | Page;
+    } | null;
+    url?: string | null;
+    label: string;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'showcaseLayout3';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1452,6 +1476,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -1768,6 +1793,26 @@ export interface ShowcaseLayout1Select<T extends boolean = true> {
 export interface ShowcaseSection2Select<T extends boolean = true> {
   image?: T;
   showcaseTagline?: T;
+  showcaseHeading?: T;
+  showcaseDescription?: T;
+  button?:
+    | T
+    | {
+        type?: T;
+        newTab?: T;
+        reference?: T;
+        url?: T;
+        label?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ShowcaseLayout3_select".
+ */
+export interface ShowcaseLayout3Select<T extends boolean = true> {
+  image?: T;
   showcaseHeading?: T;
   showcaseDescription?: T;
   button?:
@@ -2122,6 +2167,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
