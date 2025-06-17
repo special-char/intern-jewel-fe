@@ -32,6 +32,7 @@ import { ImageBlock } from "@/blocks/ImageBlock/config"
 import { SeparateBlock } from "@/blocks/Separator/config"
 import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingProduct/config"
 import { ShowcaseSection3 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection3/config"
+import { threecolumnLayout1 } from "@/blocks/ProductsCollection/layouts/ThreeColumnLayout1/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -52,6 +53,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       OfferLayout1,
       FourcolumnLayout,
       ThreecolumnLayout,
+      threecolumnLayout1,
       TrendingProduct,
       PromoProductLayout,
       ProductShowcaseLayout,

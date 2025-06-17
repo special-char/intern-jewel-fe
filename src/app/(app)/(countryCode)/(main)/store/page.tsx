@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 import StoreTemplate from "@modules/store/templates"
 import { DEFAULT_COUNTRYCODE } from "@lib/constants"
+import { listCategories } from "@lib/data/categories"
 
 export const metadata: Metadata = {
   title: "Store",
@@ -23,13 +24,17 @@ export default async function StorePage(props: Params) {
   const params = await props.params;
   const searchParams = await props.searchParams;
   const { sortBy, page } = searchParams
+   const categories = await listCategories({
+    limit: 100,
+  })
 
   return (
     <StoreTemplate
       sortBy={sortBy}
       page={page}
-      countryCode={DEFAULT_COUNTRYCODE}
-      // countryCode={params.countryCode}
+      countryCode={params.countryCode}
+      categories={categories}
+      searchParams={searchParams}
     />
   )
 }

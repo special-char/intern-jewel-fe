@@ -1,3 +1,4 @@
+import { threecolumnLayout1 } from "@/blocks/ProductsCollection/layouts/ThreeColumnLayout1/config"
 import { layoutBlocks } from "@/fields/layoutBlocks"
 import type { Block } from "payload"
 
@@ -8,7 +9,9 @@ export const ListPage1: Block = {
   fields: [
     layoutBlocks({
       overrides: {
-        defaultValue: [],
+        defaultValue: [
+          threecolumnLayout1
+        ],
       },
     }),
   ],

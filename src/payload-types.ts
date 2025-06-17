@@ -208,6 +208,7 @@ export interface HomeLayout1 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
@@ -457,6 +458,7 @@ export interface HomeLayout2 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
@@ -508,6 +510,44 @@ export interface ThreecolumnLayout {
   id?: string | null;
   blockName?: string | null;
   blockType: 'threecolumnLayout';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ThreecolumnLayout1".
+ */
+export interface ThreecolumnLayout1 {
+  /**
+   * Title to display above the product grid
+   */
+  title?: string | null;
+  /**
+   * Select products to display in the grid
+   */
+  products?: (number | Product)[] | null;
+  /**
+   * Number of products to show per page (1-12)
+   */
+  productsPerPage?: number | null;
+  /**
+   * Show pagination controls when there are multiple pages
+   */
+  showPagination?: boolean | null;
+  /**
+   * Optional call-to-action button
+   */
+  button?: {
+    /**
+     * Button text
+     */
+    label?: string | null;
+    /**
+     * Button link URL
+     */
+    url?: string | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'threecolumnLayout1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1150,6 +1190,7 @@ export interface HomeLayout3 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
@@ -1207,11 +1248,13 @@ export interface ListPage1 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1228,7 +1271,7 @@ export interface ListPage1 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -1251,11 +1294,13 @@ export interface ListPage2 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1272,7 +1317,7 @@ export interface ListPage2 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -1295,11 +1340,13 @@ export interface ListPage3 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1316,7 +1363,7 @@ export interface ListPage3 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -1339,11 +1386,13 @@ export interface ListPage4 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
+        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1360,7 +1409,7 @@ export interface ListPage4 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
       )[]
@@ -1654,6 +1703,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
@@ -1845,6 +1895,24 @@ export interface ThreecolumnLayoutSelect<T extends boolean = true> {
         reference?: T;
         url?: T;
         label?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ThreecolumnLayout1_select".
+ */
+export interface ThreecolumnLayout1Select<T extends boolean = true> {
+  title?: T;
+  products?: T;
+  productsPerPage?: T;
+  showPagination?: T;
+  button?:
+    | T
+    | {
+        label?: T;
+        url?: T;
       };
   id?: T;
   blockName?: T;
@@ -2345,6 +2413,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
@@ -2389,6 +2458,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
@@ -2452,11 +2522,13 @@ export interface ListPage1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2473,7 +2545,7 @@ export interface ListPage1Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -2495,11 +2567,13 @@ export interface ListPage2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2516,7 +2590,7 @@ export interface ListPage2Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -2538,11 +2612,13 @@ export interface ListPage3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2559,7 +2635,7 @@ export interface ListPage3Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
@@ -2581,11 +2657,13 @@ export interface ListPage4Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2602,7 +2680,7 @@ export interface ListPage4Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
       };
