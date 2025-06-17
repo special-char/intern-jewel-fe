@@ -492,6 +492,7 @@ export interface HomeLayout2 {
  */
 export interface ThreecolumnLayout {
   title: string;
+  cardDesign: string;
   products?: (number | Product)[] | null;
   button: {
     type?: ('custom' | 'reference') | null;
@@ -1654,6 +1655,7 @@ export interface FourcolumnLayoutSelect<T extends boolean = true> {
  */
 export interface ThreecolumnLayoutSelect<T extends boolean = true> {
   title?: T;
+  cardDesign?: T;
   products?: T;
   button?:
     | T
