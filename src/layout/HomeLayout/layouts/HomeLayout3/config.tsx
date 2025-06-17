@@ -24,7 +24,7 @@ export const HomeLayout3: Block = {
         { blockType: "threecolumnLayout" },
         { blockType: "trendingProduct" },
         {
-          blockType: "advertismentSection1",
+          blockType: "assosiatedBrandLayout1",
         },
         {
           blockType: "faqLayout2",
