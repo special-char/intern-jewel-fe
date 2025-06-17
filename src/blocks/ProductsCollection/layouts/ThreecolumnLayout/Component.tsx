@@ -4,13 +4,13 @@ import { ThreecolumnLayout as ThreecolumnLayoutTypes } from "@/payload-types"
 import SkeletonProductGrid from "@modules/skeletons/components/skeleton-product-grid"
 
 export const ThreecolumnLayout = (props: ThreecolumnLayoutTypes) => {
-  const { title, products, button } = props
+  const { title, products, button, cardDesign } = props
   return (
     <Suspense fallback={<SkeletonProductGrid />}>
       <ThreeColumnGrid
         title={title}
         products={products}
-        blockType={"design3"}
+        blockType={cardDesign}
         button={button}
       />
     </Suspense>
