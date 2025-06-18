@@ -25,6 +25,22 @@ export const IntroHeaderLayout1: Block = {
       name: "subtitle",
       type: "richText",
       required: false,
+      defaultValue: {
+        root: {
+          type: "root",
+          children: [
+            {
+              type: "paragraph",
+              children: [
+                {
+                  type: "text",
+                  text: "We are committed to providing the best service to our customers. Our team of experts works tirelessly to ensure your satisfaction.",
+                },
+              ],
+            },
+          ],
+        },
+      },
     },
   ],
 }

@@ -1,7 +1,9 @@
 import { AboutUs1 } from "@/layout/AboutUs/layouts/AboutUs1/config"
+import { ContactUs1 } from "@/layout/ContactUs/Layout/ContactLayout1/Config"
 import { HomeLayout1 } from "@/layout/HomeLayout/layouts/HomeLayout1/config"
 import { HomeLayout2 } from "@/layout/HomeLayout/layouts/HomeLayout2/config"
 import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/config"
+import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/config"
 import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/config"
 import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/config"
 import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/config"
@@ -25,10 +27,6 @@ export const defaultBlocks = (props: PropsTypes = {}) => {
       HomeLayout2,
       HomeLayout3,
       AboutUs1,
-      ListPage1,
-      ListPage2,
-      ListPage3,
-      ListPage4,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

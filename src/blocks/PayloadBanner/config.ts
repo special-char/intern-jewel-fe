@@ -12,8 +12,6 @@ export const PayloadBanner: Block = {
     {
       name: "PayloadBanner",
       type: "blocks",
-      blocks: [BannerLayout1, BannerLayout2],
-      defaultValue: [{ blockType: "bannerLayout1" }],
       blocks: [BannerLayout1, BannerLayout2, BannerLayout3],
       defaultValue: [{ blockType: "bannerLayout1" }],
       maxRows: 1,

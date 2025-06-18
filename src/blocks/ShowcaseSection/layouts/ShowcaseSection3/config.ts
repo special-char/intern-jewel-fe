@@ -6,7 +6,7 @@ export const ShowcaseSection3: Block = {
   slug: "showcaseLayout3",
   interfaceName: "ShowcaseLayout3",
   imageURL:
-    "https://minio.thespecialcharacter.com/payload-website-templates/thumbnail_showcaseLayout1.png",
+    "https://minio.thespecialcharacter.com/payload-website-templates/thumbnail_showcaseLayout3.png",
   admin: { group: "Showcase Section" },
   fields: [
     {
@@ -14,20 +14,20 @@ export const ShowcaseSection3: Block = {
       type: "upload",
       relationTo: "media",
       defaultValue: async ({ req }) =>
-        findImageByFilename(req, "homelayout1_showcaseImage1.jpeg"),
+        findImageByFilename(req, "homelayout3_showcaseImgae3.jpg"),
     },
     {
       name: "showcaseHeading",
       type: "text",
       required: true,
-      defaultValue: "Minimal Me",
+      defaultValue: "NEW ARRIVAL",
     },
     {
       name: "showcaseDescription",
       type: "text",
       required: true,
       defaultValue:
-        "Introducing our new minimalist collection. Suitable for the active yet elegant.",
+        "We offer a timeless adornment for those who seek both beauty and grace in meaning.",
     },
     button(),
   ],
