@@ -178,7 +178,7 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ProductDetail1)[];
+  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ProductDetail1 | ProductDetail2 | ProductDetail3)[];
   meta?: {
     title?: string | null;
     /**
@@ -400,7 +400,9 @@ export interface Product {
   status: 'draft' | 'proposed' | 'published' | 'rejected';
   publishedAt?: string | null;
   content?: {
-    layout?: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ProductDetail1)[] | null;
+    layout?:
+      | (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ProductDetail1 | ProductDetail2 | ProductDetail3)[]
+      | null;
   };
   details?: {
     additional_title?: string | null;
@@ -1239,6 +1241,96 @@ export interface ProductDetail1 {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductDetail2".
+ */
+export interface ProductDetail2 {
+  children?:
+    | (
+        | BannerLayout1
+        | BannerLayout2
+        | FeatureLayout1
+        | FeatureLayout2
+        | OfferLayout1
+        | FourcolumnLayout
+        | ThreecolumnLayout
+        | TrendingProduct
+        | PromoProductLayout
+        | ProductShowcase
+        | ShowcaseLayout1
+        | ShowcaseSection2
+        | ShowcaseLayout3
+        | AdvertismentSection1
+        | AdvertismentSection2
+        | BrandLayout1
+        | BrandLayout2
+        | CategoryLayout1
+        | CategoryLayout2
+        | FaqLayout
+        | FaqLayout2
+        | ContentBlock
+        | BannerLayout3
+        | CallToActionBlock
+        | BannerBlock
+        | MediaBlock
+        | ImageBlock
+        | CTASectionBlock
+        | IntroHeaderBlock
+        | PayloadSectionBlock
+        | ValueListBlock
+        | Separate
+      )[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'productDetail2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductDetail3".
+ */
+export interface ProductDetail3 {
+  children?:
+    | (
+        | BannerLayout1
+        | BannerLayout2
+        | FeatureLayout1
+        | FeatureLayout2
+        | OfferLayout1
+        | FourcolumnLayout
+        | ThreecolumnLayout
+        | TrendingProduct
+        | PromoProductLayout
+        | ProductShowcase
+        | ShowcaseLayout1
+        | ShowcaseSection2
+        | ShowcaseLayout3
+        | AdvertismentSection1
+        | AdvertismentSection2
+        | BrandLayout1
+        | BrandLayout2
+        | CategoryLayout1
+        | CategoryLayout2
+        | FaqLayout
+        | FaqLayout2
+        | ContentBlock
+        | BannerLayout3
+        | CallToActionBlock
+        | BannerBlock
+        | MediaBlock
+        | ImageBlock
+        | CTASectionBlock
+        | IntroHeaderBlock
+        | PayloadSectionBlock
+        | ValueListBlock
+        | Separate
+      )[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'productDetail3';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "product_categories".
  */
 export interface ProductCategory {
@@ -1489,6 +1581,8 @@ export interface PagesSelect<T extends boolean = true> {
         homeLayout3?: T | HomeLayout3Select<T>;
         aboutUs1?: T | AboutUs1Select<T>;
         productDetail1?: T | ProductDetail1Select<T>;
+        productDetail2?: T | ProductDetail2Select<T>;
+        productDetail3?: T | ProductDetail3Select<T>;
       };
   meta?:
     | T
@@ -2349,6 +2443,94 @@ export interface ProductDetail1Select<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductDetail2_select".
+ */
+export interface ProductDetail2Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ProductDetail3_select".
+ */
+export interface ProductDetail3Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
@@ -2368,6 +2550,8 @@ export interface ProductsSelect<T extends boolean = true> {
               homeLayout3?: T | HomeLayout3Select<T>;
               aboutUs1?: T | AboutUs1Select<T>;
               productDetail1?: T | ProductDetail1Select<T>;
+              productDetail2?: T | ProductDetail2Select<T>;
+              productDetail3?: T | ProductDetail3Select<T>;
             };
       };
   details?:
