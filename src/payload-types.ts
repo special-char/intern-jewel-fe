@@ -224,6 +224,7 @@ export interface HomeLayout1 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -473,6 +474,7 @@ export interface HomeLayout2 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1174,6 +1176,7 @@ export interface HomeLayout3 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2

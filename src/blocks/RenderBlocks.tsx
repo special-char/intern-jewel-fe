@@ -59,6 +59,7 @@ import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
 import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
 import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
 
+import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
@@ -87,6 +88,7 @@ const blockComponents = {
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,
+  promoProduct2 : PromoProductLayout2,
   productShowcase: ProductShowcaseLayout,
   showcaseSection: ShowcaseSection,
   showcaseLayout1: ShowcaseSection1,
