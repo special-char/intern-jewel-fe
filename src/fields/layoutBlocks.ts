@@ -27,6 +27,9 @@ import { PayloadSectionLayout1 } from "@/blocks/PayloadSection/layouts/PayloadSe
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/config"
 import { BannerLayout3 } from "@/blocks/PayloadBanner/layouts/BannerLayout3/Config"
+import { LetsConnectBlock } from "@/blocks/LetsConnect/layouts/LetsConnect1/Config"
+import { ContactInformationBlock } from "@/blocks/ContactInformation/layouts/contactInformation1/Config"
+import { ContactFormBlock } from "@/blocks/ContactForm/layouts/contactForm1/Config"
 import { CategoryLayout2 } from "@/blocks/CategoryShowcase/layouts/CategoryLayout2/config"
 import { ImageBlock } from "@/blocks/ImageBlock/config"
 import { SeparateBlock } from "@/blocks/Separator/config"
@@ -78,6 +81,10 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       IntroHeaderLayout1,
       PayloadSectionLayout1,
       ValueListLayout1,
+      LetsConnectBlock,
+      ContactInformationBlock,
+      ContactFormBlock,
+
       SeparateBlock,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
