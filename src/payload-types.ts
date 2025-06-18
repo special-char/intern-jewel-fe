@@ -210,6 +210,7 @@ export interface HomeLayout1 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -457,6 +458,7 @@ export interface HomeLayout2 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -582,6 +584,24 @@ export interface PromoProductLayout {
   id?: string | null;
   blockName?: string | null;
   blockType: 'promoProduct';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PromoProduct2".
+ */
+export interface PromoProduct2 {
+  heading: {
+    name: string;
+    description: string;
+  };
+  products: (number | Product)[];
+  promotion?: {
+    promotionImage?: (number | null) | Media;
+    promoTagline?: string | null;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'promoProduct2';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1151,6 +1171,7 @@ export interface HomeLayout3 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1475,6 +1496,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -1725,6 +1747,27 @@ export interface PromoProductLayoutSelect<T extends boolean = true> {
               url?: T;
               label?: T;
             };
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PromoProduct2_select".
+ */
+export interface PromoProduct2Select<T extends boolean = true> {
+  heading?:
+    | T
+    | {
+        name?: T;
+        description?: T;
+      };
+  products?: T;
+  promotion?:
+    | T
+    | {
+        promotionImage?: T;
+        promoTagline?: T;
       };
   id?: T;
   blockName?: T;
@@ -2167,6 +2210,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -2211,6 +2255,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;

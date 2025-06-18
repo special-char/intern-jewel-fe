@@ -53,6 +53,7 @@ import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Comp
 import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Component"
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
+import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -81,6 +82,7 @@ const blockComponents = {
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,
+  promoProduct2 : PromoProductLayout2,
   productShowcase: ProductShowcaseLayout,
   showcaseSection: ShowcaseSection,
   showcaseLayout1: ShowcaseSection1,

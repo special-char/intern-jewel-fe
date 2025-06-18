@@ -1,6 +1,7 @@
 import Design1 from "@/blocks/ProductsCollection/components/productcard-design/Design1"
 import Design2 from "@/blocks/ProductsCollection/components/productcard-design/Design2"
 import Design3 from "@/blocks/ProductsCollection/components/productcard-design/Design3"
+import Design4 from "@/blocks/ProductsCollection/components/productcard-design/Design4"
 
 const getProductComponent = (designType: string) => {
   switch (designType) {
@@ -10,6 +11,8 @@ const getProductComponent = (designType: string) => {
       return Design2
     case "design3":
       return Design3
+    case "design4":
+      return Design4
     default:
       return Design1
   }
