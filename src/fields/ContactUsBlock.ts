@@ -1,9 +1,9 @@
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
 
-import { ContactInformationBlock } from "@/blocks/ContactInformation/Config"
-import { ContactSection } from "@/blocks/LetsConnect/Config"
 import { ContactFormBlock } from "@/blocks/ContactForm/layouts/contactForm1/Config"
+import { ContactInformationBlock } from "@/blocks/ContactInformation/layouts/contactInformation1/Config"
+import { LetsConnectBlock } from "@/blocks/LetsConnect/layouts/LetsConnect1/Config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -19,7 +19,7 @@ export const contactUsBlock = (props: PropsTypes = {}) => {
     type: "blocks",
     blocks: [
       ContactInformationBlock,
-      ContactSection,
+      LetsConnectBlock,
       ContactFormBlock,
 
       ...(props?.append?.blocks ? props?.append?.blocks : []),

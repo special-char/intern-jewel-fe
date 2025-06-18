@@ -21,27 +21,31 @@ export const ContactFormBlock: Block = {
   slug: "contactFormBlock",
   interfaceName: "ContactFormBlock",
   labels: {
-    singular: "Form Block",
-    plural: "Form Blocks",
+    singular: "Contact Form Block",
+    plural: "Contact Form Blocks",
   },
   fields: [
     {
       name: "eyebrow",
-      label: "Eyebrow Text",
+      label: "contact us label",
       type: "text",
       required: false,
+      defaultValue: "CONTACT US",
     },
     {
       name: "title",
       label: "Title",
       type: "text",
       required: false,
+      defaultValue: "Get in Touch",
     },
     {
       name: "description",
       label: "Description",
       type: "textarea",
       required: false,
+      defaultValue:
+        "At Axels, we value your feedback, inquiries, and any assistance you may need. Our dedicated team is ready to provide you with the support you require.\n\nWhether you have questions about our jewelry collections, need assistance with an order, or simply want to share your thoughts, please don't hesitate to reach out to us.",
     },
     {
       name: "formAction",
@@ -64,10 +68,10 @@ export const ContactFormBlock: Block = {
         },
         {
           name: "emailLabel",
-          type: "text",
+          type: "email",
           label: "Email Label",
           required: false,
-          defaultValue: "Email Address",
+          defaultValue: "you@example.com",
         },
         {
           name: "messageLabel",
@@ -81,7 +85,7 @@ export const ContactFormBlock: Block = {
           type: "text",
           label: "Submit Button Label",
           required: false,
-          defaultValue: "Submit",
+          defaultValue: "SUBMIT",
         },
       ],
     },

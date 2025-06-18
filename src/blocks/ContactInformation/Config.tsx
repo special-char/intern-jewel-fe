@@ -1,89 +1,19 @@
 import { Block } from "payload"
+import { ContactInformationBlock } from "./layouts/contactInformation1/Config"
 
-export interface ContactSupportData {
-  title: string
-  description: string
-  email: string
-  phone: string
-  hours: string
-}
-
-export interface ShowroomData {
-  title: string
-  description: string
-  address: string
-  staffDescription: string
-}
-
-export interface ContactInformationProps {
-  heading?: string
-  customerSupport?: ContactSupportData
-  showroom?: ShowroomData
-  className?: string
-}
-
-export const ContactInformationBlock: Block = {
-  slug: "contactInformation",
+export const ContactInformation: Block = {
+  slug: "ContactInformation",
   labels: {
-    singular: "Contact Information",
-    plural: "Contact Information Sections",
+    singular: "Contact Information Layout",
+    plural: "Contact Information Layouts",
   },
   fields: [
     {
-      name: "heading",
-      type: "text",
-      label: "Heading",
-      required: false,
-    },
-    {
-      name: "customerSupport",
-      type: "group",
-      label: "Customer Support",
-      fields: [
-        {
-          name: "title",
-          type: "text",
-        },
-        {
-          name: "description",
-          type: "textarea",
-        },
-        {
-          name: "email",
-          type: "email",
-        },
-        {
-          name: "phone",
-          type: "text",
-        },
-        {
-          name: "hours",
-          type: "textarea",
-        },
-      ],
-    },
-    {
-      name: "showroom",
-      type: "group",
-      label: "Showroom",
-      fields: [
-        {
-          name: "title",
-          type: "text",
-        },
-        {
-          name: "description",
-          type: "textarea",
-        },
-        {
-          name: "address",
-          type: "text",
-        },
-        {
-          name: "staffDescription",
-          type: "textarea",
-        },
-      ],
+      name: "blocks",
+      type: "blocks",
+      blocks: [ContactInformationBlock],
+      label: "Contact Information Sections",
+      required: true,
     },
   ],
 }

@@ -12,6 +12,12 @@ export const ContactUs1: Block = {
           {
             blockType: "contactFormBlock",
           },
+          {
+            blockType: "contactInformationBlock",
+          },
+          {
+            blockType: "letsConnectBlock",
+          },
         ],
       },
     }),
