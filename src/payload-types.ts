@@ -1454,13 +1454,7 @@ export interface ListPage1 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
-        | Separate
-=========
- * via the `definition` "ContactUs1".
- */
-export interface ContactUs1 {
-  children?:
-    | (
+        | LetsConnectBlock
         | {
             heading?: string | null;
             customerSupport?: {
@@ -1480,9 +1474,9 @@ export interface ContactUs1 {
             blockName?: string | null;
             blockType: 'contactInformationBlock';
           }
-        | LetsConnectBlock
         | ContactFormBlock
->>>>>>>>> Temporary merge branch 2
+        | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1597,7 +1591,6 @@ export interface ListPage3 {
         | CTASectionBlock
         | IntroHeaderBlock
         | PayloadSectionBlock
-        | PayloadSectionBlock
         | ValueListBlock
         | LetsConnectBlock
         | {
@@ -1650,7 +1643,6 @@ export interface ListPage4 {
         | ShowcaseLayout1
         | ShowcaseSection2
         | ShowcaseLayout3
-        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1667,7 +1659,6 @@ export interface ListPage4 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | PayloadSectionBlock
         | PayloadSectionBlock
         | ValueListBlock
         | LetsConnectBlock
@@ -1698,40 +1689,6 @@ export interface ListPage4 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'listPage4';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ContactUs1".
- */
-export interface ContactUs1 {
-  children?:
-    | (
-        | {
-            heading?: string | null;
-            customerSupport?: {
-              title?: string | null;
-              description?: string | null;
-              email?: string | null;
-              phone?: string | null;
-              hours?: string | null;
-            };
-            showroom?: {
-              title?: string | null;
-              description?: string | null;
-              address?: string | null;
-              staffDescription?: string | null;
-            };
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'contactInformationBlock';
-          }
-        | LetsConnectBlock
-        | ContactFormBlock
-      )[]
-    | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'contactUs1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -3035,6 +2992,7 @@ export interface ListPage1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3107,6 +3065,7 @@ export interface ListPage2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3179,6 +3138,7 @@ export interface ListPage3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3251,6 +3211,7 @@ export interface ListPage4Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
