@@ -1,4 +1,5 @@
 import { AboutUs1 } from "@/layout/AboutUs/layouts/AboutUs1/config"
+import { ContactUs1 } from "@/layout/ContactUs/Layout/ContactLayout1/Config"
 import { HomeLayout1 } from "@/layout/HomeLayout/layouts/HomeLayout1/config"
 import { HomeLayout2 } from "@/layout/HomeLayout/layouts/HomeLayout2/config"
 import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/config"
@@ -22,7 +23,7 @@ export const defaultBlocks = (props: PropsTypes = {}) => {
       HomeLayout2,
       HomeLayout3,
       AboutUs1,
-      ProductDetail1,
+      ContactUs1,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

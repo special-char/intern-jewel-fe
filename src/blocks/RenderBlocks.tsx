@@ -54,9 +54,15 @@ import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Compon
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
 import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/Component"
+import { ContactFormComponent } from "./ContactForm/layouts/contactForm1/Component"
+import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
+import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
+import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
+
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
+  contactFormBlock: ContactFormComponent,
   mediaBlock: MediaBlock,
   imageBlock: ImageBlock,
   payloadBanner: PayloadBanner,
@@ -109,6 +115,9 @@ const blockComponents = {
   valueListLayout1: ValueListLayout1,
   separate: Separator,
   productDetail1: ProductDetail1,
+  contactUs1: ContactUs,
+  contactInformationBlock: ContactInformationComponent,
+  letsConnectBlock: LetsConnectComponent,
 }
 
 export const RenderBlocks: React.FC<{
