@@ -178,7 +178,17 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ListPage1 | ListPage2 | ListPage3 | ListPage4)[];
+  layout: (
+    | HomeLayout1
+    | HomeLayout2
+    | HomeLayout3
+    | AboutUs1
+    | ContactUs1
+    | ListPage1
+    | ListPage2
+    | ListPage3
+    | ListPage4
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -423,9 +433,18 @@ export interface Product {
   status: 'draft' | 'proposed' | 'published' | 'rejected';
   publishedAt?: string | null;
   content?: {
-    layout?: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ContactUs1)[] | null;
     layout?:
-      | (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ListPage1 | ListPage2 | ListPage3 | ListPage4)[]
+      | (
+          | HomeLayout1
+          | HomeLayout2
+          | HomeLayout3
+          | AboutUs1
+          | ContactUs1
+          | ListPage1
+          | ListPage2
+          | ListPage3
+          | ListPage4
+        )[]
       | null;
   };
   details?: {
@@ -1390,6 +1409,7 @@ export interface ListPage1 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1412,6 +1432,27 @@ export interface ListPage1 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
         | ListPageShowcase2
       )[]
@@ -1436,6 +1477,7 @@ export interface ListPage2 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1458,6 +1500,27 @@ export interface ListPage2 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
         | ListPageShowcase2
       )[]
@@ -1482,6 +1545,7 @@ export interface ListPage3 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1504,6 +1568,27 @@ export interface ListPage3 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
         | ListPageShowcase2
       )[]
@@ -1528,6 +1613,7 @@ export interface ListPage4 {
         | ThreecolumnLayout
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1550,6 +1636,27 @@ export interface ListPage4 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
         | ListPageShowcase2
       )[]
@@ -2848,6 +2955,7 @@ export interface ListPage1Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -2870,6 +2978,32 @@ export interface ListPage1Select<T extends boolean = true> {
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
@@ -2893,6 +3027,7 @@ export interface ListPage2Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -2915,6 +3050,32 @@ export interface ListPage2Select<T extends boolean = true> {
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
@@ -2938,6 +3099,7 @@ export interface ListPage3Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -2960,6 +3122,32 @@ export interface ListPage3Select<T extends boolean = true> {
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
@@ -2983,6 +3171,7 @@ export interface ListPage4Select<T extends boolean = true> {
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
@@ -3005,6 +3194,32 @@ export interface ListPage4Select<T extends boolean = true> {
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
