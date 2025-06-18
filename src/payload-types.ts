@@ -233,6 +233,7 @@ export interface HomeLayout1 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -482,6 +483,7 @@ export interface HomeLayout2 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1138,6 +1140,22 @@ export interface Separate {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageShowcase2".
+ */
+export interface ListPageShowcase2 {
+  categories?:
+    | {
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
+  children?: (BannerLayout1 | ShowcaseSection2 | FaqLayout2)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'listPageShowcase2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout3".
  */
 export interface HomeLayout3 {
@@ -1175,6 +1193,7 @@ export interface HomeLayout3 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1212,6 +1231,7 @@ export interface ListPage1 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1228,9 +1248,10 @@ export interface ListPage1 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1256,6 +1277,7 @@ export interface ListPage2 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1272,9 +1294,10 @@ export interface ListPage2 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1300,6 +1323,7 @@ export interface ListPage3 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1316,9 +1340,10 @@ export interface ListPage3 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1344,6 +1369,7 @@ export interface ListPage4 {
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
         | BrandLayout1
@@ -1360,9 +1386,10 @@ export interface ListPage4 {
         | ImageBlock
         | CTASectionBlock
         | IntroHeaderBlock
-        | SectionWrapperBlock
+        | PayloadSectionBlock
         | ValueListBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1679,6 +1706,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2332,6 +2360,27 @@ export interface SeparateSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageShowcase2_select".
+ */
+export interface ListPageShowcase2Select<T extends boolean = true> {
+  categories?:
+    | T
+    | {
+        label?: T;
+        id?: T;
+      };
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout2_select".
  */
 export interface HomeLayout2Select<T extends boolean = true> {
@@ -2370,6 +2419,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2414,6 +2464,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
         payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2457,6 +2508,7 @@ export interface ListPage1Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2473,9 +2525,10 @@ export interface ListPage1Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2500,6 +2553,7 @@ export interface ListPage2Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2516,9 +2570,10 @@ export interface ListPage2Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2543,6 +2598,7 @@ export interface ListPage3Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2559,9 +2615,10 @@ export interface ListPage3Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2586,6 +2643,7 @@ export interface ListPage4Select<T extends boolean = true> {
         productShowcase?: T | ProductShowcaseSelect<T>;
         showcaseLayout1?: T | ShowcaseLayout1Select<T>;
         showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
         advertismentSection1?: T | AdvertismentSection1Select<T>;
         advertismentSection2?: T | AdvertismentSection2Select<T>;
         assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
@@ -2602,9 +2660,10 @@ export interface ListPage4Select<T extends boolean = true> {
         imageBlock?: T | ImageBlockSelect<T>;
         ctaSectionBlock?: T | CTASectionBlockSelect<T>;
         introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
-        sectionWrapperLayout1?: T | SectionWrapperBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
         valueListLayout1?: T | ValueListBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;

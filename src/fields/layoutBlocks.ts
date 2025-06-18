@@ -32,6 +32,7 @@ import { ImageBlock } from "@/blocks/ImageBlock/config"
 import { SeparateBlock } from "@/blocks/Separator/config"
 import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingProduct/config"
 import { ShowcaseSection3 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection3/config"
+import ListPageShowcase2 from "@/blocks/ListPageShowcase/layouts/ListPageShowcase2/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -77,6 +78,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       PayloadSectionLayout1,
       ValueListLayout1,
       SeparateBlock,
+      ListPageShowcase2,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
