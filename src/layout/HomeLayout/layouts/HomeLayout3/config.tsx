@@ -20,11 +20,11 @@ export const HomeLayout3: Block = {
         {
           blockType: "showcaseLayout3",
         },
-        { blockType: "offerLayout1" },
+        { blockType: "promoProduct2" },
         { blockType: "threecolumnLayout" },
         { blockType: "trendingProduct" },
         {
-          blockType: "advertismentSection1",
+          blockType: "assosiatedBrandLayout1",
         },
         {
           blockType: "faqLayout2",

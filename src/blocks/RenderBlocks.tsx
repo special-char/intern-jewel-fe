@@ -52,6 +52,11 @@ import { CategoryLayout2 } from "./CategoryShowcase/layouts/CategoryLayout2/Comp
 import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Component"
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
+import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/Component"
+import { ContactFormComponent } from "./ContactForm/layouts/contactForm1/Component"
+import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
+import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
+import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
 import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
 import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/Component"
@@ -59,9 +64,11 @@ import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/Component"
 import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/Component"
 import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Component"
 
+import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
+  contactFormBlock: ContactFormComponent,
   mediaBlock: MediaBlock,
   imageBlock: ImageBlock,
   payloadBanner: PayloadBanner,
@@ -86,6 +93,7 @@ const blockComponents = {
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,
+  promoProduct2 : PromoProductLayout2,
   productShowcase: ProductShowcaseLayout,
   showcaseSection: ShowcaseSection,
   showcaseLayout1: ShowcaseSection1,
@@ -118,6 +126,10 @@ const blockComponents = {
   listPage4 : ListPage4,
   listPageShowcase2 : ListPageShowcase2,
   separate: Separator,
+  productDetail1: ProductDetail1,
+  contactUs1: ContactUs,
+  contactInformationBlock: ContactInformationComponent,
+  letsConnectBlock: LetsConnectComponent,
 }
 
 export const RenderBlocks: React.FC<{

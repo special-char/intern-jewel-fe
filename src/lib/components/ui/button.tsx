@@ -22,7 +22,7 @@ const buttonVariants = cva(
         animated:
           "relative bg-transperent overflow-hidden ring-1 ring-secondary hover:ring-primary group",
         design3:
-          "relative bg-secondary text-secondary-foreground overflow-hidden transition-all duration-300 ease-in-out",
+          "relative bg-secondary text-secondary-foreground dark:bg-white dark:text-black group-hover:text-white overflow-hidden transition-all duration-300 ease-in-out",
       },
       size: {
         default: "h-9 px-4 py-2",
