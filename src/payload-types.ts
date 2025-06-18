@@ -178,7 +178,17 @@ export interface Media {
 export interface Page {
   id: number;
   title: string;
-  layout: (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1)[];
+  layout: (
+    | HomeLayout1
+    | HomeLayout2
+    | HomeLayout3
+    | AboutUs1
+    | ContactUs1
+    | ListPage1
+    | ListPage2
+    | ListPage3
+    | ListPage4
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -256,6 +266,7 @@ export interface HomeLayout1 {
           }
         | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -424,7 +435,17 @@ export interface Product {
   publishedAt?: string | null;
   content?: {
     layout?:
-      | (HomeLayout1 | HomeLayout2 | HomeLayout3 | AboutUs1 | ListPage1 | ListPage2 | ListPage3 | ListPage4)[]
+      | (
+          | HomeLayout1
+          | HomeLayout2
+          | HomeLayout3
+          | AboutUs1
+          | ContactUs1
+          | ListPage1
+          | ListPage2
+          | ListPage3
+          | ListPage4
+        )[]
       | null;
   };
   details?: {
@@ -528,6 +549,7 @@ export interface HomeLayout2 {
           }
         | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1263,6 +1285,22 @@ export interface Separate {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageShowcase2".
+ */
+export interface ListPageShowcase2 {
+  categories?:
+    | {
+        label: string;
+        id?: string | null;
+      }[]
+    | null;
+  children?: (BannerLayout1 | ShowcaseSection2 | FaqLayout2)[] | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'listPageShowcase2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout3".
  */
 export interface HomeLayout3 {
@@ -1323,6 +1361,7 @@ export interface HomeLayout3 {
           }
         | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1343,6 +1382,40 @@ export interface AboutUs1 {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactUs1".
+ */
+export interface ContactUs1 {
+  children?:
+    | (
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | LetsConnectBlock
+        | ContactFormBlock
+      )[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contactUs1';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ListPage1".
  */
 export interface ListPage1 {
@@ -1358,6 +1431,7 @@ export interface ListPage1 {
         | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1381,6 +1455,34 @@ export interface ListPage1 {
         | PayloadSectionBlock
         | ValueListBlock
         | Separate
+=========
+ * via the `definition` "ContactUs1".
+ */
+export interface ContactUs1 {
+  children?:
+    | (
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | LetsConnectBlock
+        | ContactFormBlock
+>>>>>>>>> Temporary merge branch 2
       )[]
     | null;
   id?: string | null;
@@ -1404,6 +1506,7 @@ export interface ListPage2 {
         | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1426,7 +1529,29 @@ export interface ListPage2 {
         | IntroHeaderBlock
         | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1450,6 +1575,7 @@ export interface ListPage3 {
         | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
@@ -1471,8 +1597,31 @@ export interface ListPage3 {
         | CTASectionBlock
         | IntroHeaderBlock
         | PayloadSectionBlock
+        | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1496,9 +1645,11 @@ export interface ListPage4 {
         | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
+        | PromoProduct2
         | ProductShowcase
         | ShowcaseLayout1
         | ShowcaseSection2
+        | ShowcaseLayout3
         | ShowcaseLayout3
         | AdvertismentSection1
         | AdvertismentSection2
@@ -1517,8 +1668,31 @@ export interface ListPage4 {
         | CTASectionBlock
         | IntroHeaderBlock
         | PayloadSectionBlock
+        | PayloadSectionBlock
         | ValueListBlock
+        | LetsConnectBlock
+        | {
+            heading?: string | null;
+            customerSupport?: {
+              title?: string | null;
+              description?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              hours?: string | null;
+            };
+            showroom?: {
+              title?: string | null;
+              description?: string | null;
+              address?: string | null;
+              staffDescription?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contactInformationBlock';
+          }
+        | ContactFormBlock
         | Separate
+        | ListPageShowcase2
       )[]
     | null;
   id?: string | null;
@@ -1898,6 +2072,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2623,6 +2798,27 @@ export interface SeparateSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageShowcase2_select".
+ */
+export interface ListPageShowcase2Select<T extends boolean = true> {
+  categories?:
+    | T
+    | {
+        label?: T;
+        id?: T;
+      };
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "HomeLayout2_select".
  */
 export interface HomeLayout2Select<T extends boolean = true> {
@@ -2689,6 +2885,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2761,6 +2958,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
       };
   id?: T;
   blockName?: T;
@@ -2786,6 +2984,332 @@ export interface AboutUs1Select<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactUs1_select".
+ */
+export interface ContactUs1Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage1_select".
+ */
+export interface ListPage1Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage2_select".
+ */
+export interface ListPage2Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage3_select".
+ */
+export interface ListPage3Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPage4_select".
+ */
+export interface ListPage4Select<T extends boolean = true> {
+  children?:
+    | T
+    | {
+        bannerLayout1?: T | BannerLayout1Select<T>;
+        banner2?: T | BannerLayout2Select<T>;
+        featureLayout1?: T | FeatureLayout1Select<T>;
+        featureLayout2?: T | FeatureLayout2Select<T>;
+        offerLayout1?: T | OfferLayout1Select<T>;
+        fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
+        threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
+        trendingProduct?: T | TrendingProductSelect<T>;
+        promoProduct?: T | PromoProductLayoutSelect<T>;
+        promoProduct2?: T | PromoProduct2Select<T>;
+        productShowcase?: T | ProductShowcaseSelect<T>;
+        showcaseLayout1?: T | ShowcaseLayout1Select<T>;
+        showcaseLayout2?: T | ShowcaseSection2Select<T>;
+        showcaseLayout3?: T | ShowcaseLayout3Select<T>;
+        advertismentSection1?: T | AdvertismentSection1Select<T>;
+        advertismentSection2?: T | AdvertismentSection2Select<T>;
+        assosiatedBrandLayout1?: T | BrandLayout1Select<T>;
+        assosiatedBrandLayout2?: T | BrandLayout2Select<T>;
+        categoryLayout1?: T | CategoryLayout1Select<T>;
+        category2?: T | CategoryLayout2Select<T>;
+        faqLayout?: T | FaqLayoutSelect<T>;
+        faqLayout2?: T | FaqLayout2Select<T>;
+        content?: T | ContentBlockSelect<T>;
+        bannerLayout3?: T | BannerLayout3Select<T>;
+        cta?: T | CallToActionBlockSelect<T>;
+        banner?: T | BannerBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+        imageBlock?: T | ImageBlockSelect<T>;
+        ctaSectionBlock?: T | CTASectionBlockSelect<T>;
+        introHeaderBlock?: T | IntroHeaderBlockSelect<T>;
+        payloadSectionLayout1?: T | PayloadSectionBlockSelect<T>;
+        valueListLayout1?: T | ValueListBlockSelect<T>;
+        letsConnectBlock?: T | LetsConnectBlockSelect<T>;
+        contactInformationBlock?:
+          | T
+          | {
+              heading?: T;
+              customerSupport?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    email?: T;
+                    phone?: T;
+                    hours?: T;
+                  };
+              showroom?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    address?: T;
+                    staffDescription?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        contactFormBlock?: T | ContactFormBlockSelect<T>;
+        separate?: T | SeparateSelect<T>;
+        listPageShowcase2?: T | ListPageShowcase2Select<T>;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
@@ -2804,6 +3328,11 @@ export interface ProductsSelect<T extends boolean = true> {
               homeLayout2?: T | HomeLayout2Select<T>;
               homeLayout3?: T | HomeLayout3Select<T>;
               aboutUs1?: T | AboutUs1Select<T>;
+              contactUs1?: T | ContactUs1Select<T>;
+              listPage1?: T | ListPage1Select<T>;
+              listPage2?: T | ListPage2Select<T>;
+              listPage3?: T | ListPage3Select<T>;
+              listPage4?: T | ListPage4Select<T>;
             };
       };
   details?:

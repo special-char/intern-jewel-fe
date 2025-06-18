@@ -57,6 +57,8 @@ import { ContactFormComponent } from "./ContactForm/layouts/contactForm1/Compone
 import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
 import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
 import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
+
+import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Component"
 import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
 import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/Component"
@@ -125,6 +127,7 @@ const blockComponents = {
   listPage2 : ListPage2,
   listPage3 : ListPage3,
   listPage4 : ListPage4,
+  listPageShowcase2 : ListPageShowcase2,
   separate: Separator,
   productDetail1: ProductDetail1,
   contactUs1: ContactUs,

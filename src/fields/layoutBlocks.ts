@@ -36,6 +36,7 @@ import { SeparateBlock } from "@/blocks/Separator/config"
 import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingProduct/config"
 import { ShowcaseSection3 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection3/config"
 import { PromoProductLayout2 } from "@/blocks/ProductsCollection/layouts/PromoProductLayout2/config"
+import ListPageShowcase2 from "@/blocks/ListPageShowcase/layouts/ListPageShowcase2/config"
 import { threecolumnLayout1 } from "@/blocks/ProductsCollection/layouts/ThreeColumnLayout1/config"
 
 type PropsTypes = {
@@ -88,6 +89,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ContactFormBlock,
 
       SeparateBlock,
+      ListPageShowcase2,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
