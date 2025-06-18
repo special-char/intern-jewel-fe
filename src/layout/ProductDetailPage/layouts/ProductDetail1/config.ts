@@ -8,7 +8,14 @@ export const ProductDetail1: Block = {
   fields: [
     layoutBlocks({
       overrides: {
-        defaultValue: [],
+        defaultValue: [
+          {
+            blockType: "bannerLayout1",
+          },
+          {
+            blockType: "featureLayout1",
+          },
+        ],
       },
     }),
   ],
