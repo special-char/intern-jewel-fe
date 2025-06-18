@@ -59,7 +59,6 @@ import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
 import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
 import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
 
-import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/Component"
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 const blockComponents = {
   content: ContentBlock,
@@ -121,7 +120,6 @@ const blockComponents = {
   contactUs1: ContactUs,
   contactInformationBlock: ContactInformationComponent,
   letsConnectBlock: LetsConnectComponent,
-  productDetail1: ProductDetail1,
 }
 
 export const RenderBlocks: React.FC<{
