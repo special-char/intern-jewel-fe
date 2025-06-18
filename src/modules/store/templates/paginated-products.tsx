@@ -67,8 +67,6 @@ export default async function PaginatedProducts({
 
   const totalPages = Math.ceil(count / PRODUCT_LIMIT)
 
-  console.log(products, "productssss")
-
   return (
     <>
       <ul
@@ -79,7 +77,7 @@ export default async function PaginatedProducts({
           return (
             <li key={p.id}>
               {/* <ProductPreview product={p} region={region} /> */}
-              <ProductCard  product={p}  />
+              <ProductCard product={p} />
             </li>
           )
         })}
