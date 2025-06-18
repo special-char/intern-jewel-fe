@@ -54,6 +54,8 @@ import TrendingProduct from "./ProductsCollection/layouts/TrendingProduct/Compon
 import Separator from "@/blocks/Separator/Component"
 import { ShowcaseSection3 } from "./ShowcaseSection/layouts/ShowcaseSection3/Component"
 import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/Component"
+import { ProductDetail2 } from "@/layout/ProductDetailPage/layouts/ProductDetail2/Component"
+import { ProductDetail3 } from "@/layout/ProductDetailPage/layouts/ProductDetail3/Component"
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
@@ -109,6 +111,8 @@ const blockComponents = {
   valueListLayout1: ValueListLayout1,
   separate: Separator,
   productDetail1: ProductDetail1,
+  productDetail2: ProductDetail2,
+  productDetail3: ProductDetail3,
 }
 
 export const RenderBlocks: React.FC<{

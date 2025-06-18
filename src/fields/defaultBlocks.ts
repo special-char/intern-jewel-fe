@@ -3,6 +3,8 @@ import { HomeLayout1 } from "@/layout/HomeLayout/layouts/HomeLayout1/config"
 import { HomeLayout2 } from "@/layout/HomeLayout/layouts/HomeLayout2/config"
 import { HomeLayout3 } from "@/layout/HomeLayout/layouts/HomeLayout3/config"
 import { ProductDetail1 } from "@/layout/ProductDetailPage/layouts/ProductDetail1/config"
+import { ProductDetail2 } from "@/layout/ProductDetailPage/layouts/ProductDetail2/config"
+import { ProductDetail3 } from "@/layout/ProductDetailPage/layouts/ProductDetail3/config"
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
 
@@ -23,6 +25,8 @@ export const defaultBlocks = (props: PropsTypes = {}) => {
       HomeLayout3,
       AboutUs1,
       ProductDetail1,
+      ProductDetail2,
+      ProductDetail3,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
