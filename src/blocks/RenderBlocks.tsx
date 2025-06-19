@@ -68,6 +68,7 @@ import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Comp
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Component"
 import { ShowcaseSection5 } from "./ShowcaseSection/layouts/ShowcaseSection5/Component"
+import ListPageHeaderLayout1 from "./ListPageHeader/layouts/ListPageHeaderLayout1/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -97,7 +98,7 @@ const blockComponents = {
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,
-  promoProduct2 : PromoProductLayout2,
+  promoProduct2: PromoProductLayout2,
   productShowcase: ProductShowcaseLayout,
   showcaseSection: ShowcaseSection,
   showcaseLayout1: ShowcaseSection1,
@@ -126,11 +127,11 @@ const blockComponents = {
   ValueListBlock: ValueListLayout1,
   aboutUs1: AboutUs1,
   valueListLayout1: ValueListLayout1,
-  listPage1 : ListPage1,
-  listPage2 : ListPage2,
-  listPage3 : ListPage3,
-  listPage4 : ListPage4,
-  listPageShowcase2 : ListPageShowcase2,
+  listPage1: ListPage1,
+  listPage2: ListPage2,
+  listPage3: ListPage3,
+  listPage4: ListPage4,
+  listPageShowcase2: ListPageShowcase2,
   separate: Separator,
   productDetail1: ProductDetail1,
   contactUs1: ContactUs,
@@ -138,6 +139,7 @@ const blockComponents = {
   letsConnectBlock: LetsConnectComponent,
   productCard: ProductCardLayout1,
   
+  listPageHeaderLayout1: ListPageHeaderLayout1,
 }
 
 export const RenderBlocks: React.FC<{
