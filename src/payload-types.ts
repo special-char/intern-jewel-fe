@@ -1279,7 +1279,7 @@ export interface ListPageShowcase2 {
         id?: string | null;
       }[]
     | null;
-  children?: (BannerLayout1 | ShowcaseSection2 | FaqLayout2)[] | null;
+  children?: (BannerLayout1 | FaqLayout2)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'listPageShowcase2';
@@ -2791,7 +2791,6 @@ export interface ListPageShowcase2Select<T extends boolean = true> {
     | T
     | {
         bannerLayout1?: T | BannerLayout1Select<T>;
-        showcaseLayout2?: T | ShowcaseSection2Select<T>;
         faqLayout2?: T | FaqLayout2Select<T>;
       };
   id?: T;

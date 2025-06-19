@@ -3,47 +3,29 @@ import clsx from "clsx"
 import { RenderBlocks } from "@/blocks/RenderBlocks"
 import { HttpTypes } from "@medusajs/types"
 
-// Custom Types (No payload-types dependency)
-interface Category {
-  label: string
-}
-
-interface ShowcaseBlock {
-  categories?: Category[]
-  children?: any[]
-}
-
-type Props = {
+interface Props {
   region: HttpTypes.StoreRegion
-  ShowcaseBlock: ShowcaseBlock
+  children?: any[]
+  categories?: { label: string }[]
 }
 
-const fallbackCategories = [
-  "All Products",
-  "Earrings",
-  "Necklace",
-  "Bracelet",
-]
+const fallbackCategories = ["All Products", "Earrings", "Necklace", "Bracelet"]
 
-const ListPageShowcase2: React.FC<Props> = ({ region, ShowcaseBlock }) => {
-  const blocks = ShowcaseBlock
-  const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
-  const categories =
-    ShowcaseBlock?.categories?.map((cat) => cat.label) ?? fallbackCategories
-
-    console.log(ShowcaseBlock,"hello")
+const ListPageShowcase2: React.FC<Props> = ({ region, children, categories }) => {
+  const blocks = children
+  const hasBlocks = Array.isArray(blocks) && blocks.length > 0
+  const categoryList = categories?.map((cat) => cat.label) ?? fallbackCategories
 
   return (
-    <div className="grid grid-cols-[250px_1fr] gap-x-10 px-container py-10">
-      {/* Left Fixed Sidebar */}
+    <div className="grid grid-cols-1 md:grid-cols-[20%_1fr] md:px-container py-10">
       <aside className="sticky top-24 self-start h-max">
         <ul className="space-y-4">
-          {categories?.map((cat, idx) => (
+          {categoryList.map((cat, idx) => (
             <li
               key={idx}
               className={clsx(
-                "text-gray-700 uppercase tracking-wide text-sm",
-                idx === 0 && "border-l-2 border-yellow-600 pl-2 font-semibold"
+                "text-gray-700 uppercase tracking-wide text-md",
+                idx === 0 && "border-l-2 border-yellow-600 font-semibold"
               )}
             >
               {cat}
@@ -52,10 +34,12 @@ const ListPageShowcase2: React.FC<Props> = ({ region, ShowcaseBlock }) => {
         </ul>
       </aside>
 
-      {/* Right Dynamic Content Area */}
       <section className="flex flex-col space-y-12">
-        <div>Hello</div>
-        {hasBlocks && <RenderBlocks blocks={blocks} region={region} />}
+        {hasBlocks ? (
+          <RenderBlocks blocks={blocks} region={region} />
+        ) : (
+          <p className="text-sm text-muted">No blocks found</p>
+        )}
       </section>
     </div>
   )
