@@ -27,6 +27,7 @@ import { ProductShowcaseLayout } from "./ProductsCollection/layouts/ProductShowc
 import { ShowcaseSection } from "./ShowcaseSection/Component"
 import { ShowcaseSection1 } from "./ShowcaseSection/layouts/ShowcaseSection1/Component"
 import { ShowcaseSection2 } from "./ShowcaseSection/layouts/ShowcaseSection2/Component"
+import { ShowcaseSection4 } from "./ShowcaseSection/layouts/ShowcaseSection4/Component"
 import { FourcolumnLayout } from "./ProductsCollection/layouts/FourcolumnLayout/Component"
 import { PromoProductLayout } from "./ProductsCollection/layouts/PromoProductLayout/Component"
 import { AdvertismentSection } from "./AdvertismentSection/Component"
@@ -63,6 +64,8 @@ import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
 import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/Component"
 import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/Component"
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
+import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Component"
+
 import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/Component"
 import { PaginationLayout } from "./ProductsCollection/layouts/PaginationLayout/Component"
 
@@ -101,6 +104,7 @@ const blockComponents = {
   showcaseLayout1: ShowcaseSection1,
   showcaseLayout2: ShowcaseSection2,
   showcaseLayout3: ShowcaseSection3,
+  showcaseLayout4: ShowcaseSection4,
   advertismentSection: AdvertismentSection,
   advertismentSection1: AdvertismentSection1,
   advertismentSection2: AdvertismentSection2,
@@ -132,6 +136,8 @@ const blockComponents = {
   contactUs1: ContactUs,
   contactInformationBlock: ContactInformationComponent,
   letsConnectBlock: LetsConnectComponent,
+  productCard: ProductCardLayout1,
+  
 }
 
 export const RenderBlocks: React.FC<{

@@ -37,6 +37,8 @@ import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingPro
 import { ShowcaseSection3 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection3/config"
 import { PromoProductLayout2 } from "@/blocks/ProductsCollection/layouts/PromoProductLayout2/config"
 import ListPageShowcase2 from "@/blocks/ListPageShowcase/layouts/ListPageShowcase2/config"
+import { ProductCardLayout1 } from "@/blocks/ProductCard/layouts/ProductCardLayout1/config"
+import { ShowcaseSection4 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection4/config"
 import { PaginationLayout } from "@/blocks/ProductsCollection/layouts/PaginationLayout/config"
 
 type PropsTypes = {
@@ -89,6 +91,8 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ContactFormBlock,
       SeparateBlock,
       ListPageShowcase2,
+      ProductCardLayout1,
+      ShowcaseSection4,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

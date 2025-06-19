@@ -9,7 +9,7 @@ export const ListPage: Block = {
   interfaceName: "ListPage",
   fields: [
     {
-      name: "ListPage",
+      name: "listPage",
       type: "blocks",
       blocks: [ListPage1, ListPage2, ListPage3, ListPage4],
       maxRows: 1,
