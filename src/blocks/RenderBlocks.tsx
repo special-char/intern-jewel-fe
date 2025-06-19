@@ -57,16 +57,13 @@ import { ContactFormComponent } from "./ContactForm/layouts/contactForm1/Compone
 import { ContactUs } from "@/layout/ContactUs/Layout/ContactLayout1/Component"
 import { LetsConnectComponent } from "./LetsConnect/layouts/LetsConnect1/Component"
 import { ContactInformationComponent } from "./ContactInformation/layouts/contactInformation1/Component"
-
 import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Component"
 import { BannerLayout3 } from "./PayloadBanner/layouts/BannerLayout3/Component"
 import { ListPage1 } from "@/layout/Listpage/layouts/ListPage1/Component"
 import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/Component"
-import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/Component"
 import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/Component"
-import { ThreecolumnLayout1 } from "./ProductsCollection/layouts/ThreeColumnLayout1/Component"
-
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
+import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/Component"
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
@@ -92,7 +89,6 @@ const blockComponents = {
   offerLayout1: OfferLayout1,
   productsCollection: ProductsCollection,
   threecolumnLayout: ThreecolumnLayout,
-  threecolumnLayout1: ThreecolumnLayout1,
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,

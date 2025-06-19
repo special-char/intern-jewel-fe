@@ -37,7 +37,6 @@ import { TrendingProduct } from "@/blocks/ProductsCollection/layouts/TrendingPro
 import { ShowcaseSection3 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection3/config"
 import { PromoProductLayout2 } from "@/blocks/ProductsCollection/layouts/PromoProductLayout2/config"
 import ListPageShowcase2 from "@/blocks/ListPageShowcase/layouts/ListPageShowcase2/config"
-import { threecolumnLayout1 } from "@/blocks/ProductsCollection/layouts/ThreeColumnLayout1/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -58,7 +57,6 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       OfferLayout1,
       FourcolumnLayout,
       ThreecolumnLayout,
-      threecolumnLayout1,
       TrendingProduct,
       PromoProductLayout,
       PromoProductLayout2,
@@ -87,7 +85,6 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       LetsConnectBlock,
       ContactInformationBlock,
       ContactFormBlock,
-
       SeparateBlock,
       ListPageShowcase2,
       ...(props?.append?.blocks ? props?.append?.blocks : []),

@@ -218,7 +218,6 @@ export interface HomeLayout1 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -501,7 +500,6 @@ export interface HomeLayout2 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -577,24 +575,6 @@ export interface ThreecolumnLayout {
   id?: string | null;
   blockName?: string | null;
   blockType: 'threecolumnLayout';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ThreecolumnLayout1".
- */
-export interface ThreecolumnLayout1 {
-  products?: (number | Product)[] | null;
-  /**
-   * Number of products to show per page
-   */
-  productsPerPage?: number | null;
-  /**
-   * Show pagination controls
-   */
-  showPagination?: boolean | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'threecolumnLayout1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1313,7 +1293,6 @@ export interface HomeLayout3 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -1428,7 +1407,6 @@ export interface ListPage1 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -1497,7 +1475,6 @@ export interface ListPage2 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -1566,7 +1543,6 @@ export interface ListPage3 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -1635,7 +1611,6 @@ export interface ListPage4 {
         | OfferLayout1
         | FourcolumnLayout
         | ThreecolumnLayout
-        | ThreecolumnLayout1
         | TrendingProduct
         | PromoProductLayout
         | PromoProduct2
@@ -1976,7 +1951,6 @@ export interface HomeLayout1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -2198,17 +2172,6 @@ export interface ThreecolumnLayoutSelect<T extends boolean = true> {
         url?: T;
         label?: T;
       };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ThreecolumnLayout1_select".
- */
-export interface ThreecolumnLayout1Select<T extends boolean = true> {
-  products?: T;
-  productsPerPage?: T;
-  showPagination?: T;
   id?: T;
   blockName?: T;
 }
@@ -2789,7 +2752,6 @@ export interface HomeLayout2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -2862,7 +2824,6 @@ export interface HomeLayout3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -2992,7 +2953,6 @@ export interface ListPage1Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3065,7 +3025,6 @@ export interface ListPage2Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3138,7 +3097,6 @@ export interface ListPage3Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
@@ -3211,7 +3169,6 @@ export interface ListPage4Select<T extends boolean = true> {
         offerLayout1?: T | OfferLayout1Select<T>;
         fourcolumnLayout?: T | FourcolumnLayoutSelect<T>;
         threecolumnLayout?: T | ThreecolumnLayoutSelect<T>;
-        threecolumnLayout1?: T | ThreecolumnLayout1Select<T>;
         trendingProduct?: T | TrendingProductSelect<T>;
         promoProduct?: T | PromoProductLayoutSelect<T>;
         promoProduct2?: T | PromoProduct2Select<T>;
