@@ -65,6 +65,8 @@ import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/Component"
 import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Component"
 
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
+import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Component"
+
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
@@ -130,6 +132,7 @@ const blockComponents = {
   contactUs1: ContactUs,
   contactInformationBlock: ContactInformationComponent,
   letsConnectBlock: LetsConnectComponent,
+  productCard: ProductCardLayout1,
 }
 
 export const RenderBlocks: React.FC<{
