@@ -2,12 +2,12 @@ import { button } from "@/fields/button"
 import { findImageByFilename } from "@lib/util/findImageByFilename"
 import type { Block } from "payload"
 
-export const ListBanner1: Block = {
-  slug: "listBannerLayout1",
-  interfaceName: "ListBannerLayout1",
+export const ShowcaseSection4: Block = {
+  slug: "showcaseLayout4",
+  interfaceName: "ShowcaseLayout4",
   imageURL:
     "https://minio.thespecialcharacter.com/payload-website-templates/thumbnail_showcaseLayout1.png",
-  admin: { group: "List Banner Section" },
+  admin: { group: "Showcase Section" },
   fields: [
     {
       name: "image",
@@ -18,16 +18,7 @@ export const ListBanner1: Block = {
         findImageByFilename(req, "homelayout1_showcaseImage1.jpeg"),
     },
     {
-      name: "listBannerTagline",
-      type: "text",
-      required: true,
-      defaultValue: "NEW COLLECTION",
-      admin: {
-        description: "Displayed as uppercase text above the heading"
-      }
-    },
-    {
-      name: "listBannerHeading",
+      name: "showcaseHeading",
       type: "text",
       required: true,
       defaultValue: "Minimal Me",
@@ -36,7 +27,7 @@ export const ListBanner1: Block = {
       }
     },
     {
-      name: "listBannerDescription",
+      name: "showcaseDescription",
       type: "textarea",
       required: true,
       defaultValue: "Introducing our new minimalist collection. Suitable for the active yet elegant.",
