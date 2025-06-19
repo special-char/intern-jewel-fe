@@ -57,12 +57,12 @@ export const ProductPromo2 = async ({
         <div className="absolute inset-0">
           <div className="absolute bottom-6 right-6">
             {promotion?.promoTagline && (
-              <p className="bg-black/90 text-white text-small-semi tracking-widest  px-10 py-4 text-center font-bold whitespace-nowrap">
-                <img
+              <p className="bg-secondary text-white text-small-semi tracking-widest  px-10 py-4 text-center font-bold whitespace-nowrap">
+                {/* <img
       src="/images/icon.svg"
       alt="Promo Icon"
       className="w-4 h-4"
-    />
+    /> */}
                 {promotion.promoTagline}
               </p>
             )}
@@ -71,10 +71,23 @@ export const ProductPromo2 = async ({
       </div>
 
       {/* Product Grid Section */}
-      <div className="flex flex-col justify-between gap-10">
+      <div className="flex flex-col justify-between gap-12">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col gap-3">
-            <h4 className="font-playfair text-heading4">{heading.name}</h4>
+            <div className="flex items-end gap-4">
+              <h4 className="font-playfair text-heading4">{heading.name}</h4>
+              <div className="flex items-center gap-2">
+                <span className="italic text-sm text-muted-foreground">by</span>
+                <div className="max-w-[80px] w-full h-auto">
+                  <ImageMedia
+                    resource={(heading?.svg_logo as Media) || ""}
+                    fill={false}
+                    imgClassName="object-contain w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+
             <p className="text-base-regular text-muted-foreground">
               {heading.description}
             </p>

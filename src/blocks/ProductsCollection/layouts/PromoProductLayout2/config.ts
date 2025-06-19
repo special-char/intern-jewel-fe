@@ -26,6 +26,14 @@ export const PromoProductLayout2: Block = {
           defaultValue:
             "Embrace the enchanting allure of the Eve Collection, a limited edition jewelry line that intertwines the graceful symbolism of the divine angels with a mythical essence.",
         },
+        {
+          name: "svg_logo",
+          type: "upload",
+          relationTo: "media",
+          required: false,
+          defaultValue: async ({ req }) =>
+            findImageByFilename(req, "homelayoutl _ brandlmagel.svg.svg"),
+        },
       ],
     },
     {
@@ -56,7 +64,7 @@ export const PromoProductLayout2: Block = {
         {
           name: "promoTagline",
           type: "text",
-          required: false, 
+          required: false,
           defaultValue: "LIMITED STOCK",
         },
       ],
