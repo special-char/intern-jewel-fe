@@ -34,13 +34,13 @@ const ListPageShowcase2: React.FC<Props> = ({ region, children, categories }) =>
         </ul>
       </aside>
 
-      <section className="flex flex-col space-y-12">
+      <div className="flex flex-col space-y-12">
         {hasBlocks ? (
           <RenderBlocks blocks={blocks} region={region} />
         ) : (
           <p className="text-sm text-muted">No blocks found</p>
         )}
-      </section>
+      </div>
     </div>
   )
 }

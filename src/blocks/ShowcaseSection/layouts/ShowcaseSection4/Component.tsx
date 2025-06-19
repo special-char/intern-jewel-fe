@@ -16,7 +16,7 @@ export const ShowcaseSection4 = (props: ShowcaseLayout4) => {
   return (
 
     <>
-      <div className="relative aspect-4/3 lg:aspect-[4/1.3] text-secondary">
+      <div className="relative aspect-4/3 lg:aspect-[4/1.4] text-secondary">
         <ImageMedia
           resource={image as Media}
           imgClassName="object-cover"

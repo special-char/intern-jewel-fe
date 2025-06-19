@@ -5,6 +5,7 @@ import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/config"
 import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/config"
 import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/config"
 import { ShowcaseSection } from "@/blocks/ShowcaseSection/config"
+import { ListPageShowcase } from "@/blocks/ListPageShowcase/config"
 
 
 type PropsTypes = {
@@ -25,6 +26,7 @@ export const listPageBlocks = (props: PropsTypes = {}) => {
       ListPage3,
       ListPage4,
       ShowcaseSection,
+      ListPageShowcase,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

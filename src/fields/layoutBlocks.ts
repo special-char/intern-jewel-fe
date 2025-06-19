@@ -39,6 +39,7 @@ import { PromoProductLayout2 } from "@/blocks/ProductsCollection/layouts/PromoPr
 import ListPageShowcase2 from "@/blocks/ListPageShowcase/layouts/ListPageShowcase2/config"
 import { ProductCardLayout1 } from "@/blocks/ProductCard/layouts/ProductCardLayout1/config"
 import { ShowcaseSection4 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection4/config"
+import { ShowcaseSection5 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection5/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -92,6 +93,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ListPageShowcase2,
       ProductCardLayout1,
       ShowcaseSection4,
+      ShowcaseSection5,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }

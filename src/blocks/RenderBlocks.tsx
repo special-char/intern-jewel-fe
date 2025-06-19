@@ -67,6 +67,7 @@ import ListPageShowcase2 from "./ListPageShowcase/layouts/ListPageShowcase2/Comp
 
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Component"
+import { ShowcaseSection5 } from "./ShowcaseSection/layouts/ShowcaseSection5/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -103,6 +104,7 @@ const blockComponents = {
   showcaseLayout2: ShowcaseSection2,
   showcaseLayout3: ShowcaseSection3,
   showcaseLayout4: ShowcaseSection4,
+  showcaseLayout5: ShowcaseSection5,
   advertismentSection: AdvertismentSection,
   advertismentSection1: AdvertismentSection1,
   advertismentSection2: AdvertismentSection2,
