@@ -26,7 +26,7 @@ const design4 = ({
           src={product?.thumbnail || product?.images?.[0]?.url || ("" as any)}
           alt={product.title}
           fill
-          imgClassName="object-contain item-center hover:bg-primary group-hover:scale-110 duration-300 ease-in-out"
+          imgClassName="object-contain item-center hover:bg-white  group-hover:scale-110 duration-300 ease-in-out"
         />
       </div>
     </LocalizedClientLink>

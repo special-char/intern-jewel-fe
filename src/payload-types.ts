@@ -659,6 +659,7 @@ export interface PromoProduct2 {
   heading: {
     name: string;
     description: string;
+    svg_logo?: (number | null) | Media;
   };
   products: (number | Product)[];
   promotion?: {
@@ -2245,6 +2246,7 @@ export interface PromoProduct2Select<T extends boolean = true> {
     | {
         name?: T;
         description?: T;
+        svg_logo?: T;
       };
   products?: T;
   promotion?:
