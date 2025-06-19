@@ -14,7 +14,7 @@ export default async function HeaderLayout3(props: firstLayout) {
     props
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50 text-primary px-4 py-2 md:px-8 lg:px-20">
+    <header className="absolute top-0 inset-x-0 z-50 text-card-foreground px-4 py-2 md:px-8 lg:px-20">
       {/* Mobile + Tablet Header */}
       <div className="flex items-center justify-between lg:hidden">
         {/* Mobile SideNav */}
@@ -86,11 +86,11 @@ export default async function HeaderLayout3(props: firstLayout) {
             <input
               type="text"
               placeholder="Search product..."
-              className="bg-transparent border-b border-primary focus:outline-none placeholder-primary text-caption w-40 md:w-48"
+              className="bg-transparent border-b border-card-foreground focus:outline-none placeholder-card-foreground text-caption w-40 md:w-48"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-primary"
+              className="h-5 w-5 text-card-foreground"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -104,14 +104,14 @@ export default async function HeaderLayout3(props: firstLayout) {
             </svg>
           </div>
 
-          <div className="hidden md:block border-l border-primary/30 h-6" />
+          <div className="hidden md:block border-l border-card-foreground/30 h-6" />
 
           {/* Phone */}
           <div className="hidden md:flex items-center gap-2">
-            <Phone className="h-5 text-primary" />
+            <Phone className="h-5 text-card-foreground" />
             <LocalizedClientLink
               href={`tel:${contactNumber}`}
-              className="text-sm text-primary"
+              className="text-sm text-card-foreground"
             >
               {contactNumber}
             </LocalizedClientLink>
