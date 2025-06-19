@@ -40,6 +40,7 @@ import { ShowcaseSection5 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSecti
 import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
+import { SeparateBlock2 } from "@/blocks/Separator2/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -90,6 +91,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ContactFormBlock,
 
       SeparateBlock,
+      SeparateBlock2,
       ListPageShowcase2,
       ProductCardLayout1,
       ShowcaseSection4,

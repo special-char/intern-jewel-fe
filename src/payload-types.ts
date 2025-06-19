@@ -265,6 +265,7 @@ export interface HomeLayout1 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -550,6 +551,7 @@ export interface HomeLayout2 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -1272,6 +1274,16 @@ export interface Separate {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Separate2".
+ */
+export interface Separate2 {
+  Separator2?: {};
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'separate2';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ListPageShowcase2".
  */
 export interface ListPageShowcase2 {
@@ -1281,24 +1293,10 @@ export interface ListPageShowcase2 {
         id?: string | null;
       }[]
     | null;
-  children?: (BannerLayout1 | FaqLayout2 | ShowcaseLayout4 | ShowcaseSection5)[] | null;
+  children?: (BannerLayout1 | FaqLayout2 | ShowcaseLayout4 | ShowcaseSection5 | Separate2)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'listPageShowcase2';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ProductCardLayout1".
- */
-export interface ProductCardLayout1 {
-  imageUrl: string;
-  category?: string | null;
-  title: string;
-  price: string;
-  description?: string | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'productCard';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1426,6 +1424,7 @@ export interface HomeLayout3 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -1543,6 +1542,7 @@ export interface ListPage1 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -1614,6 +1614,7 @@ export interface ListPage2 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -1685,6 +1686,7 @@ export interface ListPage3 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -1756,6 +1758,7 @@ export interface ListPage4 {
           }
         | ContactFormBlock
         | Separate
+        | Separate2
         | ListPageShowcase2
         | ProductCardLayout1
         | ShowcaseLayout4
@@ -2104,6 +2107,7 @@ export interface HomeLayout1Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -2823,6 +2827,15 @@ export interface SeparateSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Separate2_select".
+ */
+export interface Separate2Select<T extends boolean = true> {
+  Separator2?: T | {};
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "ListPageShowcase2_select".
  */
 export interface ListPageShowcase2Select<T extends boolean = true> {
@@ -2839,20 +2852,8 @@ export interface ListPageShowcase2Select<T extends boolean = true> {
         faqLayout2?: T | FaqLayout2Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        separate2?: T | Separate2Select<T>;
       };
-  id?: T;
-  blockName?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ProductCardLayout1_select".
- */
-export interface ProductCardLayout1Select<T extends boolean = true> {
-  imageUrl?: T;
-  category?: T;
-  title?: T;
-  price?: T;
-  description?: T;
   id?: T;
   blockName?: T;
 }
@@ -2977,6 +2978,7 @@ export interface HomeLayout2Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -3052,6 +3054,7 @@ export interface HomeLayout3Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -3184,6 +3187,7 @@ export interface ListPage1Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -3259,6 +3263,7 @@ export interface ListPage2Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -3334,6 +3339,7 @@ export interface ListPage3Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
@@ -3409,6 +3415,7 @@ export interface ListPage4Select<T extends boolean = true> {
             };
         contactFormBlock?: T | ContactFormBlockSelect<T>;
         separate?: T | SeparateSelect<T>;
+        separate2?: T | Separate2Select<T>;
         listPageShowcase2?: T | ListPageShowcase2Select<T>;
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
