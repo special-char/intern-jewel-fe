@@ -1,4 +1,5 @@
 import { FaqLayout2 } from "@/blocks/AccordianLayout/layouts/FaqLayout2/config"
+import { ListPageHeaderLayout1 } from "@/blocks/ListPageHeader/layouts/ListPageHeaderLayout1/config"
 import { BannerLayout1 } from "@/blocks/PayloadBanner/layouts/BannerLayout1/config"
 import { ShowcaseSection4 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection4/config"
 import { ShowcaseSection5 } from "@/blocks/ShowcaseSection/layouts/ShowcaseSection5/config"
@@ -23,6 +24,7 @@ export const listPageShowcaseBlock = (props: PropsTypes = {}) => {
             FaqLayout2, 
             ShowcaseSection4,
             ShowcaseSection5,
+            ListPageHeaderLayout1,
             ...(props?.append?.blocks ? props?.append?.blocks : []),
         ],
     }
