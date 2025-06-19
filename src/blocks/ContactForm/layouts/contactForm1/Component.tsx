@@ -72,7 +72,7 @@ export const ContactFormComponent: React.FC<FormBlockProps> = ({
           </div>
 
           {/* Right Column - Form */}
-          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 bg-primary">
+          <div className="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 bg-white">
             <div className="max-w-md w-full">
               <form onSubmit={handleSubmit} className="space-y-12">
                 <div className="space-y-12">
