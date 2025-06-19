@@ -17,13 +17,13 @@ export const ProductCardLayout1 = (props: ProductCardProps) => {
   if (!imageUrl && !title && !price && !description) return null
 
   return (
-    <section
-      className="w-full px-4 py-6 sm:px-6 lg:px-8"
+    <div
+      className="w-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[300px_1fr] xl:grid-cols-[350px_1fr] gap-4 sm:gap-6 items-stretch rounded-lg overflow-hidden transition-all duration-300 ${
+        className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[300px_1fr] xl:grid-cols-[350px_1fr] items-stretch overflow-hidden transition-all duration-300 ${
           hovered ? "shadow-[0px_7px_6px_0px_rgba(0,_0,_0,_0.1)]" : "shadow-[0_2px_8px_0_rgba(0,0,0,0.04)]"
         }`}
       >
@@ -67,6 +67,6 @@ export const ProductCardLayout1 = (props: ProductCardProps) => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
