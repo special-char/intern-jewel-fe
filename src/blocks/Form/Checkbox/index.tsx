@@ -1,3 +1,5 @@
+"use client"
+
 import type { CheckboxField } from "@payloadcms/plugin-form-builder/types"
 import type {
   FieldErrorsImpl,

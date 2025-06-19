@@ -3,11 +3,11 @@ import { createContext, useContext, useEffect, useState } from "react"
 
 type ThemeProviderProps = {
   children: React.ReactNode
-  defaultTheme?: any
+  defaultTheme?: string
 }
 
 type ThemeContextType = {
-  setTheme: (theme: any) => void
+  setTheme: (theme: string) => void
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
@@ -16,19 +16,21 @@ export function ThemeProvider({
   children,
   defaultTheme = "default",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<any>(defaultTheme)
+  const [theme, setThemeState] = useState<string>(defaultTheme)
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
+    document.documentElement.setAttribute("data-theme", theme)
   }, [theme])
 
-  const value = {
-    setTheme: (newTheme: any) => {
-      setTheme(newTheme)
-    },
+  const setTheme = (newTheme: string) => {
+    setThemeState(newTheme)
   }
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={{ setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
 export function useTheme() {

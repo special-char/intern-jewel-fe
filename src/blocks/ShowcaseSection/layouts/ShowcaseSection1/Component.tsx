@@ -1,7 +1,7 @@
 import { Media, ShowcaseLayout1 } from "@/payload-types"
-import { ImageMedia } from "@components/payload/Media/ImageMedia"
 import { Button } from "@lib/components/ui/button"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Image from "next/image"
 import React from "react"
 
 export const ShowcaseSection1 = (props: ShowcaseLayout1) => {
@@ -13,14 +13,29 @@ export const ShowcaseSection1 = (props: ShowcaseLayout1) => {
     button,
   } = props
 
+  const renderImage = (image: Media | null) => {
+    if (!image || !image.url) {
+      return (
+        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-400">Image not available</span>
+        </div>
+      )
+    }
+
+    return (
+      <Image
+        src={image.url}
+        alt={image.alt || "Showcase image"}
+        fill
+        className="object-cover"
+      />
+    )
+  }
+
   return (
     <section>
       <div className="relative aspect-4/3 lg:aspect-2/1 text-secondary">
-        <ImageMedia
-          resource={image as Media}
-          imgClassName="object-cover"
-          fill
-        />
+        {renderImage(image as Media)}
         <div className="absolute inset-0 flex max-lg:flex-col justify-between items-start lg:items-end h-full p-4 md:p-10">
           <p className="text-spacing">{showcaseTagline} |</p>
           <div className="flex flex-col gap-4 lg:gap-6 lg:max-w-[450px]">

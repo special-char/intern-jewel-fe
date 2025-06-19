@@ -1,3 +1,5 @@
+"use client"
+
 import type { SelectField } from "@payloadcms/plugin-form-builder/types"
 import type { Control, FieldErrorsImpl } from "react-hook-form"
 

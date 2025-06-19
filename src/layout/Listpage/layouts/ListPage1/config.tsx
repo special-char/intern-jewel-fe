@@ -8,7 +8,8 @@ export const ListPage1: Block = {
   fields: [
     layoutBlocks({
       overrides: {
-        defaultValue: [],
+        defaultValue: [
+        ],
       },
     }),
   ],

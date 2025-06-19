@@ -4,9 +4,56 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { BannerLayout1 as BannerLayoutType, Media } from "@/payload-types"
 import { Button } from "@lib/components/ui/button"
 import { ImageMedia } from "@components/payload/Media/ImageMedia"
+import { Block } from "payload/types"
+import Image from "next/image"
 
-export const BannerLayout1 = (props: BannerLayoutType) => {
-  const { BannerImage1, BannerImage2, title, description, button, link } = props
+interface BannerLayout1Props {
+  BannerImage1?: Media | string | null
+  BannerImage2?: Media | string | null
+  title?: string
+  description?: string
+  button?: {
+    reference?: {
+      id: string
+      relationTo: string
+    }
+    url?: string
+    label: string
+  }
+  link?: {
+    reference?: {
+      id: string
+      relationTo: string
+    }
+    url?: string
+    label: string
+  }
+}
+
+export const BannerLayout1Component: React.FC<{ block: Block & BannerLayout1Props }> = ({ block }) => {
+  const { BannerImage1, BannerImage2, title, description, button, link } = block
+
+  const renderImage = (image: Media | string | null | undefined, alt: string) => {
+    if (!image) return null
+    
+    if (typeof image === "string") {
+      return (
+        <div className="relative w-full h-full">
+          <Image src={image} alt={alt} fill className="object-cover" />
+        </div>
+      )
+    }
+
+    if ("url" in image && image.url) {
+      return (
+        <div className="relative w-full h-full">
+          <Image src={image.url} alt={image.alt || alt} fill className="object-cover" />
+        </div>
+      )
+    }
+
+    return null
+  }
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-card">
@@ -27,20 +74,20 @@ export const BannerLayout1 = (props: BannerLayoutType) => {
       </div>
 
       <div className="grid grid-cols-2 gap-4 items-end">
-        <div className="aspect-3/4 overflow-hidden relative">
-          <ImageMedia
-            resource={BannerImage1 as Media}
-            imgClassName="object-cover"
-            fill
-          />
+        <div className="relative aspect-[4/3]">
+          {renderImage(BannerImage1, "Banner Image 1") || (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-400">Image not available</span>
+            </div>
+          )}
         </div>
         <div>
-          <div className="aspect-3/4 overflow-hidden relative">
-            <ImageMedia
-              resource={BannerImage2 as Media}
-              imgClassName="object-cover"
-              fill
-            />
+          <div className="relative aspect-[4/3]">
+            {renderImage(BannerImage2, "Banner Image 2") || (
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                <span className="text-gray-400">Image not available</span>
+              </div>
+            )}
           </div>
           <Button
             variant="link"

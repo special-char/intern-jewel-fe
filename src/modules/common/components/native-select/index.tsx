@@ -1,7 +1,8 @@
+"use client"
+
 import { ChevronUpDown } from "@medusajs/icons"
 import { clx } from "@medusajs/ui"
 import {
-  SelectHTMLAttributes,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -9,11 +10,12 @@ import {
   useState,
 } from "react"
 
-export type NativeSelectProps = {
+type NativeSelectProps = {
   placeholder?: string
-  errors?: Record<string, unknown>
-  touched?: Record<string, unknown>
-} & SelectHTMLAttributes<HTMLSelectElement>
+  defaultValue?: string
+  className?: string
+  children?: React.ReactNode
+} & React.SelectHTMLAttributes<HTMLSelectElement>
 
 const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
   (

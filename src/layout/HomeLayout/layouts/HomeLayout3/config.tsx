@@ -29,6 +29,9 @@ export const HomeLayout3: Block = {
         {
           blockType: "faqLayout2",
         },
+        {
+          blockType: "paginationLayout",
+        },
       ],
     }})
   ],

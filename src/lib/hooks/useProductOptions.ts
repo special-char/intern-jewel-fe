@@ -4,15 +4,17 @@ import { isEqual } from "lodash";
 const useProductOptions = (product: any) => {
   const [options, setOptions] = useState<Record<string, string>>({});
   const [queryParams, setQueryParams] = useState<Record<string, string>>({});
-  const variants = product.variants;
+  const variants = Array.isArray(product?.variants) ? product.variants : [];
 
   useEffect(() => {
     const optionObj: Record<string, string> = {};
     const queryOptions: Record<string, string> = {};
-    const defaultVariants = product.options?.map((option: any) => {
-      return { id: option.id, val: option.values[0], title: option.title };
-    });
-    for (const option of defaultVariants || []) {
+    const defaultVariants = Array.isArray(product?.options)
+      ? product.options.map((option: any) => {
+          return { id: option.id, val: option.values[0], title: option.title };
+        })
+      : [];
+    for (const option of defaultVariants) {
       Object.assign(optionObj, { [option.id]: option.val.value });
       Object.assign(queryOptions, { [option.title]: option.val.value });
     }

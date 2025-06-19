@@ -64,6 +64,8 @@ import { ListPage2 } from "@/layout/Listpage/layouts/ListPage2/Component"
 import { ListPage4 } from "@/layout/Listpage/layouts/ListPage4/Component"
 import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLayout2/Component"
 import { ListPage3 } from "@/layout/Listpage/layouts/ListPage3/Component"
+import { PaginationLayout } from "./ProductsCollection/layouts/PaginationLayout/Component"
+
 const blockComponents = {
   content: ContentBlock,
   formBlock: FormBlock,
@@ -89,6 +91,7 @@ const blockComponents = {
   offerLayout1: OfferLayout1,
   productsCollection: ProductsCollection,
   threecolumnLayout: ThreecolumnLayout,
+  paginationLayout: PaginationLayout,
   trendingProduct: TrendingProduct,
   fourcolumnLayout: FourcolumnLayout,
   promoProduct: PromoProductLayout,

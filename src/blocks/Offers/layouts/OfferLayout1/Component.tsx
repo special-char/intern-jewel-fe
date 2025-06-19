@@ -1,12 +1,31 @@
 import { Media, OfferLayout1 as OfferLayoutType } from "@/payload-types"
 import { Button } from "@lib/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { ImageMedia } from "@components/payload/Media/ImageMedia"
+import Image from "next/image"
 import React from "react"
 
 export const OfferLayout1 = (props: OfferLayoutType) => {
   const { offers } = props
   if (!offers || offers.length === 0) return null
+
+  const renderImage = (image: Media | null) => {
+    if (!image || !image.url) {
+      return (
+        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-400">Image not available</span>
+        </div>
+      )
+    }
+
+    return (
+      <Image
+        src={image.url}
+        alt={image.alt || "Offer image"}
+        fill
+        className="object-cover"
+      />
+    )
+  }
 
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 hover:cursor-pointer">
@@ -15,11 +34,7 @@ export const OfferLayout1 = (props: OfferLayoutType) => {
           key={offer?.id}
           className="relative aspect-2/1 overflow-hidden group"
         >
-          <ImageMedia
-            resource={offer?.image as Media}
-            imgClassName="object-cover"
-            fill
-          />
+          {renderImage(offer?.image as Media)}
           <div className="absolute inset-0 flex flex-col h-full justify-center gap-10 p-10 ">
             <span className="flex gap-2 flex-col">
               <h2 className="text-heading5 transition-colors duration-300 text-secondary group-hover:text-primary">
