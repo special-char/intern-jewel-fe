@@ -14,7 +14,7 @@ export default async function HeaderLayout3(props: firstLayout) {
     props
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50 text-card-foreground px-4 py-2 md:px-8 lg:px-20">
+    <header className="absolute top-0 inset-x-0 z-50 text-white px-4 py-2 md:px-8 lg:px-20">
       {/* Mobile + Tablet Header */}
       <div className="flex items-center justify-between lg:hidden">
         {/* Mobile SideNav */}
@@ -86,11 +86,11 @@ export default async function HeaderLayout3(props: firstLayout) {
             <input
               type="text"
               placeholder="Search product..."
-              className="bg-transparent border-b border-card-foreground focus:outline-none placeholder-card-foreground text-caption w-40 md:w-48"
+              className="bg-transparent border-b border-white focus:outline-none placeholder-white text-caption w-40 md:w-48"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-card-foreground"
+              className="h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -104,32 +104,32 @@ export default async function HeaderLayout3(props: firstLayout) {
             </svg>
           </div>
 
-          <div className="hidden md:block border-l border-card-foreground/30 h-6" />
+          <div className="hidden md:block border-l border-white/30 h-6" />
 
           {/* Phone */}
           <div className="hidden md:flex items-center gap-2">
-            <Phone className="h-5 text-card-foreground" />
+            <Phone className="h-5 text-white" />
             <LocalizedClientLink
               href={`tel:${contactNumber}`}
-              className="text-sm text-card-foreground"
+              className="text-sm text-white"
             >
               {contactNumber}
             </LocalizedClientLink>
           </div>
 
-          <div className="hidden md:block border-l border-primary/30 h-6" />
+          <div className="hidden md:block border-l border-white/30 h-6" />
 
           {/* Cart */}
           <Suspense
             fallback={
               <LocalizedClientLink
-                className="hover:text-primary flex gap-2 relative"
+                className="hover:text-white flex gap-2 relative"
                 href="/cart"
                 data-testid="nav-cart-link"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-primary"
+                  className="h-5 w-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -141,7 +141,7 @@ export default async function HeaderLayout3(props: firstLayout) {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7a1 1 0 00.9 1.3h12.1M16 17a1 1 0 11-2 0 1 1 0 012 0zm-6 0a1 1 0 11-2 0 1 1 0 012 0z"
                   />
                 </svg>
-                <span className="absolute -top-2 -right-2 bg-primary text-black text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 bg-white text-black text-xs w-4 h-4 flex items-center justify-center rounded-full">
                   0
                 </span>
               </LocalizedClientLink>
