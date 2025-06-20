@@ -1,9 +1,8 @@
 import ProductPrice from "@modules/products/components/product-price"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@lib/components/ui/button"
 import { ImageMedia } from "@components/payload/Media/ImageMedia"
 
-const Design3 = ({
+const Design2 = ({
   product,
   variant,
 }: {
@@ -36,4 +35,4 @@ const Design3 = ({
   </div>
 )
 
-export default Design3
+export default Design2
