@@ -36,7 +36,7 @@ export const TwoColumnGrid = async ({
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-10 gap-y-14">
             {pricedProducts &&
                 pricedProducts?.map((item) => {
                     return (

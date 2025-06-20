@@ -27,8 +27,8 @@ const TrendingProduct = (props: TrendingProductProps) => {
   }
 
   return (
-    <div style={{ backgroundColor: 'hsl(var(--card))', color: 'hsl(var(--foreground))' }}>
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-center px-container py-16">
+    <section style={{ backgroundColor: 'hsl(var(--card))', color: 'hsl(var(--foreground))' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 items-center">
 
         {/* Left Text Section */}
         <div className="flex flex-col">
@@ -79,7 +79,7 @@ const TrendingProduct = (props: TrendingProductProps) => {
         )}
 
       </div>
-    </div>
+    </section>
   )
 }
 
