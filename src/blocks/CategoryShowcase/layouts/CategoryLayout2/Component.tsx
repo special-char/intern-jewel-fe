@@ -8,7 +8,7 @@ export function CategoryLayout2(props: CategoryLayoutType) {
 
     return (
         <section className="content-container mt-20 mb-20">
-            <div className="flex flex-wrap justify-center gap-x-7 gap-y-10">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 justify-center">
                 {categories?.map((category) => (
                     <div
                         key={category.id}
@@ -32,9 +32,7 @@ export function CategoryLayout2(props: CategoryLayoutType) {
                                     imgClassName="w-[85%] h-[85%] object-contain rotate-[25deg] group-hover:rotate-0 transition-transform duration-500 ease-in-out"
                                     fill
                                 />
-                                <div
-                                    className="absolute bottom-4 left-0 right-0 bg-inherit bg-opacity-80 text-spacing text-center text-muted-foreground py-2 px-3"
-                                >
+                                <div className="absolute bottom-4 left-0 right-0 bg-inherit bg-opacity-80 text-spacing text-center text-muted-foreground py-2 px-3">
                                     {category.text}
                                 </div>
                             </div>
