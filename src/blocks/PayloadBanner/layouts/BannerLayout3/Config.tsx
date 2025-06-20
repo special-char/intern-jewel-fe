@@ -57,7 +57,7 @@ export const BannerLayout3: Block = {
       type: "number",
       min: 0,
       max: 1,
-      defaultValue: 0.3,
+      defaultValue: 0,
     },
   ],
 }
