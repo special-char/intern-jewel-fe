@@ -54,7 +54,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 place-items-center text-center max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 place-items-center text-center w-full mx-auto">
           {eyebrowText && (
             <div className={`${textColor} text-caption uppercase mb-4 sm:mb-6`}>
               {eyebrowText}
@@ -62,7 +62,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           )}
 
           <h1
-            className={`${textColor} text-banner mb-6 sm:mb-8 font-normal leading-[0.9] text-center`}
+            className={`${textColor} text-banner mb-6 sm:mb-8 font-normal  text-center`}
           >
             {heading}
           </h1>
@@ -72,11 +72,7 @@ export const BannerLayout3 = (props: HeroSectionProps) => {
           >
             {description}
           </p>
-          <Button
-            variant="outline"
-            className="w-max border border-primary text-background"
-            size="lg"
-          >
+          <Button variant="outline" className="w-max" size="lg">
             <span className="absolute left-1/2 bottom-0 w-4 h-4 bg-primary rounded-full scale-0 group-hover:scale-[15] transition-transform duration-300 ease-in-out transform -translate-x-1/2 translate-y-1/2" />
             <LocalizedClientLink
               href={button?.url || ""}
