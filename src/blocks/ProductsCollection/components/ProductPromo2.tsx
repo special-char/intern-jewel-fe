@@ -46,7 +46,7 @@ export const ProductPromo2 = async ({
   }
 
   return (
-    <section className="flex flex-col-reverse lg:grid lg:grid-cols-[40%_1fr] gap-8  ">
+    <section className="flex flex-col-reverse lg:grid lg:grid-cols-[40%_1fr] gap-11  my-10">
       {/* Banner */}
       <div className="relative text-white aspect-2/1 lg:aspect-auto">
         <ImageMedia
