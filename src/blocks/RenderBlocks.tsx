@@ -70,6 +70,7 @@ import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Com
 import { ShowcaseSection5 } from "./ShowcaseSection/layouts/ShowcaseSection5/Component"
 import ListPageHeaderLayout1 from "./ListPageHeader/layouts/ListPageHeaderLayout1/Component"
 import Separator2 from "./Separator2/Component"
+import { Navbarlayout1 } from "./Navbar/layout/Navbarlayout1/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -142,6 +143,7 @@ const blockComponents = {
   productCard: ProductCardLayout1,
   
   listPageHeaderLayout1: ListPageHeaderLayout1,
+  navbarlayout1: Navbarlayout1,
 }
 
 export const RenderBlocks: React.FC<{

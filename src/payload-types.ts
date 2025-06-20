@@ -270,6 +270,18 @@ export interface HomeLayout1 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -556,6 +568,18 @@ export interface HomeLayout2 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -570,6 +594,7 @@ export interface ThreecolumnLayout {
   title: string;
   cardDesign: string;
   products?: (number | Product)[] | null;
+  enablePagination?: boolean | null;
   button: {
     type?: ('custom' | 'reference') | null;
     newTab?: boolean | null;
@@ -667,7 +692,7 @@ export interface PromoProduct2 {
   heading: {
     name: string;
     description: string;
-    svg_logo?: (number | null) | Media;
+    svg_logo: number | Media;
   };
   products: (number | Product)[];
   promotion?: {
@@ -1293,7 +1318,9 @@ export interface ListPageShowcase2 {
         id?: string | null;
       }[]
     | null;
-  children?: (BannerLayout1 | FaqLayout2 | ShowcaseLayout4 | ShowcaseSection5 | Separate2)[] | null;
+  children?:
+    | (BannerLayout1 | FaqLayout2 | ShowcaseLayout4 | ShowcaseSection5 | ListPageHeaderLayout1 | Separate2)[]
+    | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'listPageShowcase2';
@@ -1348,6 +1375,31 @@ export interface ShowcaseSection5 {
   id?: string | null;
   blockName?: string | null;
   blockType: 'showcaseLayout5';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageHeaderLayout1".
+ */
+export interface ListPageHeaderLayout1 {
+  heading: string;
+  subtext: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'listPageHeaderLayout1';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1429,6 +1481,18 @@ export interface HomeLayout3 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -1547,6 +1611,18 @@ export interface ListPage1 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -1619,6 +1695,18 @@ export interface ListPage2 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -1691,6 +1779,18 @@ export interface ListPage3 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -1763,6 +1863,18 @@ export interface ListPage4 {
         | ProductCardLayout1
         | ShowcaseLayout4
         | ShowcaseSection5
+        | {
+            menus?:
+              | {
+                  label: string;
+                  link: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'navbarlayout1';
+          }
       )[]
     | null;
   id?: string | null;
@@ -2112,6 +2224,19 @@ export interface HomeLayout1Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -2271,6 +2396,7 @@ export interface ThreecolumnLayoutSelect<T extends boolean = true> {
   title?: T;
   cardDesign?: T;
   products?: T;
+  enablePagination?: T;
   button?:
     | T
     | {
@@ -2852,6 +2978,7 @@ export interface ListPageShowcase2Select<T extends boolean = true> {
         faqLayout2?: T | FaqLayout2Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        listPageHeaderLayout1?: T | ListPageHeaderLayout1Select<T>;
         separate2?: T | Separate2Select<T>;
       };
   id?: T;
@@ -2895,6 +3022,16 @@ export interface ShowcaseSection5Select<T extends boolean = true> {
         url?: T;
         label?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ListPageHeaderLayout1_select".
+ */
+export interface ListPageHeaderLayout1Select<T extends boolean = true> {
+  heading?: T;
+  subtext?: T;
   id?: T;
   blockName?: T;
 }
@@ -2983,6 +3120,19 @@ export interface HomeLayout2Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -3059,6 +3209,19 @@ export interface HomeLayout3Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -3192,6 +3355,19 @@ export interface ListPage1Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -3268,6 +3444,19 @@ export interface ListPage2Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -3344,6 +3533,19 @@ export interface ListPage3Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
@@ -3420,6 +3622,19 @@ export interface ListPage4Select<T extends boolean = true> {
         productCard?: T | ProductCardLayout1Select<T>;
         showcaseLayout4?: T | ShowcaseLayout4Select<T>;
         showcaseLayout5?: T | ShowcaseSection5Select<T>;
+        navbarlayout1?:
+          | T
+          | {
+              menus?:
+                | T
+                | {
+                    label?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   id?: T;
   blockName?: T;
