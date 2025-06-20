@@ -30,9 +30,9 @@ export const PromoProductLayout2: Block = {
           name: "svg_logo",
           type: "upload",
           relationTo: "media",
-          required: false,
+          required: true,
           defaultValue: async ({ req }) =>
-            findImageByFilename(req, "homelayoutl _ brandlmagel.svg.svg"),
+            findImageByFilename(req, "homelayout1_brandImage1.svg"),
         },
       ],
     },
@@ -59,7 +59,7 @@ export const PromoProductLayout2: Block = {
           type: "upload",
           relationTo: "media",
           defaultValue: async ({ req }) =>
-            findImageByFilename(req, "homelayout2_promotionImage.jpg"),
+            findImageByFilename(req, "homelayout3_promotionImage.jpg"),
         },
         {
           name: "promoTagline",
