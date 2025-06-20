@@ -40,6 +40,12 @@ export const ThreecolumnLayout: Block = {
         return products.docs.map((product) => product.id)
       },
     },
+    {
+      name: "enablePagination",
+      type: "checkbox",
+      label: "Enable Pagination",
+      defaultValue: false,
+    },
     button(),
   ],
 }
