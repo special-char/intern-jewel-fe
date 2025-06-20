@@ -2,6 +2,7 @@
 
 import { clx } from "@medusajs/ui"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { Button } from "@lib/components/ui/button"
 
 export function Pagination({
   page,
@@ -33,20 +34,17 @@ export function Pagination({
     label: string | number,
     isCurrent: boolean
   ) => (
-    <button
+    <Button
       key={p}
-      className={clx(
-        "txt-xlarge-plus px-2 py-1 rounded transition-colors",
-        isCurrent
-          ? "bg-white text-black dark:bg-black dark:text-white"
-          : "hover:bg-gray-800 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black"
-      )}
+      variant="cardForeground"
+      size="sm"
+      className="txt-xlarge-plus px-2 py-1 rounded transition-colors"
       style={{ minWidth: 36 }}
       disabled={isCurrent}
       onClick={() => handlePageChange(p)}
     >
       {label}
-    </button>
+    </Button>
   )
 
   // Function to render ellipsis
@@ -111,26 +109,31 @@ export function Pagination({
 
   // Render the component
   return (
-    <div className="flex justify-center w-full mt-12">
-      <div
-        className="flex gap-3 items-end px-4 py-2 rounded-lg bg-black text-white dark:bg-white dark:text-black"
-        data-testid={dataTestid}
-      >
-        <button
-          className="px-3 py-1 rounded disabled:opacity-50 disabled:cursor-not-allowed bg-white text-black dark:bg-black dark:text-white border border-white dark:border-black"
+    <div className="w-full mt-12">
+      <div className="flex items-center justify-between w-full px-2">
+        <Button
+          variant="cardForeground"
+          size="sm"
+          className="px-3 py-1 rounded"
           onClick={() => handlePageChange(page - 1)}
           disabled={page <= 1}
         >
           Previous
-        </button>
-        {renderPageButtons()}
-        <button
-          className="px-3 py-1 rounded disabled:opacity-50 disabled:cursor-not-allowed bg-white text-black dark:bg-black dark:text-white border border-white dark:border-black"
+        </Button>
+        <div className="flex-1 flex justify-center">
+          <div className="flex gap-3 items-end" data-testid={dataTestid}>
+            {renderPageButtons()}
+          </div>
+        </div>
+        <Button
+          variant="cardForeground"
+          size="sm"
+          className="px-3 py-1 rounded"
           onClick={() => handlePageChange(page + 1)}
           disabled={page >= totalPages}
         >
           Next
-        </button>
+        </Button>
       </div>
     </div>
   )
