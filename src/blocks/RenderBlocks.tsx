@@ -69,6 +69,7 @@ import { PromoProductLayout2 } from "./ProductsCollection/layouts/PromoProductLa
 import { ProductCardLayout1 } from "./ProductCard/layouts/ProductCardLayout1/Component"
 import { ShowcaseSection5 } from "./ShowcaseSection/layouts/ShowcaseSection5/Component"
 import ListPageHeaderLayout1 from "./ListPageHeader/layouts/ListPageHeaderLayout1/Component"
+import Separator2 from "./Separator2/Component"
 
 const blockComponents = {
   content: ContentBlock,
@@ -133,6 +134,7 @@ const blockComponents = {
   listPage4: ListPage4,
   listPageShowcase2: ListPageShowcase2,
   separate: Separator,
+  separate2: Separator2,
   productDetail1: ProductDetail1,
   contactUs1: ContactUs,
   contactInformationBlock: ContactInformationComponent,
