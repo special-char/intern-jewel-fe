@@ -41,6 +41,7 @@ import { ValueListLayout1 } from "@/blocks/ValueList/layouts/ValueList1/config"
 import deepMerge from "@/utilities/deepMerge"
 import { Block, Field } from "payload"
 import { SeparateBlock2 } from "@/blocks/Separator2/config"
+import { Navbarlayout1 } from "@/blocks/Navbar/layout/Navbarlayout1/config"
 
 type PropsTypes = {
   overrides?: Partial<Field> | null
@@ -96,7 +97,7 @@ export const layoutBlocks = (props: PropsTypes = {}) => {
       ProductCardLayout1,
       ShowcaseSection4,
       ShowcaseSection5,
-      
+      Navbarlayout1,
       ...(props?.append?.blocks ? props?.append?.blocks : []),
     ],
   }
