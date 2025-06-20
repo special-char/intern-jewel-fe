@@ -11,14 +11,8 @@ const Design3 = ({
   variant: HttpTypes.StoreProductVariant
 }) => (
   <div
-    style={{
-      display: "grid",
-      gridTemplate: "subgrid",
-      gridTemplateRows: "1fr minmax(70px, auto) auto",
-    }}
-    className="w-full aspect-3/4 gap-4 group ease-in-out hover:cursor-pointer relative overflow-hidden"
+    className="w-full aspect-3/4 flex flex-col gap-4 group ease-in-out hover:cursor-pointer relative overflow-hidden"
   >
-    
     <div className="relative w-full aspect-square bg-card overflow-hidden flex items-center justify-center">
       <div className="relative w-4/5 h-4/5 max-w-full max-h-full">
         <ImageMedia
@@ -35,9 +29,8 @@ const Design3 = ({
         Add to Cart
       </Button>
     </div>
-
-    <div className="flex flex-col">
-      <h3 className="text-body font-dmsans font-bold line-clamp-2 flex-1 group-hover:text-primary text-center">
+    <div className="flex flex-col justify-center px-2 pb-2 md:pb-0">
+      <h3 className="text-body font-dmsans font-bold line-clamp-2 group-hover:text-primary text-center text-sm sm:text-base">
         {product.title}
       </h3>
       <ProductPrice
